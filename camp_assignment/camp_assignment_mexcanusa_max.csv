@@ -1,0 +1,49 @@
+team,current_camp,current_city,current_distance_km,optimal_camp,optimal_city,optimal_distance_km,gain_km,changed
+Japan,Nashville SC,Nashville,7543.92,Mansfield Multipurpose Stadium,Dallas – Mansfield,1738.05,5805.87,True
+Norway,UNC Greensboro,Greensboro,5433.1,Bryant University,Boston,607.93,4825.17,True
+England,Swope Soccer Village,Kansas City,8953.16,Columbia Park Training Facility,New York New Jersey,5013.14,3940.02,True
+Curaçao,Florida Atlantic University,Boca Raton,10124.43,Wake Forest University,Winston-Salem,6971.74,3152.69,True
+Czechia,Mansfield Multipurpose Stadium,Dallas,8281.33,La Loma Centro Deportivo Queretaro,Querétaro,5333.09,2948.24,True
+Saudi Arabia,Austin FC Stadium,Austin,6649.33,Mercer University,Macon,4255.16,2394.17,True
+Austria,UC Santa Barbara - Harder Stadium,Goleta,9610.17,Austin FC Stadium,Austin,7276.92,2333.25,True
+Jordan,University of Portland,Portland,8866.61,RSL Stadium,Sandy,6913.29,1953.31,True
+Iraq,The Greenbrier Sports Performance Centre,Greenbrier County,4128.0,Bentley University,Boston,2289.87,1838.13,True
+Egypt,Gonzaga University,Spokane,2569.31,Seattle Sounders FC Performance Centre and Clubhouse,Renton,859.12,1710.19,True
+Argentina,Sporting KC Training Centre,Kansas City,2946.49,University of Dallas,Dallas,1518.22,1428.26,True
+Netherlands,KC Current Training Facility,Kansas City,3632.73,DBU,Dallas,2245.25,1387.48,True
+New Zealand,University of San Diego - Torero Stadium,San Diego,7939.41,Great Park Sports Complex,Irvine,7290.47,648.94,True
+Colombia,Academia Atlas FC,Guadalajara,5812.62,CF Pachuca - Universidad Del Futbol,Pachuca,5188.33,624.28,True
+Croatia,Episcopal High School,Alexandria,5393.01,Penn State University – Jeffrey Field,State College,5032.4,360.61,True
+Ghana,Bryant University,Boston,2158.32,The Pingry School,New York New Jersey,1869.64,288.69,True
+France,Bentley University,Boston,1518.9,Stockton University,New York New Jersey – Atlantic City,1239.25,279.66,True
+Iran,Centro Xoloitzcuintle,Tijuana,4336.51,University of San Diego - Torero Stadium,San Diego,4086.93,249.58,True
+Bosnia and Herzegovina,RSL Stadium,Sandy,9508.22,Boise State University,Boise,9352.67,155.54,True
+Algeria,University of Kansas,Kansas City,4936.19,Swope Soccer Village,Kansas City,4810.41,125.78,True
+Qatar,Westmont College,Santa Barbara,7084.4,UC Santa Barbara – Harder Stadium,Santa Barbara,7076.7,7.7,True
+Australia,Oakland Roots/Soul Training Facility,San Francisco Bay Area,4843.98,Oakland Roots/Soul Training Facility,San Francisco Bay Area,4843.98,0.0,False
+Canada,National Soccer Development Centre,Vancouver,6777.24,National Soccer Development Centre,Vancouver,6777.24,0.0,False
+DR Congo,Houston Training Centre,Houston,4851.26,Houston Training Centre,Houston,4851.26,0.0,False
+Ivory Coast,Philadelphia Union,Philadelphie,1156.73,Philadelphia Union,Philadelphia,1156.73,0.0,False
+Korea Republic,Chivas Verde Valle,Guadalajara,1294.57,Chivas Verde Valle,Guadalajara,1294.57,0.0,False
+Mexico,Centro de Alto Rendimiento (CAR),Mexico City,1007.51,Centro de Alto Rendimiento (CAR),Mexico City,1007.51,0.0,False
+Panama,Nottawasaga Training Site,New Tecumseth,1472.19,Nottawasaga Training Site,New Tecumseth,1472.19,0.0,False
+Paraguay,Spartan Soccer Complex,San Francisco Bay Area,1024.17,Spartan Soccer Complex,San Francisco Bay Area,1024.17,0.0,False
+Portugal,Gardens North County District Park,Palm Beach Gardens,6314.69,Kennesaw State University,Atlanta,6504.17,-189.48,True
+Belgium,Seattle Sounders FC Performance Centre and Clubhouse,Renton,3914.66,University of Portland,Portland,4341.46,-426.8,True
+Scotland,Charlotte FC,Charlotte,6577.42,Columbus Crew Performance Centre,Columbus,7182.25,-604.83,True
+Cape Verde,Waters Sportsplex,Tampa,4504.16,University of South Carolina,Columbia,5298.81,-794.65,True
+Germany,Wake Forest University,Winston-Salem,6336.47,Coastal Carolina University,Myrtle Beach,7206.84,-870.37,True
+Brazil,Columbia Park Training Facility,New York New Jersey,3770.36,Carolina Core Elite Performance Centre,High Point,4919.38,-1149.02,True
+South Africa,CF Pachuca - Universidad Del Futbol,Pachuca,5629.34,TCU,Dallas – Fort Worth,7089.92,-1460.58,True
+Sweden,FC Dallas Stadium,Dallas,2715.31,OKC Professional Soccer Training Facility,Oklahoma City,4199.84,-1484.53,True
+Türkiye,Arizona Athletic Grounds,Mesa,7320.91,US Air Force Academy,Colorado Springs,9346.37,-2025.46,True
+Uzbekistan,Atlanta United Training Centre,Atlanta,6666.84,RPS Soccer Academy,Port St. Lucie,8828.51,-2161.67,True
+Uruguay,Mayakoba Training Centre Cancun,Cancun,7043.75,Rayados Training Centre,Monterrey,9300.52,-2256.78,True
+Morocco,The Pingry School,New York New Jersey,3047.17,Atlanta United Training Centre,Atlanta,5396.33,-2349.16,True
+USA,Great Park Sports Complex,Irvine,3444.49,RSL Training Centre,Herriman,5957.15,-2512.66,True
+Spain,Baylor School,Chattanooga,5455.58,UNC Chapel Hill,Chapel Hill,8005.16,-2549.58,True
+Switzerland,SDJA,San Diego,5375.03,Kino Sports Complex,Tucson,8055.06,-2680.04,True
+Senegal,Rutgers University,New York New Jersey,1251.68,UNC Greensboro,Greensboro,4588.13,-3336.46,True
+Tunisia,Rayados Training Centre,Monterrey,3188.16,St. Louis CITY High Performance Centre,St. Louis,7635.24,-4447.08,True
+Ecuador,Columbus Crew Performance Centre,Columbus,4836.84,Orlando City SC Training Grounds at Osceola Heritage Park,Orlando,9303.61,-4466.77,True
+Haiti,Stockton University,New York New Jersey,3110.06,Gardens North County District Park,Palm Beach Gardens,8513.0,-5402.93,True

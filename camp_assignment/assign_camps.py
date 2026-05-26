@@ -111,7 +111,10 @@ def _allowed_pairs(cost: List[List[float]], top_k: int) -> List[Tuple[int, int]]
 
 
 def solve(camps: List[Camp], teams: List[Team], cost: List[List[float]],
-          top_k: int = 400) -> Tuple[Dict[str, str], float, gp.Model]:
+          top_k: int = 40,
+          forced_assignments: Dict[str, str] | None = None,
+          allowed_countries: Dict[str, set] | None = None,
+          ) -> Tuple[Dict[str, str], float, gp.Model]:
     """
     Construit et résout le modèle d'assignation.
 
@@ -137,12 +140,19 @@ def solve(camps: List[Camp], teams: List[Team], cost: List[List[float]],
 
     # x[i, j] = 1 si camp i affecté à équipe j  (modèle creux)
     x = m.addVars(pairs, vtype=GRB.BINARY, name="x")
+    x_max = m.addVar(vtype=GRB.CONTINUOUS, name="x_max")
 
     # Chaque équipe reçoit exactement un camp
     for j in range(n_teams):
         m.addConstr(
             gp.quicksum(x[i, j] for (i, jj) in pairs if jj == j) == 1,
             name=f"team_{j}_one_camp",
+        )
+    
+    for j in range(n_teams):
+        m.addConstr(
+            gp.quicksum(cost[i][j] * x[i, j] for (i, jj) in pairs if jj == j) <= x_max,
+            name=f"team_{j}_distance",
         )
 
     # Chaque camp est utilisé au plus une fois
@@ -153,10 +163,42 @@ def solve(camps: List[Camp], teams: List[Team], cost: List[List[float]],
                         name=f"camp_{i}_max_one_team")
 
     # Objectif : minimiser la distance totale
-    m.setObjective(
-        gp.quicksum(cost[i][j] * x[i, j] for (i, j) in pairs),
-        GRB.MINIMIZE,
-    )
+    m.setObjective(gp.quicksum(cost[i][j] * x[i, j] for (i, j) in pairs),GRB.MINIMIZE,)
+    #m.setObjective(x_max,GRB.MINIMIZE,)
+    #m.setObjective(1*x_max + 10*gp.quicksum(cost[i][j] * x[i, j] for (i, j) in pairs)/n_teams,GRB.MINIMIZE,)
+    m.addConstr(x_max <= 9353, name="xmax_lexico")
+    #m.addConstr(gp.quicksum(cost[i][j] * x[i, j] for (i, j) in pairs) <= 184803, name="sum_lexico")
+
+    # ----- Contraintes additionnelles --------------------------------------
+    camp_idx = {c.site: i for i, c in enumerate(camps)}
+    team_idx = {t.name: j for j, t in enumerate(teams)}
+
+    # (a) Affectations forcées : x[i*, j*] = 1
+    if forced_assignments:
+        for team_name, camp_site in forced_assignments.items():
+            j = team_idx[team_name]
+            i = camp_idx[camp_site]
+            if (i, j) not in x:                       # absent du top-K
+                x[i, j] = m.addVar(vtype=GRB.BINARY,  # on l'ajoute à la main
+                                   obj=cost[i][j], name=f"x[{i},{j}]_forced")
+                # remettre dans la contrainte "team j"
+                m.chgCoeff(m.getConstrByName(f"team_{j}_one_camp"), x[i, j], 1)
+                # et dans la contrainte "camp i" (la créer si absente)
+                cstr = m.getConstrByName(f"camp_{i}_max_one_team")
+                if cstr is None:
+                    m.addConstr(x[i, j] <= 1, name=f"camp_{i}_max_one_team")
+                else:
+                    m.chgCoeff(cstr, x[i, j], 1)
+            m.addConstr(x[i, j] == 1, name=f"force_{team_name}")
+
+    # (b) Restrictions de pays : seuls les camps des pays autorisés
+    if allowed_countries:
+        for team_name, countries in allowed_countries.items():
+            j = team_idx[team_name]
+            for (i, jj), var in list(x.items()):
+                if jj == j and camps[i].country not in countries:
+                    m.addConstr(var == 0, name=f"country_{team_name}_{i}")
+    # -----------------------------------------------------------------------
 
     m.optimize()
 
@@ -283,7 +325,18 @@ def main() -> None:
     print(f"{len(ds.camps)} camps disponibles, {len(ds.teams)} équipes")
 
     camps, teams, cost = precompute_costs(ds)
-    assignment, total_opt, _ = solve(camps, teams, cost)
+    #assignment, total_opt, _ = solve(camps, teams, cost)
+    forced = {
+        "Canada": ds.teams["Canada"].camp.site,
+        "Mexico": ds.teams["Mexico"].camp.site,
+    }
+    allowed = {
+        "USA": {"USA"},
+    }
+
+    assignment, total_opt, _ = solve(camps, teams, cost,
+                                     forced_assignments=forced,
+                                     allowed_countries=allowed)
 
     baseline = baseline_distance(ds)
     total_base = sum(baseline.values())
@@ -315,9 +368,9 @@ def main() -> None:
     for name, old, new, gain in rows[:10]:
         print(f"  {name:<25}{old[:38]:<40}{new[:38]:<40}{gain:>10,.1f}")
 
-    out_csv = here / "camp_assignment_sum.csv"
+    out_csv = here / "camp_assignment_mexcanusa_max>sum.csv"
     export_results(ds, camps, teams, cost, assignment, out_csv)
-    plot_distance_boxplot(ds, camps, teams, cost, assignment, here / "boxplot_distance_sum.png")
+    plot_distance_boxplot(ds, camps, teams, cost, assignment, here / "boxplot_distance_mexcanusa_max>sum.png")
     print(f"\nCSV écrit : {out_csv}")
 
 
