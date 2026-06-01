@@ -7,11 +7,20 @@ from itertools import product
 TIME_SLOTS = ["Morning", "Noon", "Evening", "Night"]
 
 
-def load_data(path="data_fifa.xlsx"):
+def load_data(path="data_fifa.xlsx",
+              camp_csv="flight_data_analysis/flight_distances_camps_stadiums.csv"):
     teams_df    = pd.read_excel(path, sheet_name="teams")
     games_df    = pd.read_excel(path, sheet_name="games")
     stadiums_df = pd.read_excel(path, sheet_name="stadiums")
-    return teams_df, games_df, stadiums_df
+    dist_df     = pd.read_excel(path, sheet_name="stadium_distances", index_col=0)
+
+    camp_raw     = pd.read_csv(camp_csv)[["camp_team", "stadium_name", "stad_camp_direct_distance_km"]]
+    camp_dist_df = (camp_raw
+                    .groupby(["camp_team", "stadium_name"])["stad_camp_direct_distance_km"]
+                    .min()
+                    .unstack(level="stadium_name"))   # rows = teams, cols = stadiums
+
+    return teams_df, games_df, stadiums_df, dist_df, camp_dist_df
 
 
 def build_intermediate_nodes(games_df, stadiums_df):
@@ -21,7 +30,7 @@ def build_intermediate_nodes(games_df, stadiums_df):
     return list(product(dates, stadiums, TIME_SLOTS))
 
 
-def build_and_solve(teams_df, games_df, stadiums_df):
+def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
     """
     Min-cost flow — schedule assignment:
       - n source nodes     (one per team, supply = 1)
@@ -192,8 +201,98 @@ def build_and_solve(teams_df, games_df, stadiums_df):
                     name=f"notsameslot_{grp}_d{d}_{date}_{slot}"
                 )
 
-    # Objective: placeholder — update with travel / cost data
-    model.setObjective(gp.LinExpr(), GRB.MINIMIZE)
+    # --- Flow formulation with arc costs ---------------------------------------
+    stadiums       = dist_df.index.tolist()
+    node_stad      = {v: nodes[v][1] for v in range(m)}
+    game_stad_slots = {
+        (g, s): [v for v in game_slots[g] if node_stad[v] == s]
+        for g in range(G) for s in stadiums
+    }
+
+    # Consecutive game transitions per team: (team, matchday, g1, g2)
+    team_consec = [
+        (team, d, team_day_to_game[(team, d)], team_day_to_game[(team, d + 1)])
+        for team in teams for d in [1, 2]
+        if (team, d) in team_day_to_game and (team, d + 1) in team_day_to_game
+    ]
+
+    # Flow variable f[team, d, s1, s2]: flow on arc s1→s2 for team at transition d
+    # Arc cost = dist(s1, s2).  LP-integral since supplies/demands are 0/1.
+    f = model.addVars(
+        [(team, d, s1, s2)
+         for team, d, g1, g2 in team_consec
+         for s1 in stadiums if game_stad_slots[g1, s1]
+         for s2 in stadiums if game_stad_slots[g2, s2]],
+        lb=0, ub=1, name="f"
+    )
+
+    # Flow conservation — outflow from s1 = whether game g1 is at s1
+    for team, d, g1, g2 in team_consec:
+        for s1 in stadiums:
+            if not game_stad_slots[g1, s1]:
+                continue
+            model.addConstr(
+                gp.quicksum(f[team, d, s1, s2]
+                            for s2 in stadiums if (team, d, s1, s2) in f)
+                == gp.quicksum(y[g1, v] for v in game_stad_slots[g1, s1]),
+                name=f"fout_{team}_{d}_{s1}"
+            )
+
+    # Flow conservation — inflow to s2 = whether game g2 is at s2
+    for team, d, g1, g2 in team_consec:
+        for s2 in stadiums:
+            if not game_stad_slots[g2, s2]:
+                continue
+            model.addConstr(
+                gp.quicksum(f[team, d, s1, s2]
+                            for s1 in stadiums if (team, d, s1, s2) in f)
+                == gp.quicksum(y[g2, v] for v in game_stad_slots[g2, s2]),
+                name=f"fin_{team}_{d}_{s2}"
+            )
+
+    # Source arc costs: camp → day-1 game stadium
+    # f_src[team, s] = 1 if team's day-1 game is at stadium s
+    f_src = model.addVars(
+        [(team, s)
+         for team in teams
+         for s in stadiums
+         if (team, d1 := team_day_to_game.get((team, 1))) is not None
+         and game_stad_slots[d1, s]
+         and team in camp_dist_df.index
+         and s in camp_dist_df.columns
+         and pd.notna(camp_dist_df.loc[team, s])],
+        lb=0, ub=1, name="f_src"
+    )
+
+    for team in teams:
+        g1 = team_day_to_game.get((team, 1))
+        if g1 is None or team not in camp_dist_df.index:
+            continue
+        for s in stadiums:
+            if not game_stad_slots[g1, s]:
+                continue
+            if s not in camp_dist_df.columns or pd.isna(camp_dist_df.loc[team, s]):
+                continue
+            model.addConstr(
+                f_src[team, s]
+                == gp.quicksum(y[g1, v] for v in game_stad_slots[g1, s]),
+                name=f"fsrc_{team}_{s}"
+            )
+
+    # Objective: camp → day-1 + day-1 → day-2 + day-2 → day-3
+    model.setObjective(
+        gp.quicksum(
+            camp_dist_df.loc[team, s] * f_src[team, s]
+            for team, s in f_src
+        )
+        + gp.quicksum(
+            dist_df.loc[s1, s2] * f[team, d, s1, s2]
+            for team, d, g1, g2 in team_consec
+            for s1 in stadiums for s2 in stadiums
+            if (team, d, s1, s2) in f
+        ),
+        GRB.MINIMIZE
+    )
 
     model.optimize()
 
@@ -226,5 +325,5 @@ def build_and_solve(teams_df, games_df, stadiums_df):
 
 
 if __name__ == "__main__":
-    teams_df, games_df, stadiums_df = load_data()
-    build_and_solve(teams_df, games_df, stadiums_df)
+    teams_df, games_df, stadiums_df, dist_df, camp_dist_df = load_data()
+    build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df)
