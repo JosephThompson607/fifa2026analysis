@@ -293,10 +293,11 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
 
     if model.Status in (GRB.OPTIMAL, GRB.TIME_LIMIT) and model.SolCount > 0:
         status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit (best found)"
-        print(f"Status       : {status_str}")
-        print(f"Best sol (UB): {model.ObjVal:,.2f} km")
+        print(f"Status         : {status_str}")
+        print(f"Runtime        : {model.Runtime:.1f}s")
+        print(f"Best sol (UB)  : {model.ObjVal:,.2f} km")
         print(f"Best bound (LB): {model.ObjBound:,.2f} km")
-        print(f"MIP gap      : {model.MIPGap * 100:.2f}%\n")
+        print(f"MIP gap        : {model.MIPGap * 100:.2f}%\n")
 
         # Collect results
         results = []
