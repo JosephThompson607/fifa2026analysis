@@ -107,6 +107,7 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
     # --- Model ---------------------------------------------------------------
     model = gp.Model("fifa_flow")
     model.Params.LogToConsole = 0
+    model.Params.TimeLimit    = 300
 
     # y[g, v] = 1 if game g assigned to slot v
     y = model.addVars(
@@ -290,8 +291,12 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
 
     model.optimize()
 
-    if model.Status == GRB.OPTIMAL:
-        print(f"Status  : Optimal\n")
+    if model.Status in (GRB.OPTIMAL, GRB.TIME_LIMIT) and model.SolCount > 0:
+        status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit (best found)"
+        print(f"Status       : {status_str}")
+        print(f"Best sol (UB): {model.ObjVal:,.2f} km")
+        print(f"Best bound (LB): {model.ObjBound:,.2f} km")
+        print(f"MIP gap      : {model.MIPGap * 100:.2f}%\n")
 
         # Collect results
         results = []
