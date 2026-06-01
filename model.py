@@ -54,9 +54,10 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
     src_cutoff  = last_date  - pd.Timedelta(days=8)   # arc group 1 upper bound
     sink_cutoff = first_date + pd.Timedelta(days=8)   # arc group 3 lower bound
 
-    n = len(teams)
-    m = len(nodes)
-    G = len(games_df)
+    n        = len(teams)
+    m        = len(nodes)
+    G        = len(games_df)
+    stadiums = stadiums_df["stadium"].tolist()
 
     # day number of each slot (1 = first_date, 17 = last_date)
     node_daynum = {
@@ -91,6 +92,17 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
             return list(range(m))
 
     game_slots = {g: valid_slots_for(games[g][2]) for g in range(G)}
+
+    # Host constraint: games involving a host team must be played in that country
+    HOSTS = {"Mexico": "MEX", "Canada": "CAN", "USA": "USA"}
+    stad_country = stadiums_df.set_index("stadium")["country"].to_dict()
+    node_country = {v: stad_country[nodes[v][1]] for v in range(m)}
+
+    for g, (t1, t2, d, grp) in enumerate(games):
+        required_countries = {HOSTS[t] for t in (t1, t2) if t in HOSTS}
+        if required_countries:
+            game_slots[g] = [v for v in game_slots[g]
+                             if node_country[v] in required_countries]
 
     # Reverse index: slot → list of games that can go there
     slot_games = {v: [] for v in range(m)}
@@ -139,6 +151,28 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
          for ds in date_stadium_slots),
         name="stadium_day"
     )
+
+    # Stadium cooldown — a stadium cannot host two games within 3 days of each other
+    # For each (stadium, date_1, date_2) where 0 < date_2 - date_1 < 3:
+    #   games_at_s_d1 + games_at_s_d2 <= 1
+    dates_sorted = sorted({nodes[v][0] for v in range(m)})
+    date_to_ts   = {d: pd.to_datetime(d) for d in dates_sorted}
+
+    for s in stadiums_df["stadium"]:
+        for i, d1 in enumerate(dates_sorted):
+            for d2 in dates_sorted[i + 1:]:
+                gap = (date_to_ts[d2] - date_to_ts[d1]).days
+                if gap >= 3:
+                    break   # dates are sorted, no need to check further
+                vs1 = [v for v in date_stadium_slots.get((d1, s), []) if slot_games[v]]
+                vs2 = [v for v in date_stadium_slots.get((d2, s), []) if slot_games[v]]
+                if not vs1 or not vs2:
+                    continue
+                model.addConstr(
+                    gp.quicksum(y[g, v] for v in vs1 for g in slot_games[v])
+                    + gp.quicksum(y[g, v] for v in vs2 for g in slot_games[v]) <= 1,
+                    name=f"cooldown_{s}_{d1}_{d2}"
+                )
 
     # Arc group 2 — calendar ordering: consecutive matchdays of same team ≥ 4 days apart
     # sum_v daynum(v)*y[g2,v]  >=  sum_v daynum(v)*y[g1,v]  +  4
@@ -217,6 +251,19 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
         if (team, d) in team_day_to_game and (team, d + 1) in team_day_to_game
     ]
 
+    # Stadium diversity — each team must play in at least 2 different stadiums
+    for team in teams:
+        for s in stadiums:
+            team_games = [team_day_to_game[(team, d)] for d in [1, 2, 3]
+                          if (team, d) in team_day_to_game]
+            slots_at_s = [game_stad_slots[g, s] for g in team_games]
+            if not any(slots_at_s):
+                continue
+            model.addConstr(
+                gp.quicksum(y[g, v] for g, vs in zip(team_games, slots_at_s) for v in vs) <= 2,
+                name=f"diversity_{team}_{s}"
+            )
+
     # Flow variable f[team, d, s1, s2]: flow on arc s1→s2 for team at transition d
     # Arc cost = dist(s1, s2).  LP-integral since supplies/demands are 0/1.
     f = model.addVars(
@@ -275,13 +322,29 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
         )
 
     # Objective: camp → day-1 + day-1 → day-2 + day-2 → day-3
+    # --- Arc cost weights (adjust as needed) ---
+    w_direct = 0.2   # weight on direct stadium-to-stadium distance
+    w_camp   = 0.8   # weight on via-camp route: s1 → camp → s2
+
+    def inter_arc_cost(team, s1, s2):
+        direct = dist_df.loc[s1, s2]
+        if (team in camp_dist_df.index
+                and s1 in camp_dist_df.columns
+                and s2 in camp_dist_df.columns
+                and pd.notna(camp_dist_df.loc[team, s1])
+                and pd.notna(camp_dist_df.loc[team, s2])):
+            via_camp = camp_dist_df.loc[team, s1] + camp_dist_df.loc[team, s2]
+        else:
+            via_camp = direct   # fallback when camp distances unavailable
+        return w_direct * direct + w_camp * via_camp
+
     model.setObjective(
         gp.quicksum(
             camp_dist_df.loc[team, s] * f_src[team, s]
             for team, s in f_src
         )
         + gp.quicksum(
-            dist_df.loc[s1, s2] * f[team, d, s1, s2]
+            inter_arc_cost(team, s1, s2) * f[team, d, s1, s2]
             for team, d, g1, g2 in team_consec
             for s1 in stadiums for s2 in stadiums
             if (team, d, s1, s2) in f
