@@ -1,1 +1,5 @@
 .venv
+~$data_fifa.xlsx
+~$*.xlsx
+historic_weather_data/datasets/camps/camps_hourly
+historic_weather_data/datasets/stadiums/stadiums_hourly
