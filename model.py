@@ -252,32 +252,26 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
 
     # Source arc costs: camp → day-1 game stadium
     # f_src[team, s] = 1 if team's day-1 game is at stadium s
-    f_src = model.addVars(
-        [(team, s)
-         for team in teams
-         for s in stadiums
-         if (team, d1 := team_day_to_game.get((team, 1))) is not None
-         and game_stad_slots[d1, s]
-         and team in camp_dist_df.index
-         and s in camp_dist_df.columns
-         and pd.notna(camp_dist_df.loc[team, s])],
-        lb=0, ub=1, name="f_src"
-    )
+    valid_src_arcs = [
+        (team, s)
+        for team in teams
+        for s in stadiums
+        if team_day_to_game.get((team, 1)) is not None
+        and game_stad_slots[team_day_to_game[(team, 1)], s]
+        and team in camp_dist_df.index
+        and s in camp_dist_df.columns
+        and pd.notna(camp_dist_df.loc[team, s])
+    ]
 
-    for team in teams:
-        g1 = team_day_to_game.get((team, 1))
-        if g1 is None or team not in camp_dist_df.index:
-            continue
-        for s in stadiums:
-            if not game_stad_slots[g1, s]:
-                continue
-            if s not in camp_dist_df.columns or pd.isna(camp_dist_df.loc[team, s]):
-                continue
-            model.addConstr(
-                f_src[team, s]
-                == gp.quicksum(y[g1, v] for v in game_stad_slots[g1, s]),
-                name=f"fsrc_{team}_{s}"
-            )
+    f_src = model.addVars(valid_src_arcs, lb=0, ub=1, name="f_src")
+
+    for team, s in valid_src_arcs:
+        g1 = team_day_to_game[(team, 1)]
+        model.addConstr(
+            f_src[team, s]
+            == gp.quicksum(y[g1, v] for v in game_stad_slots[g1, s]),
+            name=f"fsrc_{team}_{s}"
+        )
 
     # Objective: camp → day-1 + day-1 → day-2 + day-2 → day-3
     model.setObjective(
