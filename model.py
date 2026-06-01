@@ -56,14 +56,21 @@ def build_and_solve(teams_df, games_df, stadiums_df):
     }
     node_date = {v: pd.to_datetime(nodes[v][0]) for v in range(m)}
 
-    # Games as (team_1, team_2, matchday) indexed 0..G-1
-    games = list(games_df[["team_1", "team_2", "day"]].itertuples(index=False, name=None))
+    # Games as (team_1, team_2, matchday, group) indexed 0..G-1
+    games = list(games_df[["team_1", "team_2", "day", "group"]].itertuples(index=False, name=None))
 
     # For each (team, matchday) → game index
     team_day_to_game = {}
-    for g, (t1, t2, d) in enumerate(games):
+    for g, (t1, t2, d, grp) in enumerate(games):
         team_day_to_game[(t1, d)] = g
         team_day_to_game[(t2, d)] = g
+
+    # Games per (group, matchday): (grp, d) → [g_idx, ...]
+    group_day_games = {}
+    for g, (t1, t2, d, grp) in enumerate(games):
+        group_day_games.setdefault((grp, d), []).append(g)
+
+    group_day3 = {grp: idxs for (grp, d), idxs in group_day_games.items() if d == 3}
 
     # Valid slots per game (arc group 1 and 3 restrict day-1 and day-3)
     def valid_slots_for(matchday):
@@ -112,6 +119,17 @@ def build_and_solve(teams_df, games_df, stadiums_df):
         name="capacity"
     )
 
+    # At most one game per (date, stadium) across all time slots
+    date_stadium_slots = {}
+    for v, (date, stadium, _) in enumerate(nodes):
+        date_stadium_slots.setdefault((date, stadium), []).append(v)
+
+    model.addConstrs(
+        (gp.quicksum(y[g, v] for v in date_stadium_slots[ds] for g in slot_games[v] if slot_games[v]) <= 1
+         for ds in date_stadium_slots),
+        name="stadium_day"
+    )
+
     # Arc group 2 — calendar ordering: consecutive matchdays of same team ≥ 4 days apart
     # sum_v daynum(v)*y[g2,v]  >=  sum_v daynum(v)*y[g1,v]  +  4
     for team in teams:
@@ -127,9 +145,52 @@ def build_and_solve(teams_df, games_df, stadiums_df):
                 name=f"order_{team}_d{d}"
             )
 
-    # Arc group 3 — all games must be assigned (sink receives all n units)
-    # Already enforced by the "assign" constraint above; the sink_cutoff
-    # restricts day-3 games to late slots via game_slots[g].
+    # Simultaneity — day-3 games in the same group must share (date, time_slot)
+    # For each (date, time_slot): sum y[g1,v] == sum y[g2,v]
+    date_slot_nodes = {}
+    for v in range(m):
+        key = (nodes[v][0], nodes[v][2])   # (date, time_slot)
+        date_slot_nodes.setdefault(key, []).append(v)
+
+    for grp, grp_games in group_day3.items():
+        g1, g2 = grp_games
+        for (date, slot), vs in date_slot_nodes.items():
+            vs1 = [v for v in vs if v in set(game_slots[g1])]
+            vs2 = [v for v in vs if v in set(game_slots[g2])]
+            if not vs1 and not vs2:
+                continue
+            model.addConstr(
+                gp.quicksum(y[g1, v] for v in vs1)
+                == gp.quicksum(y[g2, v] for v in vs2),
+                name=f"simul_{grp}_{date}_{slot}"
+            )
+
+    # Proximity — day-1 and day-2 same-group games must be within 1 calendar day
+    # and NOT at the exact same (date, time_slot)
+    for d in [1, 2]:
+        for grp in set(grp for grp, _ in group_day_games):
+            pair = group_day_games.get((grp, d), [])
+            if len(pair) < 2:
+                continue
+            g1, g2 = pair
+
+            # |date_num(g1) - date_num(g2)| <= 1
+            lhs1 = gp.quicksum(node_daynum[v] * y[g1, v] for v in game_slots[g1])
+            lhs2 = gp.quicksum(node_daynum[v] * y[g2, v] for v in game_slots[g2])
+            model.addConstr(lhs1 - lhs2 <= 1, name=f"prox_{grp}_d{d}_a")
+            model.addConstr(lhs2 - lhs1 <= 1, name=f"prox_{grp}_d{d}_b")
+
+            # Not same (date, time_slot) — even across different stadiums
+            for (date, slot), vs in date_slot_nodes.items():
+                vs1 = [v for v in vs if v in set(game_slots[g1])]
+                vs2 = [v for v in vs if v in set(game_slots[g2])]
+                if not vs1 or not vs2:
+                    continue
+                model.addConstr(
+                    gp.quicksum(y[g1, v] for v in vs1)
+                    + gp.quicksum(y[g2, v] for v in vs2) <= 1,
+                    name=f"notsameslot_{grp}_d{d}_{date}_{slot}"
+                )
 
     # Objective: placeholder — update with travel / cost data
     model.setObjective(gp.LinExpr(), GRB.MINIMIZE)
@@ -138,14 +199,26 @@ def build_and_solve(teams_df, games_df, stadiums_df):
 
     if model.Status == GRB.OPTIMAL:
         print(f"Status  : Optimal\n")
-        print(f"{'Game':<35} {'Day':>3}  {'Date':<12} {'Stadium':<30} {'Slot'}")
-        print("-" * 95)
-        for g, (t1, t2, d) in enumerate(games):
+
+        # Collect results
+        results = []
+        for g, (t1, t2, d, grp) in enumerate(games):
             for v in game_slots[g]:
                 if y[g, v].X > 0.5:
                     date, stadium, slot = nodes[v]
-                    print(f"{t1} vs {t2:<25} {d:>3}  {date:<12} {stadium:<30} {slot}")
+                    results.append((grp, d, t1, t2, date, stadium, slot))
                     break
+
+        results.sort(key=lambda r: (r[0], r[1]))   # sort by group, then day
+
+        print(f"{'Group':<6} {'Game':<40} {'Day':>3}  {'Date':<12} {'Stadium':<30} {'Slot'}")
+        print("-" * 105)
+        prev_grp = None
+        for grp, d, t1, t2, date, stadium, slot in results:
+            if prev_grp and grp != prev_grp:
+                print()
+            print(f"{grp:<6} {t1} vs {t2:<30} {d:>3}  {date:<12} {stadium:<30} {slot}")
+            prev_grp = grp
     else:
         print(f"Model status: {model.Status}")
 
