@@ -46,7 +46,7 @@ def build_intermediate_nodes(weather_df):
     return nodes, node_temp
 
 
-def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df, time_limit=300):
+def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df, time_limit=300, priority=None):
     """
     Min-cost flow — schedule assignment:
       - n source nodes     (one per team, supply = 1)
@@ -427,75 +427,37 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
             "runtime_s": round(model.Runtime, 1),
             "UB": round(ub, 4) if ub is not None else None,
             "LB": round(lb, 4) if lb is not None else None,
-            "gap_pct": round(gap * 100, 2) if gap is not None else None,
+            "gap": round(gap, 4) if gap is not None else None,
             "unit": unit,
         })
 
-    # --- Phase 1: stadium distances (priority 1 — highest) ------------------
-    print("Phase 1 — Stadium-to-stadium distances (km):")
-    model.setObjective(obj_stadium, GRB.MINIMIZE)
-    model.optimize()
-    phase_report("Stadium distances", "km")
+    objectives = {
+        1: (obj_stadium, "Stadium distances",  "km"),
+        2: (obj_camp,    "Camp distances",     "km"),
+        3: (obj_temp,    "Temperature shock",  "°C"),
+        4: (obj_elev,    "Elevation gain",     "m"),
+        5: (obj_broadcast, "Broadcast penalty", ""),
+    }
 
-    if model.SolCount == 0:
-        print("No feasible solution found in phase 1.")
-        return model
+    order = priority if priority else [1, 2, 3, 4, 5]
 
-    model.addConstr(
-        obj_stadium <= model.ObjVal * (1 + phase_tol), name="fix_obj1"
-    )
+    for phase_num, obj_id in enumerate(order, start=1):
+        obj_expr, obj_name, unit = objectives[obj_id]
+        prefix = "\n" if phase_num > 1 else ""
+        print(f"{prefix}Phase {phase_num} (Obj {obj_id}) — {obj_name}:")
+        model.setObjective(obj_expr, GRB.MINIMIZE)
+        model.optimize()
+        phase_report(obj_name, unit)
 
-    # --- Phase 2: camp distances (priority 2) --------------------------------
-    print("\nPhase 2 — Camp-to-stadium distances (km):")
-    model.setObjective(obj_camp, GRB.MINIMIZE)
-    model.optimize()
-    phase_report("Camp distances", "km")
+        if model.SolCount == 0:
+            print(f"No feasible solution found in phase {phase_num}.")
+            return [], phase_reports
 
-    if model.SolCount == 0:
-        print("No feasible solution found in phase 2.")
-        return model
-
-    model.addConstr(
-        obj_camp <= model.ObjVal * (1 + phase_tol), name="fix_obj2"
-    )
-
-    # --- Phase 3: temperature shock (priority 3) ----------------------------
-    print("\nPhase 3 — Temperature shock (°C):")
-    model.setObjective(obj_temp, GRB.MINIMIZE)
-    model.optimize()
-    phase_report("Temperature shock", "°C")
-
-    if model.SolCount == 0:
-        print("No feasible solution found in phase 3.")
-        return model
-
-    model.addConstr(
-        obj_temp <= model.ObjVal * (1 + phase_tol), name="fix_obj3"
-    )
-
-    # --- Phase 4: elevation gain penalty ------------------------------------
-    print("\nPhase 4 — Elevation gain (m):")
-    model.setObjective(obj_elev, GRB.MINIMIZE)
-    model.optimize()
-    phase_report("Elevation gain", "m")
-
-    if model.SolCount == 0:
-        print("No feasible solution found in phase 4.")
-        return model
-
-    model.addConstr(
-        obj_elev <= model.ObjVal * (1 + phase_tol), name="fix_obj4"
-    )
-
-    # --- Phase 5: broadcast penalty -----------------------------------------
-    print("\nPhase 5 — Broadcast penalty:")
-    model.setObjective(obj_broadcast, GRB.MINIMIZE)
-    model.optimize()
-    phase_report("Broadcast penalty", "")
-
-    if model.SolCount == 0:
-        print("No feasible solution found in phase 5.")
-        return model
+        if phase_num < len(order):
+            model.addConstr(
+                obj_expr <= model.ObjVal * (1 + phase_tol),
+                name=f"fix_obj{phase_num}"
+            )
 
     print()
 
@@ -533,6 +495,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--time-limit", type=int, default=300,
                         help="Time limit in seconds per phase (default: 300)")
+    parser.add_argument("-p", "--priority", type=int, nargs=5, default=[1, 2, 3, 4, 5],
+                        metavar=("OBJ1", "OBJ2", "OBJ3", "OBJ4", "OBJ5"),
+                        help="Priority order of objectives 1-5 (default: 1 2 3 4 5). "
+                             "1=Stadium, 2=Camp, 3=Temperature, 4=Elevation, 5=Broadcast")
     args = parser.parse_args()
 
     import os
@@ -540,21 +506,17 @@ if __name__ == "__main__":
 
     teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df = load_data()
 
-    nodes, node_temp = build_intermediate_nodes(weather_df)
-    stad_elev        = stadiums_df.set_index("stadium")["elevation"].to_dict()
-    pd.DataFrame([
-        {"node_id": v, "date": nodes[v][0], "stadium": nodes[v][1],
-         "hour_utc": nodes[v][2], "apparent_temperature": node_temp[v],
-         "elevation": stad_elev[nodes[v][1]]}
-        for v in range(len(nodes))
-    ]).to_csv("results/intermediate_nodes.csv", index=False)
-    print(f"Exported {len(nodes)} nodes to results/intermediate_nodes.csv\n")
-
     results, phase_reports = build_and_solve(
         teams_df, games_df, stadiums_df, dist_df, camp_dist_df,
-        weather_df, broadcast_df, time_limit=args.time_limit
+        weather_df, broadcast_df,
+        time_limit=args.time_limit,
+        priority=args.priority
     )
 
-    pd.DataFrame(results).to_csv("results/solution.csv", index=False)
-    pd.DataFrame(phase_reports).to_csv("results/phase_report.csv", index=False)
-    print(f"\nSaved results/solution.csv ({len(results)} games) and results/phase_report.csv")
+    tag = "-".join(map(str, args.priority))
+    solution_path    = f"results/solution_{tag}.csv"
+    phase_report_path = f"results/phase_report_{tag}.csv"
+
+    pd.DataFrame(results).to_csv(solution_path, index=False)
+    pd.DataFrame(phase_reports).to_csv(phase_report_path, index=False)
+    print(f"\nSaved {solution_path} ({len(results)} games) and {phase_report_path}")
