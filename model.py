@@ -1,14 +1,11 @@
 import pandas as pd
 import gurobipy as gp
 from gurobipy import GRB
-from itertools import product
-
-
-TIME_SLOTS = ["Morning", "Noon", "Evening", "Night"]
 
 
 def load_data(path="data_fifa.xlsx",
-              camp_csv="flight_data_analysis/flight_distances_camps_stadiums.csv"):
+              camp_csv="flight_data_analysis/flight_distances_camps_stadiums.csv",
+              weather_csv="historic_weather_data/stadium_hourly_filtered.csv"):
     teams_df    = pd.read_excel(path, sheet_name="teams")
     games_df    = pd.read_excel(path, sheet_name="games")
     stadiums_df = pd.read_excel(path, sheet_name="stadiums")
@@ -18,19 +15,35 @@ def load_data(path="data_fifa.xlsx",
     camp_dist_df = (camp_raw
                     .groupby(["camp_team", "stadium_name"])["stad_camp_direct_distance_km"]
                     .min()
-                    .unstack(level="stadium_name"))   # rows = teams, cols = stadiums
+                    .unstack(level="stadium_name"))
 
-    return teams_df, games_df, stadiums_df, dist_df, camp_dist_df
+    weather_df = pd.read_csv(weather_csv, low_memory=False)
 
-
-def build_intermediate_nodes(games_df, stadiums_df):
-    """All combinations (date, stadium, time_slot): 17 days × 16 stadiums × 4 slots = 1,088."""
-    dates    = sorted(games_df["date"].unique())
-    stadiums = stadiums_df["stadium"].tolist()
-    return list(product(dates, stadiums, TIME_SLOTS))
+    return teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df
 
 
-def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
+def build_intermediate_nodes(weather_df):
+    """
+    Nodes are (date, stadium, hour_utc) rows from the weather CSV.
+    Returns:
+        nodes      : list of (date_str, stadium, hour_utc) tuples
+        node_temp  : dict {node_idx: apparent_temperature}
+    """
+    weather_df = weather_df.copy()
+    weather_df["date"] = "2026-06-" + weather_df["day"].astype(str).str.zfill(2)
+
+    nodes     = []
+    node_temp = {}
+
+    for _, row in weather_df.iterrows():
+        v = len(nodes)
+        nodes.append((row["date"], row["stadium"], int(row["hour_utc"])))
+        node_temp[v] = row["apparent_temperature"]
+
+    return nodes, node_temp
+
+
+def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df):
     """
     Min-cost flow — schedule assignment:
       - n source nodes     (one per team, supply = 1)
@@ -45,8 +58,11 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
       2. Intermediate → intermediate : calendar ordering per team (+4 days between matchdays)
       3. Intermediate → sink  : day-3 games, date(v) >= first_date + 8
     """
-    teams = teams_df["team"].tolist()
-    nodes = build_intermediate_nodes(games_df, stadiums_df)
+    teams              = teams_df["team"].tolist()
+    nodes, node_temp   = build_intermediate_nodes(weather_df)
+    stad_elev          = stadiums_df.set_index("stadium")["elevation"].to_dict()
+    camp_elev          = teams_df.set_index("team")["camp_elevation"].to_dict()
+    camp_temp_avg      = teams_df.set_index("team")["camp_avg_temperature"].to_dict()
 
     dates       = pd.to_datetime(games_df["date"])
     first_date  = dates.min()
@@ -112,7 +128,7 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
 
     print(f"Teams             : {n}")
     print(f"Games             : {G}")
-    print(f"Intermediate nodes: {m}  (17 × 16 × 4)")
+    print(f"Intermediate nodes: {m}  (from weather data)")
     print(f"src_cutoff        : {src_cutoff.date()}  (last_date - 8,  arc group 1)")
     print(f"sink_cutoff       : {sink_cutoff.date()}  (first_date + 8, arc group 3)\n")
 
@@ -322,71 +338,157 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df):
         )
 
     # Objective: camp → day-1 + day-1 → day-2 + day-2 → day-3
-    # --- Arc cost weights (adjust as needed) ---
-    w_direct = 0.2   # weight on direct stadium-to-stadium distance
-    w_camp   = 0.8   # weight on via-camp route: s1 → camp → s2
-
-    def inter_arc_cost(team, s1, s2):
-        direct = dist_df.loc[s1, s2]
+    def via_camp_cost(team, s1, s2):
+        """Distance s1 → camp → s2 for a given team. Falls back to direct if missing."""
         if (team in camp_dist_df.index
                 and s1 in camp_dist_df.columns
                 and s2 in camp_dist_df.columns
                 and pd.notna(camp_dist_df.loc[team, s1])
                 and pd.notna(camp_dist_df.loc[team, s2])):
-            via_camp = camp_dist_df.loc[team, s1] + camp_dist_df.loc[team, s2]
-        else:
-            via_camp = direct   # fallback when camp distances unavailable
-        return w_direct * direct + w_camp * via_camp
+            return camp_dist_df.loc[team, s1] + camp_dist_df.loc[team, s2]
+        return dist_df.loc[s1, s2]   # fallback
 
-    model.setObjective(
+    # --- Tolerance between phases (allow obj to degrade by this % in next phase)
+    phase_tol = 0.01   # 1% — adjust as needed
+
+    # Obj 1: direct stadium-to-stadium distance (no camp)
+    obj_stadium = gp.quicksum(
+        dist_df.loc[s1, s2] * f[team, d, s1, s2]
+        for team, d, g1, g2 in team_consec
+        for s1 in stadiums for s2 in stadiums
+        if (team, d, s1, s2) in f
+    )
+
+    # Obj 2: full via-camp travel — camp→s1 (source) + s1→camp→s2 (inter-game)
+    obj_camp = (
         gp.quicksum(
             camp_dist_df.loc[team, s] * f_src[team, s]
             for team, s in f_src
         )
         + gp.quicksum(
-            inter_arc_cost(team, s1, s2) * f[team, d, s1, s2]
+            via_camp_cost(team, s1, s2) * f[team, d, s1, s2]
             for team, d, g1, g2 in team_consec
             for s1 in stadiums for s2 in stadiums
             if (team, d, s1, s2) in f
-        ),
-        GRB.MINIMIZE
+        )
     )
 
+    # Precompute temperature shock coefficients: |node_temp - avg_camp_temp| per (game, slot)
+    obj_temp = gp.quicksum(
+        (abs(node_temp[v] - camp_temp_avg.get(t1, 0))
+         + abs(node_temp[v] - camp_temp_avg.get(t2, 0))) * y[g, v]
+        for g, (t1, t2, d, grp) in enumerate(games)
+        for v in game_slots[g]
+    )
+
+    # Elevation gain penalty: max(0, stad_elev - camp_elev) per team per game
+    # Penalizes going from lower-altitude camp to higher-altitude stadium
+    obj_elev = gp.quicksum(
+        (max(0, stad_elev.get(nodes[v][1], 0) - camp_elev.get(t1, 0))
+         + max(0, stad_elev.get(nodes[v][1], 0) - camp_elev.get(t2, 0))) * y[g, v]
+        for g, (t1, t2, d, grp) in enumerate(games)
+        for v in game_slots[g]
+    )
+
+    def phase_report(unit="km"):
+        status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit"
+        print(f"  Status : {status_str}")
+        print(f"  Runtime: {model.Runtime:.1f}s")
+        if model.SolCount > 0:
+            print(f"  UB     : {model.ObjVal:,.2f} {unit}")
+            print(f"  LB     : {model.ObjBound:,.2f} {unit}")
+            print(f"  Gap    : {model.MIPGap * 100:.2f}%")
+        else:
+            print("  No solution found.")
+
+    # --- Phase 1: stadium distances (priority 1 — highest) ------------------
+    print("Phase 1 — Stadium-to-stadium distances:")
+    model.setObjective(obj_stadium, GRB.MINIMIZE)
     model.optimize()
+    phase_report("km")
 
-    if model.Status in (GRB.OPTIMAL, GRB.TIME_LIMIT) and model.SolCount > 0:
-        status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit (best found)"
-        print(f"Status         : {status_str}")
-        print(f"Runtime        : {model.Runtime:.1f}s")
-        print(f"Best sol (UB)  : {model.ObjVal:,.2f} km")
-        print(f"Best bound (LB): {model.ObjBound:,.2f} km")
-        print(f"MIP gap        : {model.MIPGap * 100:.2f}%\n")
+    if model.SolCount == 0:
+        print("No feasible solution found in phase 1.")
+        return model
 
-        # Collect results
-        results = []
-        for g, (t1, t2, d, grp) in enumerate(games):
-            for v in game_slots[g]:
-                if y[g, v].X > 0.5:
-                    date, stadium, slot = nodes[v]
-                    results.append((grp, d, t1, t2, date, stadium, slot))
-                    break
+    model.addConstr(
+        obj_stadium <= model.ObjVal * (1 + phase_tol), name="fix_obj1"
+    )
 
-        results.sort(key=lambda r: (r[0], r[1]))   # sort by group, then day
+    # --- Phase 2: camp distances (priority 2) --------------------------------
+    print("\nPhase 2 — Camp-to-stadium distances:")
+    model.setObjective(obj_camp, GRB.MINIMIZE)
+    model.optimize()
+    phase_report("km")
 
-        print(f"{'Group':<6} {'Game':<40} {'Day':>3}  {'Date':<12} {'Stadium':<30} {'Slot'}")
-        print("-" * 105)
-        prev_grp = None
-        for grp, d, t1, t2, date, stadium, slot in results:
-            if prev_grp and grp != prev_grp:
-                print()
-            print(f"{grp:<6} {t1} vs {t2:<30} {d:>3}  {date:<12} {stadium:<30} {slot}")
-            prev_grp = grp
-    else:
-        print(f"Model status: {model.Status}")
+    if model.SolCount == 0:
+        print("No feasible solution found in phase 2.")
+        return model
+
+    model.addConstr(
+        obj_camp <= model.ObjVal * (1 + phase_tol), name="fix_obj2"
+    )
+
+    # --- Phase 3: temperature shock (priority 3) ----------------------------
+    print("\nPhase 3 — Temperature shock (°C):")
+    model.setObjective(obj_temp, GRB.MINIMIZE)
+    model.optimize()
+    phase_report("°C")
+
+    if model.SolCount == 0:
+        print("No feasible solution found in phase 3.")
+        return model
+
+    model.addConstr(
+        obj_temp <= model.ObjVal * (1 + phase_tol), name="fix_obj3"
+    )
+
+    # --- Phase 4: elevation gain penalty (priority 4 — lowest) --------------
+    print("\nPhase 4 — Elevation gain (m):")
+    model.setObjective(obj_elev, GRB.MINIMIZE)
+    model.optimize()
+    phase_report("m")
+
+    if model.SolCount == 0:
+        print("No feasible solution found in phase 4.")
+        return model
+
+    print()
+
+    # Collect and print results
+    results = []
+    for g, (t1, t2, d, grp) in enumerate(games):
+        for v in game_slots[g]:
+            if y[g, v].X > 0.5:
+                date, stadium, slot = nodes[v]
+                results.append((grp, d, t1, t2, date, stadium, slot))
+                break
+
+    results.sort(key=lambda r: (r[0], r[1]))
+
+    print(f"{'Group':<6} {'Game':<40} {'Day':>3}  {'Date':<12} {'Stadium':<30} {'UTC Time'}")
+    print("-" * 105)
+    prev_grp = None
+    for grp, d, t1, t2, date, stadium, slot in results:
+        if prev_grp and grp != prev_grp:
+            print()
+        print(f"{grp:<6} {t1} vs {t2:<30} {d:>3}  {date:<12} {stadium:<30} {slot}")
+        prev_grp = grp
 
     return model
 
 
 if __name__ == "__main__":
-    teams_df, games_df, stadiums_df, dist_df, camp_dist_df = load_data()
-    build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df)
+    teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df = load_data()
+
+    nodes, node_temp = build_intermediate_nodes(weather_df)
+    stad_elev        = stadiums_df.set_index("stadium")["elevation"].to_dict()
+    pd.DataFrame([
+        {"node_id": v, "date": nodes[v][0], "stadium": nodes[v][1],
+         "hour_utc": nodes[v][2], "apparent_temperature": node_temp[v],
+         "elevation": stad_elev[nodes[v][1]]}
+        for v in range(len(nodes))
+    ]).to_csv("intermediate_nodes.csv", index=False)
+    print(f"Exported {len(nodes)} nodes to intermediate_nodes.csv")
+
+    build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df)
