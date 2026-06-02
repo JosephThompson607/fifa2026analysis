@@ -1,6 +1,0 @@
-phase,status,runtime_s,UB,LB,gap_pct,unit
-Stadium distances,Time limit,300.0,49659.1753,15677.5002,68.43,km
-Camp distances,Time limit,300.1,304414.0586,145801.3855,52.1,km
-Temperature shock,Time limit,300.1,551.775,326.7528,40.78,°C
-Elevation gain,Time limit,300.0,12038.0,429.0,96.44,m
-Broadcast penalty,Time limit,300.2,69221.6109,15655.2434,77.38,
