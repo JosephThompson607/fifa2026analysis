@@ -1,0 +1,133 @@
+Running sequence 1 (best_broadcasting): 5 4 3 2 1
+/lustre06/project/6026976/juanse/fifa2026analysis/model.py:15: DtypeWarning: Columns (22) have mixed types. Specify dtype option on import or set low_memory=False.
+  camp_raw     = pd.read_csv(camp_csv)[["camp_team", "stadium_name", "stad_camp_direct_distance_km"]]
+Teams             : 48
+Games             : 72
+Intermediate nodes: 1870  (from weather data)
+src_cutoff        : 2026-06-19  (last_date - 8,  arc group 1)
+sink_cutoff       : 2026-06-19  (first_date + 8, arc group 3)
+
+Set parameter TokenServer to value "license1.computecanada.ca"
+Set parameter LogToConsole to value 0
+Phase 1 (Obj 5) — Broadcast penalty:
+  Status : Optimal
+  Runtime: 67.4s
+  UB     : 15,655.24 
+  LB     : 15,655.24 
+  Gap    : 0.00%
+
+Phase 2 (Obj 4) — Elevation gain:
+  Status : Time limit
+  Runtime: 3602.3s
+  UB     : 2,499.00 m
+  LB     : 2,440.00 m
+  Gap    : 2.36%
+
+Phase 3 (Obj 3) — Temperature shock:
+  Status : Time limit
+  Runtime: 3600.9s
+  UB     : 881.64 °C
+  LB     : 492.38 °C
+  Gap    : 44.15%
+
+Phase 4 (Obj 2) — Camp distances:
+  Status : Time limit
+  Runtime: 3600.7s
+  UB     : 273,720.71 km
+  LB     : 196,477.05 km
+  Gap    : 28.22%
+
+Phase 5 (Obj 1) — Stadium distances:
+  Status : Time limit
+  Runtime: 3601.6s
+  UB     : 129,224.39 km
+  LB     : 35,201.15 km
+  Gap    : 72.76%
+
+Group  Game                                     Day  Date         Stadium                        UTC
+---------------------------------------------------------------------------------------------------------
+A      Korea Republic vs Czechia                          1  2026-06-11   Arrowhead Stadium              1
+A      Mexico vs South Africa                     1  2026-06-11   Estadio Azteca                 21
+A      Czechia vs South Africa                     2  2026-06-15   AT&T Stadium                   17
+A      Mexico vs Korea Republic                   2  2026-06-16   Estadio BBVA                   4
+A      South Africa vs Korea Republic                   3  2026-06-27   Mercedes-Benz Stadium          21
+A      Czechia vs Mexico                           3  2026-06-27   Estadio Azteca                 21
+
+B      Qatar vs Switzerland                      1  2026-06-17   SoFi Stadium                   19
+B      Canada vs Bosnia and Herzegovina           1  2026-06-17   BMO Field                      22
+B      Canada vs Qatar                            2  2026-06-21   BC Place                       20
+B      Switzerland vs Bosnia and Herzegovina           2  2026-06-21   SoFi Stadium                   22
+B      Switzerland vs Canada                           3  2026-06-27   BC Place                       19
+B      Bosnia and Herzegovina vs Qatar                            3  2026-06-27   SoFi Stadium                   19
+
+C      Haiti vs Scotland                         1  2026-06-17   Hard Rock Stadium              23
+C      Brazil vs Morocco                          1  2026-06-17   Lincoln Financial Field        22
+C      Scotland vs Morocco                          2  2026-06-22   Gillette Stadium               19
+C      Brazil vs Haiti                            2  2026-06-21   MetLife Stadium                0
+C      Morocco vs Haiti                            3  2026-06-27   MetLife Stadium                22
+C      Scotland vs Brazil                           3  2026-06-27   Hard Rock Stadium              22
+
+D      Australia vs Türkiye                          1  2026-06-11   MetLife Stadium                20
+D      USA vs Paraguay                         1  2026-06-11   Levi's Stadium                 3
+D      Türkiye vs Paraguay                         2  2026-06-21   Lumen Field                    20
+D      USA vs Australia                        2  2026-06-21   Levi's Stadium                 3
+D      Paraguay vs Australia                        3  2026-06-27   Levi's Stadium                 3
+D      Türkiye vs USA                              3  2026-06-27   Lumen Field                    3
+
+E      Germany vs Curaçao                          1  2026-06-14   Hard Rock Stadium              22
+E      Ivory Coast vs Ecuador                          1  2026-06-15   MetLife Stadium                21
+E      Ecuador vs Curaçao                          2  2026-06-23   Hard Rock Stadium              0
+E      Germany vs Ivory Coast                      2  2026-06-23   Lincoln Financial Field        22
+E      Ecuador vs Germany                          3  2026-06-27   AT&T Stadium                   20
+E      Curaçao vs Ivory Coast                      3  2026-06-27   Lincoln Financial Field        20
+
+F      Netherlands vs Japan                            1  2026-06-11   BMO Field                      23
+F      Sweden vs Tunisia                          1  2026-06-11   Gillette Stadium               19
+F      Netherlands vs Sweden                           2  2026-06-21   BMO Field                      22
+F      Tunisia vs Japan                            2  2026-06-20   Hard Rock Stadium              0
+F      Japan vs Sweden                           3  2026-06-27   BMO Field                      23
+F      Tunisia vs Netherlands                      3  2026-06-27   Arrowhead Stadium              23
+
+G      Belgium vs Egypt                            1  2026-06-11   BC Place                       21
+G      Iran vs New Zealand                      1  2026-06-11   SoFi Stadium                   20
+G      New Zealand vs Egypt                            2  2026-06-15   BC Place                       21
+G      Belgium vs Iran                             2  2026-06-15   Lumen Field                    20
+G      New Zealand vs Belgium                          3  2026-06-24   Lumen Field                    20
+G      Egypt vs Iran                             3  2026-06-24   BMO Field                      20
+
+H      Spain vs Cape Verde                       1  2026-06-11   Lincoln Financial Field        20
+H      Saudi Arabia vs Uruguay                          1  2026-06-12   NRG Stadium                    17
+H      Spain vs Saudi Arabia                     2  2026-06-18   AT&T Stadium                   17
+H      Uruguay vs Cape Verde                       2  2026-06-18   NRG Stadium                    21
+H      Cape Verde vs Saudi Arabia                     3  2026-06-24   NRG Stadium                    19
+H      Uruguay vs Spain                            3  2026-06-24   Levi's Stadium                 19
+
+I      Iraq vs Norway                           1  2026-06-14   BMO Field                      20
+I      France vs Senegal                          1  2026-06-14   SoFi Stadium                   22
+I      Norway vs Senegal                          2  2026-06-18   Lumen Field                    22
+I      France vs Iraq                             2  2026-06-18   MetLife Stadium                19
+I      Norway vs France                           3  2026-06-27   Gillette Stadium               20
+I      Senegal vs Iraq                             3  2026-06-27   NRG Stadium                    20
+
+J      Argentina vs Algeria                          1  2026-06-12   AT&T Stadium                   17
+J      Austria vs Jordan                           1  2026-06-12   Lumen Field                    20
+J      Argentina vs Austria                          2  2026-06-18   Levi's Stadium                 22
+J      Jordan vs Algeria                          2  2026-06-18   BC Place                       20
+J      Jordan vs Argentina                        3  2026-06-24   SoFi Stadium                   20
+J      Algeria vs Austria                          3  2026-06-24   BC Place                       20
+
+K      Portugal vs DR Congo                         1  2026-06-11   Hard Rock Stadium              22
+K      Uzbekistan vs Colombia                         1  2026-06-11   Mercedes-Benz Stadium          16
+K      Portugal vs Uzbekistan                       2  2026-06-15   NRG Stadium                    17
+K      Colombia vs DR Congo                         2  2026-06-15   Levi's Stadium                 21
+K      DR Congo vs Uzbekistan                       3  2026-06-21   AT&T Stadium                   17
+K      Colombia vs Portugal                         3  2026-06-21   NRG Stadium                    17
+
+L      England vs Croatia                          1  2026-06-14   Lincoln Financial Field        22
+L      Ghana vs Panama                           1  2026-06-14   Gillette Stadium               23
+L      England vs Ghana                            2  2026-06-19   Gillette Stadium               19
+L      Panama vs Croatia                          2  2026-06-20   Lincoln Financial Field        22
+L      Panama vs England                          3  2026-06-24   AT&T Stadium                   22
+L      Croatia vs Ghana                            3  2026-06-24   MetLife Stadium                22
+
+Saved results/solution_5-4-3-2-1.csv (72 games) and results/phase_report_5-4-3-2-1.csv

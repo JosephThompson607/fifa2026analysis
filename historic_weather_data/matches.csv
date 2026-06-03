@@ -1,0 +1,73 @@
+match,group,date,time,tz,team1,team2,stadium,city_name,country,lat,lon
+1,A,2026-06-11,13:00,UTC-6,Mexico,South Africa,Estadio Azteca,Mexico City,Mexico,19.303,-99.151
+2,A,2026-06-11,20:00,UTC-6,Korea Republic,Czechia,Estadio Akron,Zapopan,Mexico,20.689,-103.467
+25,A,2026-06-18,12:00,UTC-4,Czechia,South Africa,Mercedes-Benz Stadium,Atlanta,USA,33.755,-84.401
+28,A,2026-06-18,19:00,UTC-6,Mexico,Korea Republic,Estadio Akron,Zapopan,Mexico,20.689,-103.467
+53,A,2026-06-24,19:00,UTC-6,Czechia,Mexico,Estadio Azteca,Mexico City,Mexico,19.303,-99.151
+54,A,2026-06-24,19:00,UTC-6,South Africa,Korea Republic,Estadio BBVA,Guadalupe,Mexico,25.669,-100.247
+3,B,2026-06-12,15:00,UTC-4,Canada,Bosnia and Herzegovina,BMO Field,Toronto,Canada,43.633,-79.419
+8,B,2026-06-13,12:00,UTC-7,Qatar,Switzerland,Levi's Stadium,Santa Clara,USA,37.403,-121.97
+26,B,2026-06-18,12:00,UTC-7,Switzerland,Bosnia and Herzegovina,SoFi Stadium,Inglewood,USA,33.953,-118.339
+27,B,2026-06-18,15:00,UTC-7,Canada,Qatar,BC Place,Vancouver,Canada,49.277,-123.112
+51,B,2026-06-24,12:00,UTC-7,Switzerland,Canada,BC Place,Vancouver,Canada,49.277,-123.112
+52,B,2026-06-24,12:00,UTC-7,Bosnia and Herzegovina,Qatar,Lumen Field,Seattle,USA,47.595,-122.332
+7,C,2026-06-13,18:00,UTC-4,Brazil,Morocco,MetLife Stadium,East Rutherford,USA,40.814,-74.075
+5,C,2026-06-13,21:00,UTC-4,Haiti,Scotland,Gillette Stadium,Foxborough,USA,42.091,-71.264
+30,C,2026-06-19,18:00,UTC-4,Scotland,Morocco,Gillette Stadium,Foxborough,USA,42.091,-71.264
+29,C,2026-06-19,20:30,UTC-4,Brazil,Haiti,Lincoln Financial Field,Philadelphia,USA,39.901,-75.168
+49,C,2026-06-24,18:00,UTC-4,Scotland,Brazil,Hard Rock Stadium,Miami Gardens,USA,25.958,-80.239
+50,C,2026-06-24,18:00,UTC-4,Morocco,Haiti,Mercedes-Benz Stadium,Atlanta,USA,33.755,-84.401
+4,D,2026-06-12,18:00,UTC-7,USA,Paraguay,SoFi Stadium,Inglewood,USA,33.953,-118.339
+6,D,2026-06-13,21:00,UTC-7,Australia,Türkiye,BC Place,Vancouver,Canada,49.277,-123.112
+32,D,2026-06-19,12:00,UTC-7,USA,Australia,Lumen Field,Seattle,USA,47.595,-122.332
+31,D,2026-06-19,20:00,UTC-7,Türkiye,Paraguay,Levi's Stadium,Santa Clara,USA,37.403,-121.97
+59,D,2026-06-25,19:00,UTC-7,Türkiye,USA,SoFi Stadium,Inglewood,USA,33.953,-118.339
+60,D,2026-06-25,19:00,UTC-7,Paraguay,Australia,Levi's Stadium,Santa Clara,USA,37.403,-121.97
+10,E,2026-06-14,12:00,UTC-5,Germany,Curaçao,NRG Stadium,Houston,USA,29.685,-95.411
+9,E,2026-06-14,19:00,UTC-4,Ivory Coast,Ecuador,Lincoln Financial Field,Philadelphia,USA,39.901,-75.168
+33,E,2026-06-20,16:00,UTC-4,Germany,Ivory Coast,BMO Field,Toronto,Canada,43.633,-79.419
+34,E,2026-06-20,19:00,UTC-5,Ecuador,Curaçao,Arrowhead Stadium,Kansas City,USA,39.049,-94.484
+55,E,2026-06-25,16:00,UTC-4,Curaçao,Ivory Coast,Lincoln Financial Field,Philadelphia,USA,39.901,-75.168
+56,E,2026-06-25,16:00,UTC-4,Ecuador,Germany,MetLife Stadium,East Rutherford,USA,40.814,-74.075
+11,F,2026-06-14,15:00,UTC-5,Netherlands,Japan,AT&T Stadium,Dallas,USA,32.748,-97.093
+12,F,2026-06-14,20:00,UTC-6,Sweden,Tunisia,Estadio BBVA,Guadalupe,Mexico,25.669,-100.247
+35,F,2026-06-20,12:00,UTC-5,Netherlands,Sweden,NRG Stadium,Houston,USA,29.685,-95.411
+36,F,2026-06-20,22:00,UTC-6,Tunisia,Japan,Estadio BBVA,Guadalupe,Mexico,25.669,-100.247
+57,F,2026-06-25,18:00,UTC-5,Japan,Sweden,AT&T Stadium,Dallas,USA,32.748,-97.093
+58,F,2026-06-25,18:00,UTC-5,Tunisia,Netherlands,Arrowhead Stadium,Kansas City,USA,39.049,-94.484
+16,G,2026-06-15,12:00,UTC-7,Belgium,Egypt,Lumen Field,Seattle,USA,47.595,-122.332
+15,G,2026-06-15,18:00,UTC-7,Iran,New Zealand,SoFi Stadium,Inglewood,USA,33.953,-118.339
+39,G,2026-06-21,12:00,UTC-7,Belgium,Iran,SoFi Stadium,Inglewood,USA,33.953,-118.339
+40,G,2026-06-21,18:00,UTC-7,New Zealand,Egypt,BC Place,Vancouver,Canada,49.277,-123.112
+63,G,2026-06-26,20:00,UTC-7,Egypt,Iran,Lumen Field,Seattle,USA,47.595,-122.332
+64,G,2026-06-26,20:00,UTC-7,New Zealand,Belgium,BC Place,Vancouver,Canada,49.277,-123.112
+14,H,2026-06-15,12:00,UTC-4,Spain,Cape Verde,Mercedes-Benz Stadium,Atlanta,USA,33.755,-84.401
+13,H,2026-06-15,18:00,UTC-4,Saudi Arabia,Uruguay,Hard Rock Stadium,Miami Gardens,USA,25.958,-80.239
+38,H,2026-06-21,12:00,UTC-4,Spain,Saudi Arabia,Mercedes-Benz Stadium,Atlanta,USA,33.755,-84.401
+37,H,2026-06-21,18:00,UTC-4,Uruguay,Cape Verde,Hard Rock Stadium,Miami Gardens,USA,25.958,-80.239
+65,H,2026-06-26,19:00,UTC-5,Cape Verde,Saudi Arabia,NRG Stadium,Houston,USA,29.685,-95.411
+66,H,2026-06-26,18:00,UTC-6,Uruguay,Spain,Estadio Akron,Zapopan,Mexico,20.689,-103.467
+17,I,2026-06-16,15:00,UTC-4,France,Senegal,MetLife Stadium,East Rutherford,USA,40.814,-74.075
+18,I,2026-06-16,18:00,UTC-4,Iraq,Norway,Gillette Stadium,Foxborough,USA,42.091,-71.264
+42,I,2026-06-22,17:00,UTC-4,France,Iraq,Lincoln Financial Field,Philadelphia,USA,39.901,-75.168
+41,I,2026-06-22,20:00,UTC-4,Norway,Senegal,MetLife Stadium,East Rutherford,USA,40.814,-74.075
+61,I,2026-06-26,15:00,UTC-4,Norway,France,Gillette Stadium,Foxborough,USA,42.091,-71.264
+62,I,2026-06-26,15:00,UTC-4,Senegal,Iraq,BMO Field,Toronto,Canada,43.633,-79.419
+19,J,2026-06-16,20:00,UTC-5,Argentina,Algeria,Arrowhead Stadium,Kansas City,USA,39.049,-94.484
+20,J,2026-06-16,21:00,UTC-7,Austria,Jordan,Levi's Stadium,Santa Clara,USA,37.403,-121.97
+43,J,2026-06-22,12:00,UTC-5,Argentina,Austria,AT&T Stadium,Dallas,USA,32.748,-97.093
+44,J,2026-06-22,20:00,UTC-7,Jordan,Algeria,Levi's Stadium,Santa Clara,USA,37.403,-121.97
+69,J,2026-06-27,21:00,UTC-5,Algeria,Austria,Arrowhead Stadium,Kansas City,USA,39.049,-94.484
+70,J,2026-06-27,21:00,UTC-5,Jordan,Argentina,AT&T Stadium,Dallas,USA,32.748,-97.093
+23,K,2026-06-17,12:00,UTC-5,Portugal,DR Congo,NRG Stadium,Houston,USA,29.685,-95.411
+24,K,2026-06-17,20:00,UTC-6,Uzbekistan,Colombia,Estadio Azteca,Mexico City,Mexico,19.303,-99.151
+47,K,2026-06-23,12:00,UTC-5,Portugal,Uzbekistan,NRG Stadium,Houston,USA,29.685,-95.411
+48,K,2026-06-23,20:00,UTC-6,Colombia,DR Congo,Estadio Akron,Zapopan,Mexico,20.689,-103.467
+71,K,2026-06-27,19:30,UTC-4,Colombia,Portugal,Hard Rock Stadium,Miami Gardens,USA,25.958,-80.239
+72,K,2026-06-27,19:30,UTC-4,DR Congo,Uzbekistan,Mercedes-Benz Stadium,Atlanta,USA,33.755,-84.401
+22,L,2026-06-17,15:00,UTC-5,England,Croatia,AT&T Stadium,Dallas,USA,32.748,-97.093
+21,L,2026-06-17,19:00,UTC-4,Ghana,Panama,BMO Field,Toronto,Canada,43.633,-79.419
+45,L,2026-06-23,16:00,UTC-4,England,Ghana,Gillette Stadium,Foxborough,USA,42.091,-71.264
+46,L,2026-06-23,19:00,UTC-4,Panama,Croatia,BMO Field,Toronto,Canada,43.633,-79.419
+67,L,2026-06-27,17:00,UTC-4,Panama,England,MetLife Stadium,East Rutherford,USA,40.814,-74.075
+68,L,2026-06-27,17:00,UTC-4,Croatia,Ghana,Lincoln Financial Field,Philadelphia,USA,39.901,-75.168

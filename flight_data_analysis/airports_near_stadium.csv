@@ -1,0 +1,113 @@
+AirportID,Name,City,Country,IATA,ICAO,stadium_name,distance_km
+7846,Arlington Municipal Airport,Arlington,USA,\N,KGKY,AT&T Stadium,9.352453855517766
+3670,Dallas Fort Worth International Airport,Dallas-Fort Worth,USA,DFW,KDFW,AT&T Stadium,17.32566211756595
+8188,Dallas Executive Airport,Dallas,USA,RBD,KRBD,AT&T Stadium,22.31555597632958
+3502,Dallas Love Field,Dallas,USA,DAL,KDAL,AT&T Stadium,25.093760164684063
+3723,Fort Worth Meacham International Airport,Fort Worth,USA,FTW,KFTW,AT&T Stadium,26.419356437631766
+6948,NAS Fort Worth JRB/Carswell Field,Dallas,USA,FWH,KNFW,AT&T Stadium,32.67324351375101
+8342,Fort Worth Alliance Airport,Fort Worth,USA,AFW,KAFW,AT&T Stadium,33.978541230408034
+7513,Addison Airport,Addison,USA,ADS,KADS,AT&T Stadium,34.295041380157464
+4293,Charles B. Wheeler Downtown Airport,Kansas City,USA,MKC,KMKC,Arrowhead Stadium,12.499892818000113
+9228,Johnson County Executive Airport,Olathe,USA,OJC,KOJC,Arrowhead Stadium,31.344710363427158
+3458,Kansas City International Airport,Kansas City,USA,MCI,KMCI,Arrowhead Stadium,34.012973733439964
+7869,New Century Aircenter Airport,Olathe,USA,JCI,KIXD,Arrowhead Stadium,42.69600994767665
+13022,Harbour (Public) Heliport,Vancouver,Canada,\N,CBC7,BC Place,1.179953437706776
+5500,Vancouver Harbour Water Aerodrome,Vancouver,Canada,CXH,CYHC,BC Place,1.9360685356260894
+156,Vancouver International Airport,Vancouver,Canada,YVR,CYVR,BC Place,10.616347034407049
+12090,Vancouver International Seaplane Base,Vancouver,Canada,\N,CAM9,BC Place,11.838706851035072
+7273,Boundary Bay Airport,Boundary Bay,Canada,YDT,CZBB,BC Place,23.693008747261462
+104,Pitt Meadows Airport,Pitt Meadows,Canada,\N,CYPK,BC Place,29.956129205543018
+7274,Langley Airport,Langley Township,Canada,YLY,CYNJ,BC Place,40.072329942855774
+144,Billy Bishop Toronto City Centre Airport,Toronto,Canada,YTZ,CYTZ,BMO Field,1.934140173521466
+194,Downsview Airport,Toronto,Canada,YZD,CYZD,BMO Field,12.73935177494352
+193,Lester B. Pearson International Airport,Toronto,Canada,YYZ,CYYZ,BMO Field,17.71860007387356
+82,Buttonville Municipal Airport,Toronto,Canada,YKZ,CYKZ,BMO Field,25.7881709325233
+9238,Markham Airport,Markham,Canada,\N,CNU8,BMO Field,35.94565705254275
+7820,Brampton Airport,Brampton,Canada,\N,CNC3,BMO Field,39.29780568328989
+7780,Burlington Executive,Burlington,Canada,\N,CZBA,BMO Field,40.758228192660596
+1859,Zapopan Airport,Zapopan,Mexico,\N,MMZP,Estadio Akron,6.574895943106437
+1804,Don Miguel Hidalgo Y Costilla International Airport,Guadalajara,Mexico,GDL,MMGL,Estadio Akron,24.68397472707393
+1824,Licenciado Benito Juarez International Airport,Mexico City,Mexico,MEX,MMMX,Estadio Azteca,16.976668265114725
+1850,Licenciado Adolfo Lopez Mateos International Airport,Toluca,Mexico,TLC,MMTO,Estadio Azteca,43.71214307013918
+1825,General Mariano Escobedo International Airport,Monterrey,Mexico,MTY,MMMY,Estadio BBVA,18.572318706729526
+1784,Del Norte International Airport,Monterrey,Mexico,NTR,MMAN,Estadio BBVA,21.883956853115368
+8280,Norwood Memorial Airport,Norwood,USA,OWD,KOWD,Gillette Stadium,13.37266835206019
+3781,North Central State Airport,Smithfield,USA,SFZ,KSFZ,Gillette Stadium,26.668552309071508
+8276,Taunton Municipal King Field,Taunton,USA,\N,KTAN,Gillette Stadium,31.594856221515727
+3448,General Edward Lawrence Logan International Airport,Boston,USA,BOS,KBOS,Gillette Stadium,37.115802032334706
+3641,Theodore Francis Green State Airport,Providence,USA,PVD,KPVD,Gillette Stadium,41.900951947774345
+3425,Laurence G Hanscom Field,Bedford,USA,BED,KBED,Gillette Stadium,42.193175499456366
+8277,Plymouth Municipal Airport,Plymouth,USA,PYM,KPYM,Gillette Stadium,48.63608727914501
+8285,Marshfield Municipal George Harlow Field,Marshfield,USA,\N,KGHG,Gillette Stadium,48.836353715179996
+3468,North Perry Airport,Hollywood,USA,HWO,KHWO,Hard Rock Stadium,4.80662555356525
+3791,Opa-locka Executive Airport,Miami,USA,OPF,KOPF,Hard Rock Stadium,6.905099837170887
+3533,Fort Lauderdale Hollywood International Airport,Fort Lauderdale,USA,FLL,KFLL,Hard Rock Stadium,15.386563086986355
+3576,Miami International Airport,Miami,USA,MIA,KMIA,Hard Rock Stadium,19.038357084154843
+3464,Fort Lauderdale Executive Airport,Fort Lauderdale,USA,FXE,KFXE,Hard Rock Stadium,27.469402211300785
+8379,Pompano Beach Airpark,Pompano Beach,USA,PPM,KPMP,Hard Rock Stadium,34.590580785059146
+3869,Kendall-Tamiami Executive Airport,Kendall-tamiami,USA,TMB,KTMB,Hard Rock Stadium,39.564863788110266
+3831,Boca Raton Airport,Boca Raton,USA,BCT,KBCT,Hard Rock Stadium,48.55891857997463
+3748,Norman Y. Mineta San Jose International Airport,San Jose,USA,SJC,KSJC,Levi's Stadium,5.771034543390587
+3783,Moffett Federal Airfield,Mountain View,USA,NUQ,KNUQ,Levi's Stadium,7.128337143469867
+8864,Palo Alto Airport of Santa Clara County,Palo Alto,USA,PAO,KPAO,Levi's Stadium,14.34061270129811
+11312,Reid-Hillview Airport of Santa Clara County,San Jose,USA,RHV,KRHV,Levi's Stadium,15.45397833850477
+7683,San Carlos Airport,San Carlos,USA,SQL,KSQL,Levi's Stadium,27.521916858064586
+8982,Hayward Executive Airport,Hayward,USA,HWD,KHWD,Levi's Stadium,31.483643755020385
+7629,Livermore Municipal Airport,Livermore,USA,LVK,KLVK,Levi's Stadium,34.894012177442754
+3453,Metropolitan Oakland International Airport,Oakland,USA,OAK,KOAK,Levi's Stadium,41.73900124136388
+3469,San Francisco International Airport,San Francisco,USA,SFO,KSFO,Levi's Stadium,43.04604747484669
+10360,Half Moon Bay Airport,Half Moon Bay,USA,HAF,KHAF,Levi's Stadium,48.45024537476634
+3752,Philadelphia International Airport,Philadelphia,USA,PHL,KPHL,Lincoln Financial Field,7.0262271418248075
+3750,Northeast Philadelphia Airport,Philadelphia,USA,PNE,KPNE,Lincoln Financial Field,24.175145951218735
+8504,Wings Field,Philadelphia,USA,BBX,KLOM,Lincoln Financial Field,27.56695173649598
+8548,South Jersey Regional Airport,Mount Holly,USA,LLY,KVAY,Lincoln Financial Field,27.876792398023213
+3803,Willow Grove Naval Air Station/Joint Reserve Base,Willow Grove,USA,NXX,KNXX,Lincoln Financial Field,33.26759794965534
+9249,Brandywine Airport,West Goshen Township,USA,\N,KOQN,Lincoln Financial Field,36.648892279389955
+3859,New Castle Airport,Wilmington,USA,ILG,KILG,Lincoln Financial Field,44.88559617465529
+9763,Doylestown Airport,Doylestown,USA,DYL,KDYL,Lincoln Financial Field,48.19316374055929
+3726,Boeing Field King County International Airport,Seattle,USA,BFI,KBFI,Lumen Field,7.5701675398212105
+8796,Renton Municipal Airport,Renton,USA,RNT,KRNT,Lumen Field,14.289613132623073
+3577,Seattle Tacoma International Airport,Seattle,USA,SEA,KSEA,Lumen Field,16.325973089517724
+6455,Berkley Structures Heliport,Pagerungan,Indonesia,\N,WA19,Lumen Field,16.816362380775896
+6445,Bremerton National Airport,Bremerton,USA,PWT,KPWT,Lumen Field,34.5273636264243
+3822,Snohomish County (Paine Field) Airport,Everett,USA,PAE,KPAE,Lumen Field,34.81621121254547
+8446,Tacoma Narrows Airport,Tacoma,USA,TIW,KTIW,Lumen Field,40.80847994172695
+7497,Fulton County Airport Brown Field,Atlanta,USA,FTY,KFTY,Mercedes-Benz Stadium,11.447476564434536
+3682,Hartsfield Jackson Atlanta International Airport,Atlanta,USA,ATL,KATL,Mercedes-Benz Stadium,13.391164143384923
+7654,DeKalb Peachtree Airport,Atlanta,USA,PDK,KPDK,Mercedes-Benz Stadium,16.231922413000778
+3666,Dobbins Air Reserve Base,Marietta,USA,MGE,KMGE,Mercedes-Benz Stadium,20.773082170529765
+7712,Cobb County-Mc Collum Field,Atlanta,USA,\N,KRYY,Mercedes-Benz Stadium,34.014854524856176
+9066,Henry County Airport,Hampton,USA,\N,K4A7,Mercedes-Benz Stadium,41.17977876128824
+8291,Earl L. Small Jr. Field/Stockmar Airport,Villa Rica,USA,\N,20GA,Mercedes-Benz Stadium,44.717571550959384
+8306,Peachtree City Falcon Field,Atlanta,USA,\N,KFFC,Mercedes-Benz Stadium,46.969114629183295
+7847,Gwinnett County Briscoe Field,Lawrenceville,USA,LZU,KLZU,Mercedes-Benz Stadium,47.48987645200552
+8321,Mallards Landing Airport,Locust Grove,USA,\N,GA04,Mercedes-Benz Stadium,48.48966823095273
+3624,Teterboro Airport,Teterboro,USA,TEB,KTEB,MetLife Stadium,4.188337718017077
+7729,West 30th St. Heliport,New York,USA,JRA,KJRA,MetLife Stadium,8.743560860028683
+8123,One Police Plaza Heliport,New York,USA,\N,NK39,MetLife Stadium,12.940225807781054
+3993,Downtown-Manhattan/Wall St Heliport,New York,USA,JRB,KJRB,MetLife Stadium,13.719539614084068
+3494,Newark Liberty International Airport,Newark,USA,EWR,KEWR,MetLife Stadium,15.646640584080043
+3697,La Guardia Airport,New York,USA,LGA,KLGA,MetLife Stadium,17.522735019743976
+7990,Essex County Airport,Caldwell,USA,CDW,KCDW,MetLife Stadium,18.648003268049045
+8550,Linden Airport,Linden,USA,LDJ,KLDJ,MetLife Stadium,26.119132644666585
+7657,Morristown Municipal Airport,Morristown,USA,MMU,KMMU,MetLife Stadium,28.654010009457583
+3797,John F Kennedy International Airport,New York,USA,JFK,KJFK,MetLife Stadium,31.587429540689712
+3589,Westchester County Airport,White Plains,USA,HPN,KHPN,MetLife Stadium,41.758227522929516
+3566,William P Hobby Airport,Houston,USA,HOU,KHOU,NRG Stadium,13.50183689631557
+9225,Andrau Airpark,Houston,USA,AAP,KAAP,NRG Stadium,17.624917613868675
+4220,Sugar Land Regional Airport,Sugar Land,USA,SGR,KSGR,NRG Stadium,24.726591594811804
+3572,Ellington Airport,Houston,USA,EFD,KEFD,NRG Stadium,25.858633267099354
+4226,West Houston Airport,Houston,USA,IWS,KIWS,NRG Stadium,29.277031205630024
+3550,George Bush Intercontinental Houston Airport,Houston,USA,IAH,KIAH,NRG Stadium,33.961888491355
+4065,David Wayne Hooks Memorial Airport,Houston,USA,DWH,KDWH,NRG Stadium,44.0727144290886
+3508,Jack Northrop Field Hawthorne Municipal Airport,Hawthorne,USA,HHR,KHHR,SoFi Stadium,3.3785316087562416
+3484,Los Angeles International Airport,Los Angeles,USA,LAX,KLAX,SoFi Stadium,6.470576991951525
+7647,Santa Monica Municipal Airport,Santa Monica,USA,SMO,KSMO,SoFi Stadium,12.465760238218278
+7053,Zamperini Field,Torrance,USA,TOA,KTOA,SoFi Stadium,16.63522298574459
+3582,Long Beach /Daugherty Field/ Airport,Long Beach,USA,LGB,KLGB,SoFi Stadium,22.897852390344013
+3644,Bob Hope Airport,Burbank,USA,BUR,KBUR,SoFi Stadium,27.604389907302625
+10017,San Gabriel Valley Airport,El Monte,USA,EMT,KEMT,SoFi Stadium,31.686249605318462
+4071,Van Nuys Airport,Van Nuys,USA,VNY,KVNY,SoFi Stadium,31.761143349067705
+5613,Los Alamitos Army Air Field,Solwesi,Zambia,\N,KSLI,SoFi Stadium,32.10268823442641
+6481,Fullerton Municipal Airport,Fullerton,USA,FUL,KFUL,SoFi Stadium,34.33055075561853
+8220,Whiteman Airport,Los Angeles,USA,WHP,KWHP,SoFi Stadium,34.73382707467445

@@ -1,0 +1,167 @@
+AirportID,Name,stadium_name,distance_km,City,Country,IATA,ICAO,airport_lat,airport_lon,Altitude,Timezone,DST,TzDatabaseTimezone,city_name,country,lat,lon
+33,Nanaimo Airport,BC Place,60.3796643148869,Nanaimo,Canada,YCD,CYCD,49.0549702249,-123.869862556,92,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+70,John C. Munro Hamilton International Airport,BMO Field,65.93292830275857,Hamilton,Canada,YHM,CYHM,43.173599243199995,-79.93499755859999,780,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+82,Buttonville Municipal Airport,BMO Field,25.7881709325233,Toronto,Canada,YKZ,CYKZ,43.86220169067383,-79.37000274658203,650,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+104,Pitt Meadows Airport,BC Place,29.956129205543018,Pitt Meadows,Canada,\N,CYPK,49.21609878540039,-122.70999908447266,11,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+144,Billy Bishop Toronto City Centre Airport,BMO Field,1.934140173521466,Toronto,Canada,YTZ,CYTZ,43.627499,-79.396202,252,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+156,Vancouver International Airport,BC Place,10.616347034407049,Vancouver,Canada,YVR,CYVR,49.193901062,-123.183998108,14,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+175,Abbotsford Airport,BC Place,61.372163720726256,Abbotsford,Canada,YXX,CYXX,49.025299072265625,-122.36100006103516,195,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+193,Lester B. Pearson International Airport,BMO Field,17.71860007387356,Toronto,Canada,YYZ,CYYZ,43.6772003174,-79.63059997559999,569,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+194,Downsview Airport,BMO Field,12.73935177494352,Toronto,Canada,YZD,CYZD,43.74250030517578,-79.4655990600586,652,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+1784,Del Norte International Airport,Estadio BBVA,21.883956853115368,Monterrey,Mexico,NTR,MMAN,25.865601,-100.237,1476,-6,S,America/Mexico_City,Guadalupe,Mexico,25.669,-100.247
+1787,General Mariano Matamoros Airport,Estadio Azteca,53.336236696468816,Cuernavaca,Mexico,CVJ,MMCB,18.834800720214844,-99.26129913330078,4277,-6,S,America/Mexico_City,Mexico City,Mexico,19.303,-99.151
+1804,Don Miguel Hidalgo Y Costilla International Airport,Estadio Akron,24.68397472707393,Guadalajara,Mexico,GDL,MMGL,20.521799087524418,-103.31099700927734,5016,-6,S,America/Mexico_City,Zapopan,Mexico,20.689,-103.467
+1810,Plan De Guadalupe International Airport,Estadio BBVA,69.66412798017214,Saltillo,Mexico,SLW,MMIO,25.54949951171875,-100.9290008544922,4778,-6,S,America/Mexico_City,Guadalupe,Mexico,25.669,-100.247
+1824,Licenciado Benito Juarez International Airport,Estadio Azteca,16.976668265114725,Mexico City,Mexico,MEX,MMMX,19.4363,-99.072098,7316,-6,S,America/Mexico_City,Mexico City,Mexico,19.303,-99.151
+1825,General Mariano Escobedo International Airport,Estadio BBVA,18.572318706729526,Monterrey,Mexico,MTY,MMMY,25.7784996033,-100.107002258,1278,-6,S,America/Mexico_City,Guadalupe,Mexico,25.669,-100.247
+1850,Licenciado Adolfo Lopez Mateos International Airport,Estadio Azteca,43.71214307013918,Toluca,Mexico,TLC,MMTO,19.3370990753,-99.56600189210002,8466,-6,S,America/Mexico_City,Mexico City,Mexico,19.303,-99.151
+1859,Zapopan Airport,Estadio Akron,6.574895943106437,Zapopan,Mexico,\N,MMZP,20.747922,-103.461709,5333,-6,S,America/Mexico_City,Zapopan,Mexico,20.689,-103.467
+3425,Laurence G Hanscom Field,Gillette Stadium,42.193175499456366,Bedford,USA,BED,KBED,42.47000122,-71.28900146,133,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+3447,Trenton Mercer Airport,Lincoln Financial Field,51.52339700422132,Trenton,USA,TTN,KTTN,40.27669906616211,-74.8134994506836,213,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3448,General Edward Lawrence Logan International Airport,Gillette Stadium,37.115802032334706,Boston,USA,BOS,KBOS,42.36429977,-71.00520325,20,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+3453,Metropolitan Oakland International Airport,Levi's Stadium,41.73900124136388,Oakland,USA,OAK,KOAK,37.721298,-122.221001,9,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+3458,Kansas City International Airport,Arrowhead Stadium,34.012973733439964,Kansas City,USA,MCI,KMCI,39.2976,-94.713898,1026,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+3464,Fort Lauderdale Executive Airport,Hard Rock Stadium,27.469402211300785,Fort Lauderdale,USA,FXE,KFXE,26.1972999573,-80.1707000732,13,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3468,North Perry Airport,Hard Rock Stadium,4.80662555356525,Hollywood,USA,HWO,KHWO,26.0012,-80.2407,8,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3469,San Francisco International Airport,Levi's Stadium,43.04604747484669,San Francisco,USA,SFO,KSFO,37.61899948120117,-122.375,13,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+3484,Los Angeles International Airport,SoFi Stadium,6.470576991951525,Los Angeles,USA,LAX,KLAX,33.94250107,-118.4079971,125,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3494,Newark Liberty International Airport,MetLife Stadium,15.646640584080043,Newark,USA,EWR,KEWR,40.692501068115234,-74.168701171875,18,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+3502,Dallas Love Field,AT&T Stadium,25.093760164684063,Dallas,USA,DAL,KDAL,32.847099,-96.851799,487,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+3508,Jack Northrop Field Hawthorne Municipal Airport,SoFi Stadium,3.3785316087562416,Hawthorne,USA,HHR,KHHR,33.922798,-118.334999,66,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3530,Gray Army Air Field,Lumen Field,60.34541145971199,Fort Lewis,USA,GRF,KGRF,47.07920074,-122.5810013,300,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+3533,Fort Lauderdale Hollywood International Airport,Hard Rock Stadium,15.386563086986355,Fort Lauderdale,USA,FLL,KFLL,26.072599,-80.152702,9,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3550,George Bush Intercontinental Houston Airport,NRG Stadium,33.961888491355,Houston,USA,IAH,KIAH,29.984399795532227,-95.34140014648438,97,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+3566,William P Hobby Airport,NRG Stadium,13.50183689631557,Houston,USA,HOU,KHOU,29.64539909,-95.27890015,46,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+3572,Ellington Airport,NRG Stadium,25.858633267099354,Houston,USA,EFD,KEFD,29.6072998047,-95.1587982178,32,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+3576,Miami International Airport,Hard Rock Stadium,19.038357084154843,Miami,USA,MIA,KMIA,25.79319953918457,-80.29060363769531,8,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3577,Seattle Tacoma International Airport,Lumen Field,16.325973089517724,Seattle,USA,SEA,KSEA,47.449001,-122.308998,433,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+3582,Long Beach /Daugherty Field/ Airport,SoFi Stadium,22.897852390344013,Long Beach,USA,LGB,KLGB,33.81769943,-118.1520004,60,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3589,Westchester County Airport,MetLife Stadium,41.758227522929516,White Plains,USA,HPN,KHPN,41.06700134277344,-73.70760345458984,439,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+3624,Teterboro Airport,MetLife Stadium,4.188337718017077,Teterboro,USA,TEB,KTEB,40.85010147089999,-74.060798645,9,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+3630,Niagara Falls International Airport,BMO Field,69.83926087432089,Niagara Falls,USA,IAG,KIAG,43.1072998046875,-78.94619750976562,589,-5,A,America/New_York,Toronto,Canada,43.633,-79.419
+3641,Theodore Francis Green State Airport,Gillette Stadium,41.900951947774345,Providence,USA,PVD,KPVD,41.732601,-71.420403,55,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+3644,Bob Hope Airport,SoFi Stadium,27.604389907302625,Burbank,USA,BUR,KBUR,34.20069885253906,-118.35900115966795,778,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3655,Mc Guire Air Force Base,Lincoln Financial Field,50.74540811194994,Wrightstown,USA,WRI,KWRI,40.0155983,-74.59169769,131,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3666,Dobbins Air Reserve Base,Mercedes-Benz Stadium,20.773082170529765,Marietta,USA,MGE,KMGE,33.91540146,-84.51629639,1068,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+3670,Dallas Fort Worth International Airport,AT&T Stadium,17.32566211756595,Dallas-Fort Worth,USA,DFW,KDFW,32.896801,-97.038002,607,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+3672,McChord Air Force Base,Lumen Field,51.99312905264441,Tacoma,USA,TCM,KTCM,47.1376991272,-122.475997925,322,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+3679,Millville Municipal Airport,Lincoln Financial Field,59.85382279332271,Millville,USA,MIV,KMIV,39.367802,-75.072197,85,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3682,Hartsfield Jackson Atlanta International Airport,Mercedes-Benz Stadium,13.391164143384923,Atlanta,USA,ATL,KATL,33.6367,-84.428101,1026,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+3697,La Guardia Airport,MetLife Stadium,17.522735019743976,New York,USA,LGA,KLGA,40.77719879,-73.87259674,21,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+3721,Dade Collier Training and Transition Airport,Hard Rock Stadium,66.67566948484634,Miami,USA,TNT,KTNT,25.861799240112,-80.897003173828,13,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3723,Fort Worth Meacham International Airport,AT&T Stadium,26.419356437631766,Fort Worth,USA,FTW,KFTW,32.819801,-97.362396,710,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+3726,Boeing Field King County International Airport,Lumen Field,7.5701675398212105,Seattle,USA,BFI,KBFI,47.529998779296875,-122.302001953125,21,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+3734,Ontario International Airport,SoFi Stadium,68.98613837888723,Ontario,USA,ONT,KONT,34.055999755859375,-117.60099792480467,944,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3748,Norman Y. Mineta San Jose International Airport,Levi's Stadium,5.771034543390587,San Jose,USA,SJC,KSJC,37.362598,-121.929001,62,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+3750,Northeast Philadelphia Airport,Lincoln Financial Field,24.175145951218735,Philadelphia,USA,PNE,KPNE,40.081902,-75.010597,120,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3752,Philadelphia International Airport,Lincoln Financial Field,7.0262271418248075,Philadelphia,USA,PHL,KPHL,39.87189865112305,-75.24109649658203,36,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3777,Bellingham International Airport,BC Place,68.18843160880382,Bellingham,USA,BLI,KBLI,48.79280090332031,-122.53800201416016,170,-8,A,America/Los_Angeles,Vancouver,Canada,49.277,-123.112
+3781,North Central State Airport,Gillette Stadium,26.668552309071508,Smithfield,USA,SFZ,KSFZ,41.9207992554,-71.49140167239999,441,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+3783,Moffett Federal Airfield,Levi's Stadium,7.128337143469867,Mountain View,USA,NUQ,KNUQ,37.4161,-122.049004,32,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+3791,Opa-locka Executive Airport,Hard Rock Stadium,6.905099837170887,Miami,USA,OPF,KOPF,25.907,-80.278397,8,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3797,John F Kennedy International Airport,MetLife Stadium,31.587429540689712,New York,USA,JFK,KJFK,40.63980103,-73.77890015,13,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+3798,Homestead ARB Airport,Hard Rock Stadium,54.167606592440485,Homestead,USA,HST,KHST,25.48859978,-80.38359833,5,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3800,Sherman Army Air Field,Arrowhead Stadium,51.35810475158544,Fort Leavenworth,USA,FLV,KFLV,39.3683013916,-94.9147033691,772,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+3803,Willow Grove Naval Air Station/Joint Reserve Base,Lincoln Financial Field,33.26759794965534,Willow Grove,USA,NXX,KNXX,40.19979858,-75.14820099,358,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3822,Snohomish County (Paine Field) Airport,Lumen Field,34.81621121254547,Everett,USA,PAE,KPAE,47.90629959,-122.2819977,606,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+3831,Boca Raton Airport,Hard Rock Stadium,48.55891857997463,Boca Raton,USA,BCT,KBCT,26.3784999847,-80.1076965332,13,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3859,New Castle Airport,Lincoln Financial Field,44.88559617465529,Wilmington,USA,ILG,KILG,39.67869949,-75.60649872,80,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+3867,John Wayne Airport-Orange County Airport,SoFi Stadium,53.331131801660106,Santa Ana,USA,SNA,KSNA,33.67570114,-117.8679962,56,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+3869,Kendall-Tamiami Executive Airport,Hard Rock Stadium,39.564863788110266,Kendall-tamiami,USA,TMB,KTMB,25.6478996277,-80.432800293,8,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+3993,Downtown-Manhattan/Wall St Heliport,MetLife Stadium,13.719539614084068,New York,USA,JRB,KJRB,40.70119858,-74.00900269,7,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+4065,David Wayne Hooks Memorial Airport,NRG Stadium,44.0727144290886,Houston,USA,DWH,KDWH,30.0618000031,-95.5528030396,152,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+4071,Van Nuys Airport,SoFi Stadium,31.761143349067705,Van Nuys,USA,VNY,KVNY,34.209800720215,-118.48999786377,802,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+4220,Sugar Land Regional Airport,NRG Stadium,24.726591594811804,Sugar Land,USA,SGR,KSGR,29.622299194336,-95.65650177002,82,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+4226,West Houston Airport,NRG Stadium,29.277031205630024,Houston,USA,IWS,KIWS,29.818199157699997,-95.6725997925,111,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+4293,Charles B. Wheeler Downtown Airport,Arrowhead Stadium,12.499892818000113,Kansas City,USA,MKC,KMKC,39.123199462890625,-94.5927963256836,759,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+4298,El Toro Marine Corps Air Station,SoFi Stadium,64.05518922751193,Santa Ana,USA,NZJ,KNZJ,33.67610168457031,-117.7310028076172,383,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+5500,Vancouver Harbour Water Aerodrome,BC Place,1.9360685356260894,Vancouver,Canada,CXH,CYHC,49.2943992615,-123.111000061,0,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+5613,Los Alamitos Army Air Field,SoFi Stadium,32.10268823442641,Solwesi,Zambia,\N,KSLI,33.79000092,-118.052002,32,-8,U,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+5737,New Bedford Regional Airport,Gillette Stadium,52.67566719777165,New Bedford,USA,EWB,KEWB,41.67610168457031,-70.95690155029297,80,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+6426,Worcester Regional Airport,Gillette Stadium,54.08258705116625,Worcester,USA,ORH,KORH,42.26729965209961,-71.87570190429688,1009,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+6445,Bremerton National Airport,Lumen Field,34.5273636264243,Bremerton,USA,PWT,KPWT,47.490200042725,-122.76499938965,444,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+6455,Berkley Structures Heliport,Lumen Field,16.816362380775896,Pagerungan,Indonesia,\N,WA19,47.682043,-122.148456,50,-8,N,America/Los_Angeles,Seattle,USA,47.595,-122.332
+6481,Fullerton Municipal Airport,SoFi Stadium,34.33055075561853,Fullerton,USA,FUL,KFUL,33.8720016479,-117.980003357,96,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+6948,NAS Fort Worth JRB/Carswell Field,AT&T Stadium,32.67324351375101,Dallas,USA,FWH,KNFW,32.76919937,-97.4414978,650,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+7025,Catalina Airport,SoFi Stadium,61.360992785375544,Catalina Island,USA,AVX,KAVX,33.4049,-118.416,1602,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+7053,Zamperini Field,SoFi Stadium,16.63522298574459,Torrance,USA,TOA,KTOA,33.803398132324,-118.33999633789,103,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+7083,Orcas Island Airport,BC Place,64.94217229653046,Eastsound,USA,ESD,KORS,48.7081985474,-122.910003662,31,-8,A,America/Los_Angeles,Vancouver,Canada,49.277,-123.112
+7268,Nanaimo Harbour Water Airport,BC Place,61.734478175565826,Nanaimo,Canada,ZNA,CAC8,49.1833000183,-123.949996948,0,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+7269,Ganges Seaplane Base,BC Place,54.71211264619584,Ganges,Canada,YGG,CAX6,48.8545,-123.4969,0,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+7273,Boundary Bay Airport,BC Place,23.693008747261462,Boundary Bay,Canada,YDT,CZBB,49.0742,-123.012001,6,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+7274,Langley Airport,BC Place,40.072329942855774,Langley Township,Canada,YLY,CYNJ,49.10079956049999,-122.630996704,34,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+7497,Fulton County Airport Brown Field,Mercedes-Benz Stadium,11.447476564434536,Atlanta,USA,FTY,KFTY,33.7790985107,-84.5214004517,841,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+7513,Addison Airport,AT&T Stadium,34.295041380157464,Addison,USA,ADS,KADS,32.9686012268,-96.8364028931,644,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+7629,Livermore Municipal Airport,Levi's Stadium,34.894012177442754,Livermore,USA,LVK,KLVK,37.6934013367,-121.819999695,400,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+7647,Santa Monica Municipal Airport,SoFi Stadium,12.465760238218278,Santa Monica,USA,SMO,KSMO,34.015800476100004,-118.450996399,177,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+7654,DeKalb Peachtree Airport,Mercedes-Benz Stadium,16.231922413000778,Atlanta,USA,PDK,KPDK,33.8755989075,-84.3020019531,1003,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+7657,Morristown Municipal Airport,MetLife Stadium,28.654010009457583,Morristown,USA,MMU,KMMU,40.79940032958984,-74.41490173339844,187,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+7683,San Carlos Airport,Levi's Stadium,27.521916858064586,San Carlos,USA,SQL,KSQL,37.511901855469,-122.25,5,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+7712,Cobb County-Mc Collum Field,Mercedes-Benz Stadium,34.014854524856176,Atlanta,USA,\N,KRYY,34.01319885,-84.59860229,1040,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+7729,West 30th St. Heliport,MetLife Stadium,8.743560860028683,New York,USA,JRA,KJRA,40.754501,-74.007103,7,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+7780,Burlington Executive,BMO Field,40.758228192660596,Burlington,Canada,\N,CZBA,43.4414531515,-79.850102663,602,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+7820,Brampton Airport,BMO Field,39.29780568328989,Brampton,Canada,\N,CNC3,43.7602996826,-79.875,935,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+7846,Arlington Municipal Airport,AT&T Stadium,9.352453855517766,Arlington,USA,\N,KGKY,32.66389846801758,-97.09429931640624,628,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+7847,Gwinnett County Briscoe Field,Mercedes-Benz Stadium,47.48987645200552,Lawrenceville,USA,LZU,KLZU,33.97809982,-83.96240234,1061,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+7869,New Century Aircenter Airport,Arrowhead Stadium,42.69600994767665,Olathe,USA,JCI,KIXD,38.8308982849,-94.890296936,1087,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+7888,Buchanan Field,Levi's Stadium,65.68561904744377,Concord,USA,CCR,KCCR,37.9897003174,-122.056999207,26,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+7902,Toronto/Oshawa Executive Airport,BMO Field,52.992956606601176,Oshawa,Canada,YOO,CYOO,43.922798,-78.894997,460,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+7935,Collin County Regional At Mc Kinney Airport,AT&T Stadium,66.95416962964003,DALLAS,USA,\N,KTKI,33.17789841,-96.59049988,585,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+7990,Essex County Airport,MetLife Stadium,18.648003268049045,Caldwell,USA,CDW,KCDW,40.875198364300005,-74.2814025879,173,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+8034,Republic Airport,MetLife Stadium,56.513184705901445,Farmingdale,USA,FRG,KFRG,40.7288017273,-73.4133987427,82,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+8123,One Police Plaza Heliport,MetLife Stadium,12.940225807781054,New York,USA,\N,NK39,40.71260070800781,-73.99960327148438,244,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+8188,Dallas Executive Airport,AT&T Stadium,22.31555597632958,Dallas,USA,RBD,KRBD,32.6809005737,-96.8682022095,660,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+8220,Whiteman Airport,SoFi Stadium,34.73382707467445,Los Angeles,USA,WHP,KWHP,34.2593002319,-118.413002014,1003,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+8276,Taunton Municipal King Field,Gillette Stadium,31.594856221515727,Taunton,USA,\N,KTAN,41.8744010925293,-71.0166015625,43,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8277,Plymouth Municipal Airport,Gillette Stadium,48.63608727914501,Plymouth,USA,PYM,KPYM,41.909,-70.728798,148,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8278,Quonset State Airport,Gillette Stadium,56.272810214833655,North Kingstown,USA,NCO,KOQU,41.597099304199,-71.412101745605,18,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8280,Norwood Memorial Airport,Gillette Stadium,13.37266835206019,Norwood,USA,OWD,KOWD,42.1904983521,-71.1728973389,49,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8285,Marshfield Municipal George Harlow Field,Gillette Stadium,48.836353715179996,Marshfield,USA,\N,KGHG,42.09830093383789,-70.67220306396484,11,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8290,Fitchburg Municipal Airport,Gillette Stadium,65.63384607728948,Fitchburg,USA,\N,KFIT,42.554100036621094,-71.75900268554688,348,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8291,Earl L. Small Jr. Field/Stockmar Airport,Mercedes-Benz Stadium,44.717571550959384,Villa Rica,USA,\N,20GA,33.756500244099996,-84.88469696039999,1110,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+8292,Cartersville Airport,Mercedes-Benz Stadium,58.147061670235004,Cartersville,USA,\N,KVPC,34.12310028076172,-84.84870147705078,759,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+8306,Peachtree City Falcon Field,Mercedes-Benz Stadium,46.969114629183295,Atlanta,USA,\N,KFFC,33.3572998046875,-84.5718002319336,808,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+8321,Mallards Landing Airport,Mercedes-Benz Stadium,48.48966823095273,Locust Grove,USA,\N,GA04,33.365699768066406,-84.16519927978516,837,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+8342,Fort Worth Alliance Airport,AT&T Stadium,33.978541230408034,Fort Worth,USA,AFW,KAFW,32.9875984192,-97.3188018799,722,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+8366,Lawrence Municipal Airport,Arrowhead Stadium,63.41959414283027,Lawrence,USA,LWC,KLWC,39.01119995,-95.21659851,833,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+8379,Pompano Beach Airpark,Hard Rock Stadium,34.590580785059146,Pompano Beach,USA,PPM,KPMP,26.247100830078,-80.111099243164,19,-5,A,America/New_York,Miami Gardens,USA,25.958,-80.239
+8446,Tacoma Narrows Airport,Lumen Field,40.80847994172695,Tacoma,USA,TIW,KTIW,47.26789856,-122.5780029,294,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+8504,Wings Field,Lincoln Financial Field,27.56695173649598,Philadelphia,USA,BBX,KLOM,40.1375007629,-75.2650985718,302,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+8513,Newnan Coweta County Airport,Mercedes-Benz Stadium,59.99458374183058,Newnan,USA,\N,KCCO,33.31159973144531,-84.7697982788086,970,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+8548,South Jersey Regional Airport,Lincoln Financial Field,27.876792398023213,Mount Holly,USA,LLY,KVAY,39.942901611299995,-74.845703125,53,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+8550,Linden Airport,MetLife Stadium,26.119132644666585,Linden,USA,LDJ,KLDJ,40.617401123,-74.2445983887,23,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+8658,Beverly Municipal Airport,Gillette Stadium,61.83370167682994,Beverly,USA,BVY,KBVY,42.584201812699995,-70.91649627689999,107,-5,A,America/New_York,Foxborough,USA,42.091,-71.264
+8665,Somerset Airport,MetLife Stadium,54.342035272613536,Somerville,USA,\N,KSMQ,40.625999450683594,-74.67019653320312,105,-5,A,America/New_York,East Rutherford,USA,40.814,-74.075
+8772,Chester County G O Carlson Airport,Lincoln Financial Field,60.09453566068258,Coatesville,USA,CTH,KMQS,39.97900009,-75.8655014,660,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+8796,Renton Municipal Airport,Lumen Field,14.289613132623073,Renton,USA,RNT,KRNT,47.4930992126,-122.216003418,32,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+8798,Brackett Field,SoFi Stadium,53.597077926521735,La Verne,USA,POC,KPOC,34.091598510742,-117.78199768066,1011,-8,A,America/Los_Angeles,Inglewood,USA,33.953,-118.339
+8816,Newnan Hospital Heliport,Mercedes-Benz Stadium,55.71230679458928,Bengassi,Mali,\N,GA46,33.38090133666992,-84.8010025024414,960,0,N,Africa/Bamako,Atlanta,USA,33.755,-84.401
+8864,Palo Alto Airport of Santa Clara County,Levi's Stadium,14.34061270129811,Palo Alto,USA,PAO,KPAO,37.461101532,-122.114997864,4,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+8982,Hayward Executive Airport,Levi's Stadium,31.483643755020385,Hayward,USA,HWD,KHWD,37.659198761,-122.122001648,52,-8,A,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+9066,Henry County Airport,Mercedes-Benz Stadium,41.17977876128824,Hampton,USA,\N,K4A7,33.389099,-84.332397,874,-5,A,America/New_York,Atlanta,USA,33.755,-84.401
+9071,Alameda Naval Air Station,Levi's Stadium,52.84052908100051,Alameda,USA,NGZ,KNGZ,37.78889846801758,-122.31999969482422,10,-8,U,America/Los_Angeles,Santa Clara,USA,37.403,-121.97
+9225,Andrau Airpark,NRG Stadium,17.624917613868675,Houston,USA,AAP,KAAP,29.7224998474,-95.5883026123,79,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+9228,Johnson County Executive Airport,Arrowhead Stadium,31.344710363427158,Olathe,USA,OJC,KOJC,38.84759903,-94.73760223,1096,-6,A,America/Chicago,Kansas City,USA,39.049,-94.484
+9238,Markham Airport,BMO Field,35.94565705254275,Markham,Canada,\N,CNU8,43.93579864501953,-79.26219940185547,807,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+9241,Niagara District Airport,BMO Field,52.980345056381765,Saint Catherines,Canada,YCM,CYSN,43.19169998168945,-79.17169952392578,321,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+9245,Holland Landing Airpark,BMO Field,51.11400205590489,Holland Landing,Canada,\N,CLA4,44.08940124511719,-79.49500274658203,855,-5,A,America/Toronto,Toronto,Canada,43.633,-79.419
+9249,Brandywine Airport,Lincoln Financial Field,36.648892279389955,West Goshen Township,USA,\N,KOQN,39.9901008605957,-75.58190155029297,466,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+9252,Texas Gulf Coast Regional Airport,NRG Stadium,64.28356196833369,Angleton,USA,LJN,KLBX,29.1086006165,-95.462097168,25,-6,A,America/Chicago,Houston,USA,29.685,-95.411
+9348,Enumclaw Airport,Lumen Field,50.15797101036372,Enumclaw,USA,\N,WA77,47.195701599121094,-122.02200317382812,738,-8,A,America/Los_Angeles,Seattle,USA,47.595,-122.332
+9749,Bedwell Harbour Seaplane Base,BC Place,59.26045156674048,Bedwell Harbour,Canada,YBW,CAB3,48.75,-123.233001709,0,-8,A,America/Vancouver,Vancouver,Canada,49.277,-123.112
+9763,Doylestown Airport,Lincoln Financial Field,48.19316374055929,Doylestown,USA,DYL,KDYL,40.3330001831,-75.1222991943,394,-5,A,America/New_York,Philadelphia,USA,39.901,-75.168
+9788,Mesquite Metro Airport,AT&T Stadium,52.615180040921736,Misquite,USA,\N,KHQZ,32.74700164794922,-96.53040313720705,447,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+9789,Denton Municipal Airport,AT&T Stadium,51.28184333990126,Denton,USA,\N,KDTO,33.2006988525,-97.1979980469,642,-6,A,America/Chicago,Dallas,USA,32.748,-97.093
+10017,San Gabriel Valley Airport,SoFi Stadium,31.686249605318462,El Monte,USA,EMT,KEMT,34.086102,-118.035004,296,-8,E,\N,Inglewood,USA,33.953,-118.339
+10117,Cable Airport,SoFi Stadium,62.52747960911562,Upland,USA,CCB,KCCB,34.1115989685,-117.68800354,1444,-8,A,\N,Inglewood,USA,33.953,-118.339
+10162,Chino Airport,SoFi Stadium,64.78597136907091,Chino,USA,CNO,KCNO,33.97470093,-117.637001,650,-8,A,\N,Inglewood,USA,33.953,-118.339
+10360,Half Moon Bay Airport,Levi's Stadium,48.45024537476634,Half Moon Bay,USA,HAF,KHAF,37.513401031499995,-122.500999451,66,-8,A,\N,Santa Clara,USA,37.403,-121.97
+11111,Quakertown Airport,Lincoln Financial Field,62.118546472913295,Quakertown,USA,UKT,KUKT,40.435199737549,-75.381896972656,526,-5,A,\N,Philadelphia,USA,39.901,-75.168
+11141,Arlington Municipal Airport,Lumen Field,64.21275829466254,Arlington,USA,\N,KAWO,48.16070175,-122.1589966,142,-8,A,\N,Seattle,USA,47.595,-122.332
+11312,Reid-Hillview Airport of Santa Clara County,Levi's Stadium,15.45397833850477,San Jose,USA,RHV,KRHV,37.332901001,-121.819000244,135,8,A,\N,Santa Clara,USA,37.403,-121.97
+11638,Watsonville Municipal Airport,Levi's Stadium,54.3540157983308,Watsonville,USA,WVI,KWVI,36.9356994629,-121.790000916,163,-8,A,\N,Santa Clara,USA,37.403,-121.97
+11722,Squamish Airport,BC Place,56.2360017786334,Squamish,Canada,YSE,CYSE,49.7817001343,-123.162002563,171,-8,A,\N,Vancouver,Canada,49.277,-123.112
+12090,Vancouver International Seaplane Base,BC Place,11.838706851035072,Vancouver,Canada,\N,CAM9,49.177047,-123.168154,0,-8,A,\N,Vancouver,Canada,49.277,-123.112
+12185,Tracy Municipal Airport,Levi's Stadium,56.37552429244283,Tracy,USA,\N,KTCY,37.68899917602539,-121.44200134277344,193,-8,A,\N,Santa Clara,USA,37.403,-121.97
+12796,Danielson Airport,Gillette Stadium,60.701531196097136,Danielson,USA,\N,KLZD,41.819698333740234,-71.9010009765625,238,-5,A,\N,Foxborough,USA,42.091,-71.264
+13022,Harbour (Public) Heliport,BC Place,1.179953437706776,Vancouver,Canada,\N,CBC7,49.2868921105,-123.106112257,2,-8,A,\N,Vancouver,Canada,49.277,-123.112
