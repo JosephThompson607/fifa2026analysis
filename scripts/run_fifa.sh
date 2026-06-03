@@ -26,8 +26,13 @@ NAMES=(
 SEQ=${SEQUENCES[$SLURM_ARRAY_TASK_ID]}
 NAME=${NAMES[$SLURM_ARRAY_TASK_ID]}
 
-echo "Running sequence $SLURM_ARRAY_TASK_ID ($NAME): $SEQ"
+MULTI_OBJ_FLAG=""
+if [ "${MULTI_OBJ:-false}" = "true" ]; then
+    MULTI_OBJ_FLAG="-N"
+fi
+
+echo "Running sequence $SLURM_ARRAY_TASK_ID ($NAME): $SEQ  multi_obj=${MULTI_OBJ:-false}"
 
 cd $HOME/Thesis/fifa2026analysis
 
-python model.py -t $TIME_LIMIT -p $SEQ
+python model.py -t $TIME_LIMIT -p $SEQ $MULTI_OBJ_FLAG

@@ -3,12 +3,14 @@
 TIME_LIMIT=3600
 MEM_LIMIT=16
 INDICES=""
+MULTI_OBJ=false
 
 usage() {
-  echo "Usage: $0 [-t time_limit_in_seconds] [-m memory_limit_in_GB] [-i indices]"
+  echo "Usage: $0 [-t time_limit_in_seconds] [-m memory_limit_in_GB] [-i indices] [-N]"
   echo "  -t : Time limit per phase in seconds (default: 3600)"
-  echo "  -m : Memory limit in GB (default: 4)"
-  echo "  -i : Job array indices to run, e.g. 0-4 or 0,2,4 (default: all 6)"
+  echo "  -m : Memory limit in GB (default: 16)"
+  echo "  -i : Job array indices to run, e.g. 0-4 or 0,2,4 (default: all 5)"
+  echo "  -N : Use setObjectiveN (single 5× solve) instead of sequential phases"
   echo ""
   echo "Sequences:"
   echo "  0 — For the fans          (5 1 2 3 4)"
@@ -19,11 +21,12 @@ usage() {
   exit 1
 }
 
-while getopts "t:m:i:" opt; do
+while getopts "t:m:i:N" opt; do
   case $opt in
     t) TIME_LIMIT=$OPTARG ;;
     m) MEM_LIMIT=$OPTARG ;;
     i) INDICES=$OPTARG ;;
+    N) MULTI_OBJ=true ;;
     *) usage ;;
   esac
 done
@@ -43,6 +46,7 @@ echo "  Sequences  : ${INDICES:-0-4}"
 echo "  Time/phase : ${TIME_LIMIT}s"
 echo "  Wall time  : ${SLURM_TIME}"
 echo "  Memory     : ${MEM_LIMIT}G"
+echo "  Mode       : $( $MULTI_OBJ && echo "setObjectiveN (5× limit)" || echo "Sequential phases" )"
 
 mkdir -p logs/fifa
 
@@ -50,6 +54,6 @@ sbatch --time=$SLURM_TIME \
        --mem=${MEM_LIMIT}G \
        --job-name=fifa_schedule \
        --output=logs/fifa/%A_%a.out \
-       --export=ALL,TIME_LIMIT=$TIME_LIMIT \
+       --export=ALL,TIME_LIMIT=$TIME_LIMIT,MULTI_OBJ=$MULTI_OBJ \
        $ARRAY_OPTION \
        "$(dirname "$0")/run_fifa.sh"

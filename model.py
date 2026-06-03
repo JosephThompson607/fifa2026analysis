@@ -46,7 +46,7 @@ def build_intermediate_nodes(weather_df):
     return nodes, node_temp
 
 
-def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df, time_limit=300, priority=None):
+def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df, time_limit=300, priority=None, multi_obj=False):
     """
     Min-cost flow — schedule assignment:
       - n source nodes     (one per team, supply = 1)
@@ -441,23 +441,59 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
 
     order = priority if priority else [1, 2, 3, 4, 5]
 
-    for phase_num, obj_id in enumerate(order, start=1):
-        obj_expr, obj_name, unit = objectives[obj_id]
-        prefix = "\n" if phase_num > 1 else ""
-        print(f"{prefix}Phase {phase_num} (Obj {obj_id}) — {obj_name}:")
-        model.setObjective(obj_expr, GRB.MINIMIZE)
+    if multi_obj:
+        # --- setObjectiveN mode: single solve, 5× time limit -----------------
+        total_limit = len(order) * time_limit
+        model.Params.TimeLimit = total_limit
+        print(f"Mode: setObjectiveN  (time limit: {total_limit}s)\n")
+        for idx, obj_id in enumerate(order):
+            obj_expr, obj_name, unit = objectives[obj_id]
+            model.setObjectiveN(obj_expr, index=idx,
+                                priority=len(order) - idx,
+                                name=obj_name)
         model.optimize()
-        phase_report(obj_name, unit)
-
+        for idx, obj_id in enumerate(order):
+            _, obj_name, unit = objectives[obj_id]
+            model.params.ObjNumber = idx
+            status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit"
+            val   = model.ObjNVal   if model.SolCount > 0 else None
+            bound = model.ObjNBound if model.SolCount > 0 else None
+            gap   = abs(val - bound) / max(abs(val), 1e-6) if val is not None else None
+            print(f"Obj {obj_id} — {obj_name}:")
+            print(f"  Status : {status_str}  Runtime: {model.Runtime:.1f}s")
+            if val is not None:
+                print(f"  Val: {val:,.4f} {unit}  Bound: {bound:,.4f}  Gap: {gap:.4f}")
+            phase_reports.append({
+                "phase": obj_name, "status": status_str,
+                "runtime_s": round(model.Runtime, 1),
+                "UB": round(val, 4) if val is not None else None,
+                "LB": round(bound, 4) if bound is not None else None,
+                "gap": round(gap, 4) if gap is not None else None,
+                "unit": unit,
+            })
         if model.SolCount == 0:
-            print(f"No feasible solution found in phase {phase_num}.")
+            print("No feasible solution found.")
             return [], phase_reports
 
-        if phase_num < len(order):
-            model.addConstr(
-                obj_expr <= model.ObjVal * (1 + phase_tol),
-                name=f"fix_obj{phase_num}"
-            )
+    else:
+        # --- Sequential mode: one phase per time limit -----------------------
+        for phase_num, obj_id in enumerate(order, start=1):
+            obj_expr, obj_name, unit = objectives[obj_id]
+            prefix = "\n" if phase_num > 1 else ""
+            print(f"{prefix}Phase {phase_num} (Obj {obj_id}) — {obj_name}:")
+            model.setObjective(obj_expr, GRB.MINIMIZE)
+            model.optimize()
+            phase_report(obj_name, unit)
+
+            if model.SolCount == 0:
+                print(f"No feasible solution found in phase {phase_num}.")
+                return [], phase_reports
+
+            if phase_num < len(order):
+                model.addConstr(
+                    obj_expr <= model.ObjVal * (1 + phase_tol),
+                    name=f"fix_obj{phase_num}"
+                )
 
     print()
 
@@ -495,6 +531,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--time-limit", type=int, default=300,
                         help="Time limit in seconds per phase (default: 300)")
+    parser.add_argument("-N", "--multi-obj", action="store_true",
+                        help="Use setObjectiveN (single solve, 5× time limit) instead of sequential phases")
     parser.add_argument("-p", "--priority", type=int, nargs=5, default=[1, 2, 3, 4, 5],
                         metavar=("OBJ1", "OBJ2", "OBJ3", "OBJ4", "OBJ5"),
                         help="Priority order of objectives 1-5 (default: 1 2 3 4 5). "
@@ -510,7 +548,8 @@ if __name__ == "__main__":
         teams_df, games_df, stadiums_df, dist_df, camp_dist_df,
         weather_df, broadcast_df,
         time_limit=args.time_limit,
-        priority=args.priority
+        priority=args.priority,
+        multi_obj=args.multi_obj,
     )
 
     tag = "-".join(map(str, args.priority))
