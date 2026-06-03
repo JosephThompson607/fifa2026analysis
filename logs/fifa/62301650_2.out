@@ -1,0 +1,24 @@
+Running sequence 2 (for_the_teams): 2 4 3 1 5  multi_obj=true
+/lustre06/project/6026976/juanse/fifa2026analysis/model.py:15: DtypeWarning: Columns (22) have mixed types. Specify dtype option on import or set low_memory=False.
+  camp_raw     = pd.read_csv(camp_csv)[["camp_team", "stadium_name", "stad_camp_direct_distance_km"]]
+Teams             : 48
+Games             : 72
+Intermediate nodes: 1870  (from weather data)
+src_cutoff        : 2026-06-19  (last_date - 8,  arc group 1)
+sink_cutoff       : 2026-06-19  (first_date + 8, arc group 3)
+
+Set parameter TokenServer to value "license1.computecanada.ca"
+Set parameter LogToConsole to value 0
+Mode: setObjectiveN  (time limit: 18000s)
+
+Traceback (most recent call last):
+  File "/lustre06/project/6026976/juanse/fifa2026analysis/model.py", line 547, in <module>
+    results, phase_reports = build_and_solve(
+                             ^^^^^^^^^^^^^^^^
+  File "/lustre06/project/6026976/juanse/fifa2026analysis/model.py", line 460, in build_and_solve
+    bound = model.ObjNBound if model.SolCount > 0 else None
+            ^^^^^^^^^^^^^^^
+  File "src/gurobipy/_model.pyx", line 391, in gurobipy._model.Model.__getattr__
+  File "src/gurobipy/_model.pyx", line 2103, in gurobipy._model.Model.getAttr
+  File "src/gurobipy/_attrutil.pyx", line 40, in gurobipy._attrutil._getattrinfo
+AttributeError: 'gurobipy.Model' object has no attribute 'ObjNBound'. Did you mean: 'ObjBound'?
