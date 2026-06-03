@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TIME_LIMIT=3600
-MEM_LIMIT=4
+MEM_LIMIT=16
 INDICES=""
 
 usage() {
