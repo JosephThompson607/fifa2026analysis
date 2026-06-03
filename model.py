@@ -552,9 +552,10 @@ if __name__ == "__main__":
         multi_obj=args.multi_obj,
     )
 
-    tag = "-".join(map(str, args.priority))
-    solution_path    = f"results/solution_{tag}.csv"
-    phase_report_path = f"results/phase_report_{tag}.csv"
+    mode = "setN" if args.multi_obj else "seq"
+    tag  = "-".join(map(str, args.priority))
+    solution_path     = f"results/solution_{mode}_{tag}.csv"
+    phase_report_path = f"results/phase_report_{mode}_{tag}.csv"
 
     pd.DataFrame(results).to_csv(solution_path, index=False)
     pd.DataFrame(phase_reports).to_csv(phase_report_path, index=False)
