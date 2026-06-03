@@ -13,7 +13,7 @@ from __future__ import annotations
 from dataclasses import asdict, fields
 from pathlib import Path
 from typing import List
-
+import pandas as pd
 import matplotlib.pyplot as plt
 
 from models import load_dataset
@@ -115,6 +115,68 @@ def plot_all(stats: List[TeamStats], out_dir: Path) -> Path:
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
     return path
+
+
+
+
+# Average per team
+def temp_and_humidityplot(teams_df, out_fp="average_real_temp_vs_humidity.png"):
+    '''Inputs:
+            teams_df: dataframe with the columns 'team' (team name), 'relative_humidity_2mumidy_2m', ''temperature_2m'. 
+            The rows are the data for each match that the team plays in. '''
+    avg = teams_df.groupby('team')[['relative_humidity_2m', 'temperature_2m', 'elevation']].mean()
+
+    # Plot
+    fig, ax = plt.subplots(figsize=(10, 7))
+
+    ax.scatter(avg['relative_humidity_2m'], avg['temperature_2m'], zorder=3)
+
+    for team, row in avg.iterrows():
+        ax.annotate(team, (row['relative_humidity_2m'], row['temperature_2m']),
+                    textcoords='offset points', xytext=(6, 4), fontsize=9)
+
+    ax.set_xlabel('Average Relative Humidity (%)')
+    ax.set_ylabel('Average Temperature (°C)')
+    ax.set_title('Average kickoff time humidity vs temperature by team')
+    ax.grid(True, linestyle='--', alpha=0.5)
+
+    plt.tight_layout()
+    plt.savefig(out_fp)
+
+def temperature_differences_plots(teams_w_camp_info_df, out_fp = "temp_vs_elevation_differences.png"):
+    '''Creates plot that shows the average differences between games and camps in elevation and temperature.
+    
+    Inputs:
+    teams_w_camp_info_df: This dataframe has 1 row per team and game. 
+        Required columns: 'apparent_temperature' -- The apparent temperature at the start of the match
+                            'elevation' -- the elvation of the stadium
+                            'camp_apparent_temperature' -- The average temperature of the camp
+                            'camp_elevation'-- The elevation of the camp 
+                            
+    out_fp: The filepath to save the figure'''
+    teams_w_camp_info = teams_w_camp_info_df.copy()
+    teams_w_camp_info['temp_diff'] = teams_w_camp_info['apparent_temperature']  - teams_w_camp_info['camp_apparent_temperature'] 
+    teams_w_camp_info['elevation_diff'] = teams_w_camp_info['elevation']  - teams_w_camp_info['camp_elevation'] 
+
+    avg = teams_w_camp_info.groupby('team')[['temp_diff', 'elevation_diff']].mean()
+
+    # Plot
+    fig, ax = plt.subplots(figsize=(10, 7))
+
+    ax.scatter(avg['elevation_diff'], avg['temp_diff'], zorder=3)
+
+    for team, row in avg.iterrows():
+        ax.annotate(team, (row['elevation_diff'], row['temp_diff']),
+                    textcoords='offset points', xytext=(6, 4), fontsize=9)
+
+    ax.set_xlabel('Average elevation difference (m)')
+    ax.set_ylabel('Average temperature difference (°C)')
+    ax.set_title('Average elevation change vs apparent temp change by team')
+    ax.grid(True, linestyle='--', alpha=0.5)
+
+    plt.tight_layout()
+
+    plt.savefig(out_fp)
 
 
 if __name__ == "__main__":
