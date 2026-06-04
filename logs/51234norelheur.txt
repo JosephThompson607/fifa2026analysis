@@ -1,0 +1,1881 @@
+nohup: les entrées sont ignorées
+/home/pincam/fifa2026analysis/model.py:15: DtypeWarning: Columns (22) have mixed types. Specify dtype option on import or set low_memory=False.
+  camp_raw     = pd.read_csv(camp_csv)[["camp_team", "stadium_name", "stad_camp_direct_distance_km"]]
+Teams             : 48
+Games             : 72
+Intermediate nodes: 1870  (from weather data)
+src_cutoff        : 2026-06-19  (last_date - 8,  arc group 1)
+sink_cutoff       : 2026-06-19  (first_date + 8, arc group 3)
+
+Set parameter TokenServer to value "licences.gerad.lan"
+Set parameter TimeLimit to value 7000
+Set parameter NoRelHeurTime to value 5800
+Phase 1 (Obj 5) — Broadcast penalty:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7000
+NoRelHeurTime  5800
+
+Optimize a model with 12414 rows, 106664 columns and 1533580 nonzeros
+Model fingerprint: 0xd5b461d2
+Variable types: 21964 continuous, 84700 integer (84700 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [5e+00, 6e+04]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Presolve removed 1596 rows and 17950 columns (presolve time = 5s)...
+Presolve removed 4466 rows and 24276 columns (presolve time = 10s)...
+Presolve removed 4115 rows and 23992 columns
+Presolve time: 14.27s
+Presolved: 8299 rows, 82672 columns, 714144 nonzeros
+Variable types: 21260 continuous, 61412 integer (61340 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 93
+Found phase-1 solution: relaxation 85
+Found phase-1 solution: relaxation 59
+Found phase-1 solution: relaxation 56
+Found phase-1 solution: relaxation 55
+Found phase-1 solution: relaxation 54
+Found phase-1 solution: relaxation 52
+Found phase-1 solution: relaxation 50
+Found phase-1 solution: relaxation 46
+Found phase-1 solution: relaxation 42
+Found phase-1 solution: relaxation 39
+Found phase-1 solution: relaxation 35
+Elapsed time for NoRel heuristic: 7s (best bound 14050.9)
+Found phase-1 solution: relaxation 30
+Found phase-1 solution: relaxation 20
+Found phase-1 solution: relaxation 13
+Found phase-1 solution: relaxation 12
+Found phase-1 solution: relaxation 9
+Elapsed time for NoRel heuristic: 12s (best bound 15655.2)
+Found phase-1 solution: relaxation 7
+Found phase-1 solution: relaxation 6
+Found phase-1 solution: relaxation 5
+Found phase-1 solution: relaxation 4
+Elapsed time for NoRel heuristic: 22s (best bound 15655.2)
+Found phase-1 solution: relaxation 0
+Found heuristic solution: objective 231297.33971
+Transition to phase 2
+Found heuristic solution: objective 138167.57622
+Found heuristic solution: objective 127692.34534
+Elapsed time for NoRel heuristic: 27s (best bound 15655.2)
+Found heuristic solution: objective 114250.21359
+Found heuristic solution: objective 112286.09992
+Found heuristic solution: objective 112100.16709
+Found heuristic solution: objective 110136.05343
+Found heuristic solution: objective 110028.21477
+Found heuristic solution: objective 107060.87340
+Found heuristic solution: objective 47859.670050
+Found heuristic solution: objective 39635.799433
+Found heuristic solution: objective 36247.927691
+Found heuristic solution: objective 35233.674759
+Elapsed time for NoRel heuristic: 33s (best bound 15655.2)
+Found heuristic solution: objective 32246.895254
+Found heuristic solution: objective 21114.667974
+Elapsed time for NoRel heuristic: 41s (best bound 15655.2)
+Found heuristic solution: objective 18746.069196
+Found heuristic solution: objective 18023.842214
+Elapsed time for NoRel heuristic: 47s (best bound 15655.2)
+Elapsed time for NoRel heuristic: 53s (best bound 15655.2)
+Elapsed time for NoRel heuristic: 59s (best bound 15655.2)
+Found heuristic solution: objective 15655.243436
+Elapsed time for NoRel heuristic: 67s (best bound 15655.2)
+NoRel heuristic complete
+
+Explored 0 nodes (0 simplex iterations) in 82.01 seconds (17.41 work units)
+Thread count was 32 (of 48 available processors)
+
+Solution count 10: 15655.2 18023.8 18746.1 ... 107061
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.565524343612e+04, best bound 1.565524343612e+04, gap 0.0000%
+  Status : Optimal
+  Runtime: 82.2s
+  UB     : 15,655.24 
+  LB     : 15,655.24 
+  Gap    : 0.00%
+
+Phase 2 (Obj 1) — Stadium distances:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7000
+NoRelHeurTime  5800
+
+Optimize a model with 12415 rows, 106664 columns and 1584403 nonzeros
+Model fingerprint: 0xb3df562a
+Variable types: 21964 continuous, 84700 integer (84700 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+04]
+  Objective range  [1e+02, 6e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+04]
+
+MIP start from previous solve produced solution with objective 198465 (0.46s)
+Loaded MIP start from previous solve with objective 198465
+
+Presolve removed 1964 rows and 26337 columns (presolve time = 5s)...
+Presolve removed 4948 rows and 33642 columns
+Presolve time: 9.14s
+Presolved: 7467 rows, 73022 columns, 672366 nonzeros
+Variable types: 19857 continuous, 53165 integer (53097 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 373
+Found phase-1 solution: relaxation 350
+Found phase-1 solution: relaxation 343
+Found phase-1 solution: relaxation 339
+Found phase-1 solution: relaxation 302
+Found phase-1 solution: relaxation 217
+Found phase-1 solution: relaxation 192
+Found phase-1 solution: relaxation 104
+Found phase-1 solution: relaxation 86
+Found phase-1 solution: relaxation 47
+Found phase-1 solution: relaxation 43
+Found phase-1 solution: relaxation 38
+Elapsed time for NoRel heuristic: 7s (best bound 3425.48)
+Found phase-1 solution: relaxation 6
+Found phase-1 solution: relaxation 5
+Found phase-1 solution: relaxation 0
+Found heuristic solution: objective 195809.87829
+Transition to phase 2
+Found heuristic solution: objective 194521.31006
+Found heuristic solution: objective 191140.45518
+Found heuristic solution: objective 189016.10755
+Found heuristic solution: objective 185907.35249
+Found heuristic solution: objective 184550.68483
+Elapsed time for NoRel heuristic: 13s (best bound 3425.48)
+Found heuristic solution: objective 183938.21270
+Found heuristic solution: objective 179350.32042
+Found heuristic solution: objective 170975.38203
+Found heuristic solution: objective 165367.16853
+Found heuristic solution: objective 156054.98764
+Found heuristic solution: objective 150073.10691
+Found heuristic solution: objective 149491.33596
+Found heuristic solution: objective 147366.40499
+Found heuristic solution: objective 143634.11257
+Found heuristic solution: objective 143286.96089
+Found heuristic solution: objective 133011.57882
+Found heuristic solution: objective 121205.90183
+Found heuristic solution: objective 114957.34329
+Found heuristic solution: objective 113395.37131
+Found heuristic solution: objective 106462.02816
+Found heuristic solution: objective 102003.96274
+Found heuristic solution: objective 99352.148656
+Elapsed time for NoRel heuristic: 19s (best bound 3425.48)
+Found heuristic solution: objective 94717.761283
+Found heuristic solution: objective 93810.160830
+Found heuristic solution: objective 80856.352671
+Found heuristic solution: objective 76099.686354
+Found heuristic solution: objective 71747.565514
+Found heuristic solution: objective 71736.082912
+Found heuristic solution: objective 71545.931378
+Found heuristic solution: objective 69594.527572
+Found heuristic solution: objective 68731.990899
+Found heuristic solution: objective 68683.230557
+Found heuristic solution: objective 68545.452439
+Found heuristic solution: objective 68458.381037
+Found heuristic solution: objective 67316.245036
+Elapsed time for NoRel heuristic: 25s (best bound 3425.48)
+Found heuristic solution: objective 67229.173634
+Found heuristic solution: objective 66235.212195
+Found heuristic solution: objective 65927.127258
+Found heuristic solution: objective 65682.615861
+Found heuristic solution: objective 65228.369295
+Found heuristic solution: objective 64675.772961
+Found heuristic solution: objective 64072.560883
+Found heuristic solution: objective 61261.096560
+Elapsed time for NoRel heuristic: 32s (best bound 3425.48)
+Found heuristic solution: objective 60490.325090
+Found heuristic solution: objective 60384.214145
+Found heuristic solution: objective 60236.467929
+Elapsed time for NoRel heuristic: 38s (best bound 3425.48)
+Found heuristic solution: objective 58400.288507
+Found heuristic solution: objective 51809.408081
+Found heuristic solution: objective 51501.080821
+Found heuristic solution: objective 50797.825550
+Found heuristic solution: objective 49743.538747
+Found heuristic solution: objective 49413.152073
+Found heuristic solution: objective 46937.724319
+Elapsed time for NoRel heuristic: 44s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 49s (best bound 3425.48)
+Found heuristic solution: objective 46230.184824
+Found heuristic solution: objective 46212.162451
+Found heuristic solution: objective 46194.140078
+Found heuristic solution: objective 46194.139951
+Elapsed time for NoRel heuristic: 59s (best bound 3425.48)
+Found heuristic solution: objective 46037.190116
+Found heuristic solution: objective 44907.904642
+Found heuristic solution: objective 44907.904394
+Elapsed time for NoRel heuristic: 67s (best bound 3425.48)
+Found heuristic solution: objective 44346.554309
+Found heuristic solution: objective 43417.613270
+Found heuristic solution: objective 42643.822345
+Found heuristic solution: objective 41364.661468
+Elapsed time for NoRel heuristic: 77s (best bound 3425.48)
+Found heuristic solution: objective 40743.493871
+Found heuristic solution: objective 40743.493620
+Elapsed time for NoRel heuristic: 82s (best bound 3425.48)
+Found heuristic solution: objective 40743.493425
+Found heuristic solution: objective 40743.493173
+Found heuristic solution: objective 40743.492403
+Found heuristic solution: objective 40743.492140
+Elapsed time for NoRel heuristic: 98s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 106s (best bound 3425.48)
+Found heuristic solution: objective 40410.819723
+Elapsed time for NoRel heuristic: 115s (best bound 3425.48)
+Found heuristic solution: objective 40410.818887
+Found heuristic solution: objective 40410.818469
+Found heuristic solution: objective 40410.816389
+Elapsed time for NoRel heuristic: 124s (best bound 3425.48)
+Found heuristic solution: objective 40410.816131
+Found heuristic solution: objective 40410.815536
+Found heuristic solution: objective 40410.815282
+Elapsed time for NoRel heuristic: 136s (best bound 3425.48)
+Found heuristic solution: objective 40410.815026
+Elapsed time for NoRel heuristic: 146s (best bound 3425.48)
+Found heuristic solution: objective 40410.814772
+Elapsed time for NoRel heuristic: 153s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 169s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 178s (best bound 3425.48)
+Found heuristic solution: objective 40410.814334
+Found heuristic solution: objective 40410.813629
+Elapsed time for NoRel heuristic: 202s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 210s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 222s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 237s (best bound 3425.48)
+Found heuristic solution: objective 40410.812435
+Found heuristic solution: objective 40171.877029
+Elapsed time for NoRel heuristic: 291s (best bound 3425.48)
+Found heuristic solution: objective 40171.875292
+Elapsed time for NoRel heuristic: 316s (best bound 3425.48)
+Found heuristic solution: objective 40171.875203
+Elapsed time for NoRel heuristic: 327s (best bound 3425.48)
+Found heuristic solution: objective 40171.873520
+Elapsed time for NoRel heuristic: 346s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 372s (best bound 3425.48)
+Found heuristic solution: objective 40171.873010
+Elapsed time for NoRel heuristic: 384s (best bound 3425.48)
+Found heuristic solution: objective 40171.872758
+Elapsed time for NoRel heuristic: 412s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 431s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 449s (best bound 3425.48)
+Found heuristic solution: objective 39477.346950
+Elapsed time for NoRel heuristic: 461s (best bound 3425.48)
+Found heuristic solution: objective 39477.346268
+Found heuristic solution: objective 39012.376286
+Elapsed time for NoRel heuristic: 490s (best bound 3425.48)
+Found heuristic solution: objective 39012.375929
+Found heuristic solution: objective 39012.374165
+Elapsed time for NoRel heuristic: 519s (best bound 3425.48)
+Found heuristic solution: objective 39012.374135
+Found heuristic solution: objective 39012.374082
+Elapsed time for NoRel heuristic: 541s (best bound 3425.48)
+Found heuristic solution: objective 39012.373983
+Found heuristic solution: objective 39012.373697
+Found heuristic solution: objective 39012.373370
+Elapsed time for NoRel heuristic: 572s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 614s (best bound 3425.48)
+Found heuristic solution: objective 39012.371641
+Found heuristic solution: objective 39012.371297
+Found heuristic solution: objective 39012.370687
+Elapsed time for NoRel heuristic: 632s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 677s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 717s (best bound 3425.48)
+Found heuristic solution: objective 39012.370573
+Found heuristic solution: objective 39012.370504
+Elapsed time for NoRel heuristic: 746s (best bound 3425.48)
+Found heuristic solution: objective 39012.370431
+Found heuristic solution: objective 39012.370361
+Elapsed time for NoRel heuristic: 772s (best bound 3425.48)
+Found heuristic solution: objective 39012.368630
+Elapsed time for NoRel heuristic: 811s (best bound 3425.48)
+Found heuristic solution: objective 39012.368572
+Elapsed time for NoRel heuristic: 850s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 887s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 953s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 1019s (best bound 3425.48)
+Found heuristic solution: objective 39012.368510
+Found heuristic solution: objective 39012.366684
+Found heuristic solution: objective 39012.366085
+Elapsed time for NoRel heuristic: 1202s (best bound 3425.48)
+Found heuristic solution: objective 39012.365110
+Elapsed time for NoRel heuristic: 1286s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 1343s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 1431s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 1510s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 1794s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 2142s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 2427s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 2791s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 3084s (best bound 3425.48)
+Found heuristic solution: objective 38858.278772
+Elapsed time for NoRel heuristic: 3406s (best bound 3425.48)
+Found heuristic solution: objective 38525.604624
+Found heuristic solution: objective 38525.604561
+Found heuristic solution: objective 38525.604324
+Found heuristic solution: objective 38525.604306
+Elapsed time for NoRel heuristic: 3511s (best bound 3425.48)
+Found heuristic solution: objective 38525.604119
+Found heuristic solution: objective 38525.603916
+Found heuristic solution: objective 38525.603710
+Found heuristic solution: objective 38525.603277
+Found heuristic solution: objective 38525.601337
+Elapsed time for NoRel heuristic: 3620s (best bound 3425.48)
+Found heuristic solution: objective 38525.601110
+Found heuristic solution: objective 38525.598583
+Elapsed time for NoRel heuristic: 3721s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 3859s (best bound 3425.48)
+Found heuristic solution: objective 38525.596616
+Found heuristic solution: objective 38525.593196
+Elapsed time for NoRel heuristic: 3955s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4113s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4199s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4246s (best bound 3425.48)
+Found heuristic solution: objective 38525.592092
+Elapsed time for NoRel heuristic: 4537s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4648s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4753s (best bound 3425.48)
+Found heuristic solution: objective 38525.591664
+Elapsed time for NoRel heuristic: 4850s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 4960s (best bound 3425.48)
+Found heuristic solution: objective 38525.589887
+Elapsed time for NoRel heuristic: 5146s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 5263s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 5415s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 5613s (best bound 3425.48)
+Elapsed time for NoRel heuristic: 5828s (best bound 3425.48)
+NoRel heuristic complete
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.83s
+
+Barrier statistics:
+ AA' NZ     : 4.949e+05
+ Factor NZ  : 2.267e+06 (roughly 50 MB of memory)
+ Factor Ops : 1.094e+09 (less than 1 second per iteration)
+ Threads    : 30
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.47418673e+09 -1.29845471e+08  7.72e+05 1.68e+03  1.84e+05  5840s
+   1   1.15636424e+09 -1.85027268e+08  3.61e+05 7.33e+02  8.66e+04  5840s
+   2   1.82071044e+08 -1.73225690e+08  5.70e+04 2.00e+02  1.46e+04  5840s
+   3   3.96156033e+07 -1.26830722e+08  1.25e+04 6.05e+01  3.75e+03  5841s
+   4   6.56164082e+06 -8.50081601e+07  2.20e+03 3.44e+01  1.06e+03  5841s
+   5   1.76734640e+06 -5.46339152e+07  5.78e+02 2.02e+01  4.92e+02  5841s
+   6   5.22157716e+05 -2.45899000e+07  1.34e+02 8.79e+00  1.94e+02  5841s
+   7   2.56416831e+05 -1.08227858e+07  4.15e+01 3.77e+00  8.16e+01  5841s
+   8   1.50043947e+05 -4.11087598e+06  1.04e+01 1.39e+00  3.04e+01  5841s
+   9   7.14424585e+04 -1.64332369e+06  8.79e-01 5.39e-01  1.17e+01  5841s
+  10   3.62849499e+04 -6.07209894e+05  2.02e-01 1.92e-01  4.38e+00  5841s
+  11   2.09159881e+04 -4.06039597e+05  8.31e-02 1.35e-01  2.90e+00  5841s
+  12   1.29480496e+04 -1.83602662e+05  3.92e-02 6.05e-02  1.33e+00  5842s
+  13   8.87850691e+03 -4.05715865e+04  2.17e-02 1.33e-02  3.36e-01  5842s
+  14   4.04943271e+03 -1.16685362e+04  1.87e-03 4.35e-03  1.06e-01  5842s
+  15   3.72226439e+03  1.92639231e+01  7.41e-04 8.50e-04  2.50e-02  5842s
+  16   3.58813745e+03  7.77670425e+02  3.85e-04 6.52e-04  1.90e-02  5842s
+  17   3.55343293e+03  1.57487616e+03  2.98e-04 4.50e-04  1.34e-02  5842s
+  18   3.52877970e+03  1.90583791e+03  2.37e-04 3.73e-04  1.10e-02  5842s
+  19   3.51366078e+03  2.09313575e+03  2.01e-04 3.26e-04  9.59e-03  5842s
+  20   3.46764547e+03  2.85483501e+03  8.15e-05 1.34e-04  4.14e-03  5842s
+  21   3.46089751e+03  3.13097813e+03  6.81e-05 6.81e-05  2.23e-03  5842s
+  22   3.44457755e+03  3.20094484e+03  3.66e-05 5.10e-05  1.64e-03  5843s
+  23   3.43346998e+03  3.37383720e+03  1.37e-05 1.12e-05  4.02e-04  5843s
+  24   3.42681599e+03  3.41818737e+03  2.03e-06 1.51e-06  5.81e-05  5843s
+  25   3.42549813e+03  3.42542877e+03  4.38e-09 9.16e-10  4.65e-07  5843s
+  26   3.42548276e+03  3.42548275e+03  3.26e-08 3.92e-10  4.21e-11  5843s
+
+Barrier solved model in 26 iterations and 5842.80 seconds (1607.82 work units)
+Optimal objective 3.42548276e+03
+
+Concurrent spin time: 3.26s (can be avoided by choosing Method=3)
+
+Solved with dual simplex
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2636    3.4254827e+03   0.000000e+00   0.000000e+00   5843s
+
+Root relaxation: objective 3.425483e+03, 2636 iterations, 5.63 seconds (1.79 work units)
+Total elapsed time = 5845.54s (DegenMoves)
+Total elapsed time = 5850.09s (DegenMoves)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 3425.48275    0  286 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  286 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  286 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  297 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  297 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  297 38525.5899 3425.48275  91.1%     - 5851s
+     0     0 3425.48275    0  381 38525.5899 3425.48275  91.1%     - 5852s
+     0     0 3425.48275    0  381 38525.5899 3425.48275  91.1%     - 5852s
+     0     0 3425.48275    0  381 38525.5899 3425.48275  91.1%     - 5852s
+     0     0 3425.48275    0  392 38525.5899 3425.48275  91.1%     - 5853s
+     0     0 3425.48275    0  392 38525.5899 3425.48275  91.1%     - 5853s
+     0     0 7556.11411    0  539 38525.5899 7556.11411  80.4%     - 5866s
+     0     0 7776.05058    0  589 38525.5899 7776.05058  79.8%     - 5874s
+     0     0 7776.05058    0  589 38525.5899 7776.05058  79.8%     - 5875s
+     0     0 7776.05058    0  484 38525.5899 7776.05058  79.8%     - 5886s
+     0     0 7776.05058    0  467 38525.5899 7776.05058  79.8%     - 5890s
+     0     0 8290.43386    0  478 38525.5899 8290.43386  78.5%     - 5908s
+     0     0 8613.17086    0  488 38525.5899 8613.17086  77.6%     - 5929s
+     0     0 8670.22623    0  500 38525.5899 8670.22623  77.5%     - 5933s
+     0     0 8727.78310    0  541 38525.5899 8727.78310  77.3%     - 5935s
+     0     0 8727.78310    0  540 38525.5899 8727.78310  77.3%     - 5936s
+     0     0 10745.0648    0  471 38525.5899 10745.0648  72.1%     - 5942s
+     0     0 10898.6359    0  504 38525.5899 10898.6359  71.7%     - 5946s
+     0     0 10924.6655    0  478 38525.5899 10924.6655  71.6%     - 5947s
+     0     0 10924.6655    0  471 38525.5899 10924.6655  71.6%     - 5948s
+     0     0 12029.9637    0  511 38525.5899 12029.9637  68.8%     - 5954s
+     0     0 12039.0313    0  493 38525.5899 12039.0313  68.8%     - 5966s
+     0     0 12042.6071    0  481 38525.5899 12042.6071  68.7%     - 5967s
+     0     0 12042.6071    0  492 38525.5899 12042.6071  68.7%     - 5967s
+     0     0 12997.1568    0  488 38525.5899 12997.1568  66.3%     - 5973s
+     0     0 13133.3806    0  443 38525.5899 13133.3806  65.9%     - 5998s
+     0     0 13146.0605    0  472 38525.5899 13146.0605  65.9%     - 5999s
+     0     0 13149.3497    0  452 38525.5899 13149.3497  65.9%     - 6000s
+     0     0 13149.6010    0  450 38525.5899 13149.6010  65.9%     - 6000s
+     0     0 13471.3913    0  489 38525.5899 13471.3913  65.0%     - 6007s
+     0     0 13512.6172    0  492 38525.5899 13512.6172  64.9%     - 6019s
+     0     0 13516.1765    0  532 38525.5899 13516.1765  64.9%     - 6021s
+     0     0 13516.1765    0  516 38525.5899 13516.1765  64.9%     - 6021s
+     0     0 13918.0419    0  474 38525.5899 13918.0419  63.9%     - 6030s
+     0     0 13964.9034    0  472 38525.5899 13964.9034  63.8%     - 6039s
+     0     0 13964.9034    0  447 38525.5899 13964.9034  63.8%     - 6040s
+     0     0 14163.7351    0  481 38525.5899 14163.7351  63.2%     - 6048s
+     0     0 14188.4623    0  493 38525.5899 14188.4623  63.2%     - 6064s
+     0     0 14189.1993    0  481 38525.5899 14189.1993  63.2%     - 6066s
+     0     0 14347.6815    0  511 38525.5899 14347.6815  62.8%     - 6076s
+     0     0 14350.2717    0  512 38525.5899 14350.2717  62.8%     - 6083s
+     0     0 14524.6505    0  478 38525.5899 14524.6505  62.3%     - 6091s
+     0     0 14532.0125    0  509 38525.5899 14532.0125  62.3%     - 6097s
+     0     0 14532.5568    0  508 38525.5899 14532.5568  62.3%     - 6099s
+     0     0 14985.8441    0  476 38525.5899 14985.8441  61.1%     - 6106s
+     0     0 15013.4153    0  477 38525.5899 15013.4153  61.0%     - 6136s
+     0     0 15013.7374    0  475 38525.5899 15013.7374  61.0%     - 6138s
+     0     0 15179.4018    0  493 38525.5899 15179.4018  60.6%     - 6143s
+     0     0 15207.3814    0  479 38525.5899 15207.3814  60.5%     - 6151s
+     0     0 15207.5033    0  457 38525.5899 15207.5033  60.5%     - 6153s
+     0     0 15279.0644    0  470 38525.5899 15279.0644  60.3%     - 6161s
+     0     0 15306.5685    0  497 38525.5899 15306.5685  60.3%     - 6195s
+     0     0 15306.5685    0  477 38525.5899 15306.5685  60.3%     - 6195s
+     0     0 15412.2674    0  494 38525.5899 15412.2674  60.0%     - 6200s
+     0     0 15419.0828    0  499 38525.5899 15419.0828  60.0%     - 6203s
+     0     0 15428.1894    0  499 38525.5899 15428.1894  60.0%     - 6204s
+     0     0 15428.1894    0  491 38525.5899 15428.1894  60.0%     - 6205s
+     0     0 15434.2961    0  505 38525.5899 15434.2961  59.9%     - 6210s
+     0     0 15434.2961    0  479 38525.5899 15434.2961  59.9%     - 6213s
+     0     0 15484.3832    0  511 38525.5899 15484.3832  59.8%     - 6219s
+     0     0 15487.0019    0  517 38525.5899 15487.0019  59.8%     - 6223s
+     0     0 15675.3670    0  490 38525.5899 15675.3670  59.3%     - 6228s
+     0     0 15708.1285    0  523 38525.5899 15708.1285  59.2%     - 6267s
+     0     0 15708.6658    0  512 38525.5899 15708.6658  59.2%     - 6268s
+     0     0 15760.1743    0  512 38525.5899 15760.1743  59.1%     - 6271s
+     0     0 15760.1743    0  508 38525.5899 15760.1743  59.1%     - 6272s
+     0     0 15845.8367    0  538 38525.5899 15845.8367  58.9%     - 6276s
+     0     0 15895.0592    0  566 38525.5899 15895.0592  58.7%     - 6288s
+     0     0 15895.0592    0  527 38525.5899 15895.0592  58.7%     - 6289s
+     0     0 16103.4026    0  465 38525.5899 16103.4026  58.2%     - 6294s
+     0     0 16133.4999    0  486 38525.5899 16133.4999  58.1%     - 6298s
+     0     0 16133.4999    0  472 38525.5899 16133.4999  58.1%     - 6299s
+     0     0 16135.2561    0  472 38525.5899 16135.2561  58.1%     - 6301s
+     0     0 16135.2561    0  357 38525.5899 16135.2561  58.1%     - 6311s
+     0     2 16135.7099    0  356 38525.5899 16135.7099  58.1%     - 6336s
+     1     4 19130.1603    1  425 38525.5899 16883.6886  56.2% 14870 6342s
+     3     8 19130.1603    2  423 38525.5899 18772.6434  51.3%  5389 6345s
+    15    30 19133.9280    4  491 38525.5899 18864.8356  51.0%  2164 6360s
+    30    58 19133.9280    5  492 38525.5899 18864.8356  51.0%  2315 6369s
+    60    90 19382.1991    6  542 38525.5899 18864.8356  51.0%  1711 6375s
+    92   170 19382.1991    7  513 38525.5899 18864.8356  51.0%  1482 6392s
+   172   241 19385.6385    8  519 38525.5899 18864.8356  51.0%  1255 6406s
+   243   273 19385.6385    9  501 38525.5899 18864.8356  51.0%  1167 6427s
+   275   313 19394.9873   10  511 38525.5899 18864.8356  51.0%  1122 6442s
+   315   351 19684.4017   11  578 38525.5899 18864.8356  51.0%  1097 6452s
+   355   393 20005.3083   11  502 38525.5899 18864.8356  51.0%  1066 6460s
+   397   436 19684.4017   12  603 38525.5899 18864.8356  51.0%  1037 6466s
+   442   481 19684.4017   13  589 38525.5899 18864.8356  51.0%  1016 6472s
+   489   531 19684.4017   14  574 38525.5899 18864.8356  51.0%   978 6483s
+   539   579 19684.4017   15  587 38525.5899 18864.8356  51.0%   940 6491s
+   589   630 19684.4017   16  539 38525.5899 18864.8356  51.0%   912 6498s
+   640   676 19688.7010   17  525 38525.5899 18864.8356  51.0%   877 6505s
+   688   722 19688.7010   18  537 38525.5899 18864.8356  51.0%   849 6511s
+   741   771 19688.7010   19  561 38525.5899 18864.8356  51.0%   822 6515s
+   796   822 19688.7010   20  528 38525.5899 18864.8356  51.0%   786 6524s
+   851   877 20575.7895   21  505 38525.5899 18864.8356  51.0%   768 6533s
+   908   934 19688.7010   21  515 38525.5899 18864.8356  51.0%   742 6538s
+   967   999 19688.7010   22  499 38525.5899 18864.8356  51.0%   716 6544s
+  1034  1063 19688.7010   23  503 38525.5899 18864.8356  51.0%   687 6550s
+  1101  1127 19690.1902   24  512 38525.5899 18864.8356  51.0%   659 6556s
+  1168  1189 19690.1902   25  507 38525.5899 18864.8356  51.0%   640 6561s
+  1237  1273 19690.1902   25  462 38525.5899 18864.8356  51.0%   629 6569s
+  1321  1305 19690.1902   26  459 38525.5899 18864.8356  51.0%   610 6594s
+  1353  1340 19690.1902   27  437 38525.5899 18864.8356  51.0%   604 6607s
+  1388  1383 19690.1902   28  446 38525.5899 18864.8356  51.0%   601 6617s
+  1432  1433 19797.9658   29  471 38525.5899 18864.8356  51.0%   600 6625s
+  1485  1487 20069.5462   29  452 38525.5899 18864.8356  51.0%   593 6639s
+  1541  1538 19797.9658   30  433 38525.5899 18864.8356  51.0%   583 6644s
+  1600  1616 19797.9658   31  427 38525.5899 18864.8356  51.0%   573 6654s
+  1683  1712 19797.9658   32  435 38525.5899 18864.8356  51.0%   557 6663s
+  1805  1816 21090.3559   32  447 38525.5899 18959.1329  50.8%   538 6676s
+  1932  1913 19797.9658   33  428 38525.5899 18959.1329  50.8%   521 6688s
+  2042  2042 19908.7955   35  390 38525.5899 18959.1329  50.8%   519 6697s
+  2187  2197 19911.3751   38  366 38525.5899 18959.1329  50.8%   510 6710s
+  2364  2358 19911.3751   52  360 38525.5899 18959.1329  50.8%   494 6722s
+  2551  2525 19996.2583   54  406 38525.5899 18959.1329  50.8%   487 6732s
+  2738  2683 20010.9040   59  393 38525.5899 19049.6103  50.6%   478 6743s
+  2941  2829 21655.9468   62  409 38525.5899 19134.8979  50.3%   468 6755s
+  3106  3025 20609.5580   65  352 38525.5899 19164.8194  50.3%   468 6764s
+  3318  3285 20415.8444   76  337 38525.5899 19164.8194  50.3%   463 6785s
+  3582  3562 22275.7348   80  369 38525.5899 19164.8194  50.3%   453 6799s
+  3865  3880 21289.1533   85  318 38525.5899 19164.8194  50.3%   442 6812s
+  4221  4306 21328.3097  105  322 38525.5899 19164.8194  50.3%   429 6827s
+  4680  4725 21341.5163  130  337 38525.5899 19164.8194  50.3%   413 6838s
+  5131  5107 21347.5237  135  339 38525.5899 19164.8194  50.3%   399 6855s
+  5612  5480 24195.3553  139  365 38525.5899 19164.8194  50.3%   387 6871s
+  6088  5852 21497.9609  141  374 38525.5899 19191.9560  50.2%   379 6887s
+  6545  6283 22002.1056  145  357 38525.5899 19191.9560  50.2%   375 6904s
+  7044  6783 22752.1076  152  318 38525.5899 19191.9560  50.2%   370 6920s
+  7604  7289 23576.9761  174  331 38525.5899 19191.9560  50.2%   365 6933s
+  8197  7747 25482.0435  196  352 38525.5899 19191.9560  50.2%   360 6951s
+  8722  8268 27469.1771  235  310 38525.5899 19191.9560  50.2%   359 6968s
+
+Cutting planes:
+  Gomory: 7
+  Cover: 127
+  Implied bound: 28
+  Clique: 185
+  MIR: 399
+  StrongCG: 11
+  Flow cover: 3
+  GUB cover: 208
+  Zero half: 56
+  RLT: 491
+  Relax-and-lift: 8
+
+Explored 9295 nodes (3482694 simplex iterations) in 7000.16 seconds (2422.74 work units)
+Thread count was 32 (of 48 available processors)
+
+Solution count 10: 38525.6 38525.6 38525.6 ... 38525.6
+
+Time limit reached
+Best objective 3.852558988663e+04, best bound 1.919195603073e+04, gap 50.1839%
+  Status : Time limit
+  Runtime: 7000.2s
+  UB     : 38,525.59 km
+  LB     : 19,191.96 km
+  Gap    : 50.18%
+
+Phase 3 (Obj 2) — Camp distances:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7000
+NoRelHeurTime  5800
+
+Optimize a model with 12416 rows, 106664 columns and 1604319 nonzeros
+Model fingerprint: 0x96a83f78
+Variable types: 21964 continuous, 84700 integer (84700 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+04]
+  Objective range  [3e+00, 9e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+04]
+
+MIP start from previous solve produced solution with objective 345329 (0.32s)
+Loaded MIP start from previous solve with objective 345329
+
+Presolve removed 4678 rows and 31722 columns (presolve time = 5s)...
+Presolve removed 4390 rows and 31648 columns
+Presolve time: 9.46s
+Presolved: 8026 rows, 75016 columns, 630671 nonzeros
+Variable types: 19857 continuous, 55159 integer (55090 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 361
+Found phase-1 solution: relaxation 257
+Found phase-1 solution: relaxation 233
+Found phase-1 solution: relaxation 166.72
+Found phase-1 solution: relaxation 149.408
+Found phase-1 solution: relaxation 115.408
+Found phase-1 solution: relaxation 99.4077
+Found phase-1 solution: relaxation 94.4077
+Found phase-1 solution: relaxation 85.4077
+Found phase-1 solution: relaxation 76.4077
+Found phase-1 solution: relaxation 73.4077
+Found phase-1 solution: relaxation 17.4077
+Found phase-1 solution: relaxation 8.66362
+Elapsed time for NoRel heuristic: 5s (best bound 154925)
+Found phase-1 solution: relaxation 5.66362
+Found phase-1 solution: relaxation 3
+Found phase-1 solution: relaxation 0
+Transition to phase 2
+Elapsed time for NoRel heuristic: 12s (best bound 156719)
+Found heuristic solution: objective 344957.68402
+Found heuristic solution: objective 344601.71474
+Elapsed time for NoRel heuristic: 19s (best bound 156881)
+Found heuristic solution: objective 344230.71684
+Found heuristic solution: objective 343993.54088
+Found heuristic solution: objective 343863.85473
+Elapsed time for NoRel heuristic: 25s (best bound 156881)
+Found heuristic solution: objective 343247.53629
+Found heuristic solution: objective 340318.89539
+Found heuristic solution: objective 338620.25866
+Found heuristic solution: objective 338383.08271
+Found heuristic solution: objective 337411.82227
+Elapsed time for NoRel heuristic: 31s (best bound 156881)
+Elapsed time for NoRel heuristic: 38s (best bound 156881)
+Found heuristic solution: objective 337069.62897
+Found heuristic solution: objective 336700.02119
+Elapsed time for NoRel heuristic: 49s (best bound 156881)
+Found heuristic solution: objective 336543.93546
+Found heuristic solution: objective 336327.93684
+Elapsed time for NoRel heuristic: 56s (best bound 156881)
+Elapsed time for NoRel heuristic: 63s (best bound 156881)
+Elapsed time for NoRel heuristic: 72s (best bound 156881)
+Found heuristic solution: objective 336327.93571
+Elapsed time for NoRel heuristic: 86s (best bound 156881)
+Found heuristic solution: objective 336327.93535
+Found heuristic solution: objective 336327.93530
+Elapsed time for NoRel heuristic: 91s (best bound 156881)
+Elapsed time for NoRel heuristic: 98s (best bound 156881)
+Elapsed time for NoRel heuristic: 105s (best bound 156881)
+Found heuristic solution: objective 336327.93424
+Found heuristic solution: objective 333742.34208
+Elapsed time for NoRel heuristic: 125s (best bound 156881)
+Elapsed time for NoRel heuristic: 130s (best bound 156881)
+Elapsed time for NoRel heuristic: 137s (best bound 156881)
+Found heuristic solution: objective 333742.34088
+Elapsed time for NoRel heuristic: 142s (best bound 156881)
+Found heuristic solution: objective 333493.22945
+Elapsed time for NoRel heuristic: 150s (best bound 156881)
+Elapsed time for NoRel heuristic: 156s (best bound 156881)
+Found heuristic solution: objective 333493.22766
+Elapsed time for NoRel heuristic: 165s (best bound 156881)
+Found heuristic solution: objective 333493.22705
+Elapsed time for NoRel heuristic: 171s (best bound 156881)
+Found heuristic solution: objective 333493.22595
+Found heuristic solution: objective 333493.22483
+Found heuristic solution: objective 333493.21830
+Elapsed time for NoRel heuristic: 178s (best bound 156881)
+Elapsed time for NoRel heuristic: 187s (best bound 156881)
+Found heuristic solution: objective 333493.21754
+Elapsed time for NoRel heuristic: 193s (best bound 156881)
+Elapsed time for NoRel heuristic: 203s (best bound 156881)
+Elapsed time for NoRel heuristic: 210s (best bound 156881)
+Found heuristic solution: objective 333493.21575
+Elapsed time for NoRel heuristic: 225s (best bound 156881)
+Elapsed time for NoRel heuristic: 231s (best bound 156881)
+Elapsed time for NoRel heuristic: 236s (best bound 156881)
+Found heuristic solution: objective 333433.51270
+Elapsed time for NoRel heuristic: 245s (best bound 156881)
+Found heuristic solution: objective 333421.36459
+Elapsed time for NoRel heuristic: 255s (best bound 156881)
+Found heuristic solution: objective 249527.86377
+Elapsed time for NoRel heuristic: 272s (best bound 156881)
+Found heuristic solution: objective 249527.86343
+Found heuristic solution: objective 249030.89240
+Found heuristic solution: objective 248141.22532
+Found heuristic solution: objective 247456.58417
+Elapsed time for NoRel heuristic: 285s (best bound 156881)
+Found heuristic solution: objective 247434.17533
+Found heuristic solution: objective 247434.17499
+Elapsed time for NoRel heuristic: 295s (best bound 156881)
+Found heuristic solution: objective 247434.17446
+Found heuristic solution: objective 247434.17418
+Found heuristic solution: objective 247434.17135
+Elapsed time for NoRel heuristic: 308s (best bound 156881)
+Found heuristic solution: objective 247434.16878
+Found heuristic solution: objective 247434.16802
+Found heuristic solution: objective 247434.16564
+Found heuristic solution: objective 247434.16428
+Elapsed time for NoRel heuristic: 327s (best bound 156881)
+Found heuristic solution: objective 247434.15962
+Elapsed time for NoRel heuristic: 336s (best bound 156881)
+Elapsed time for NoRel heuristic: 358s (best bound 156881)
+Found heuristic solution: objective 247434.15872
+Elapsed time for NoRel heuristic: 374s (best bound 156881)
+Elapsed time for NoRel heuristic: 391s (best bound 156881)
+Elapsed time for NoRel heuristic: 406s (best bound 156881)
+Found heuristic solution: objective 246773.27574
+Elapsed time for NoRel heuristic: 422s (best bound 156881)
+Found heuristic solution: objective 246519.34648
+Found heuristic solution: objective 245875.90582
+Found heuristic solution: objective 245619.19818
+Elapsed time for NoRel heuristic: 442s (best bound 156881)
+Found heuristic solution: objective 245365.26892
+Found heuristic solution: objective 244975.75752
+Elapsed time for NoRel heuristic: 481s (best bound 156881)
+Found heuristic solution: objective 244721.81765
+Elapsed time for NoRel heuristic: 524s (best bound 156881)
+Elapsed time for NoRel heuristic: 538s (best bound 156881)
+Elapsed time for NoRel heuristic: 550s (best bound 156881)
+Elapsed time for NoRel heuristic: 564s (best bound 156881)
+Elapsed time for NoRel heuristic: 607s (best bound 156881)
+Found heuristic solution: objective 244721.81295
+Elapsed time for NoRel heuristic: 642s (best bound 156881)
+Found heuristic solution: objective 244721.81095
+Found heuristic solution: objective 241025.12332
+Elapsed time for NoRel heuristic: 681s (best bound 156881)
+Found heuristic solution: objective 241025.12054
+Elapsed time for NoRel heuristic: 707s (best bound 156881)
+Elapsed time for NoRel heuristic: 752s (best bound 156881)
+Elapsed time for NoRel heuristic: 812s (best bound 156881)
+Elapsed time for NoRel heuristic: 864s (best bound 156881)
+Found heuristic solution: objective 241025.11426
+Elapsed time for NoRel heuristic: 973s (best bound 156881)
+Found heuristic solution: objective 240992.94706
+Elapsed time for NoRel heuristic: 1014s (best bound 156881)
+Found heuristic solution: objective 240992.03216
+Elapsed time for NoRel heuristic: 1089s (best bound 156881)
+Found heuristic solution: objective 240992.02991
+Elapsed time for NoRel heuristic: 1157s (best bound 156881)
+Found heuristic solution: objective 240992.02886
+Found heuristic solution: objective 240992.02297
+Elapsed time for NoRel heuristic: 1225s (best bound 156881)
+Found heuristic solution: objective 240992.02125
+Elapsed time for NoRel heuristic: 1293s (best bound 156881)
+Elapsed time for NoRel heuristic: 1342s (best bound 156881)
+Elapsed time for NoRel heuristic: 1364s (best bound 156881)
+Elapsed time for NoRel heuristic: 1416s (best bound 156881)
+Elapsed time for NoRel heuristic: 1470s (best bound 156881)
+Found heuristic solution: objective 240992.02052
+Elapsed time for NoRel heuristic: 1598s (best bound 156881)
+Elapsed time for NoRel heuristic: 1681s (best bound 156881)
+Found heuristic solution: objective 240992.02018
+Elapsed time for NoRel heuristic: 1737s (best bound 156881)
+Found heuristic solution: objective 240992.01982
+Elapsed time for NoRel heuristic: 1802s (best bound 156881)
+Found heuristic solution: objective 240992.01901
+Elapsed time for NoRel heuristic: 1956s (best bound 156881)
+Elapsed time for NoRel heuristic: 2018s (best bound 156881)
+Elapsed time for NoRel heuristic: 2070s (best bound 156881)
+Elapsed time for NoRel heuristic: 2144s (best bound 156881)
+Elapsed time for NoRel heuristic: 2301s (best bound 156881)
+Elapsed time for NoRel heuristic: 2575s (best bound 156881)
+Elapsed time for NoRel heuristic: 2849s (best bound 156881)
+Elapsed time for NoRel heuristic: 3017s (best bound 156881)
+Elapsed time for NoRel heuristic: 3344s (best bound 156881)
+Elapsed time for NoRel heuristic: 3754s (best bound 156881)
+Found heuristic solution: objective 240992.01867
+Elapsed time for NoRel heuristic: 3944s (best bound 156881)
+Found heuristic solution: objective 240992.01588
+Elapsed time for NoRel heuristic: 4085s (best bound 156881)
+Found heuristic solution: objective 240992.01475
+Elapsed time for NoRel heuristic: 4261s (best bound 156881)
+Found heuristic solution: objective 240992.01098
+Elapsed time for NoRel heuristic: 4388s (best bound 156881)
+Found heuristic solution: objective 240992.00276
+Elapsed time for NoRel heuristic: 4499s (best bound 156881)
+Elapsed time for NoRel heuristic: 4639s (best bound 156881)
+Elapsed time for NoRel heuristic: 4782s (best bound 156881)
+Found heuristic solution: objective 240992.00256
+Found heuristic solution: objective 240992.00086
+Elapsed time for NoRel heuristic: 4919s (best bound 156881)
+Elapsed time for NoRel heuristic: 5089s (best bound 156881)
+Elapsed time for NoRel heuristic: 5209s (best bound 156881)
+Elapsed time for NoRel heuristic: 5382s (best bound 156881)
+Found heuristic solution: objective 240991.99862
+Elapsed time for NoRel heuristic: 5859s (best bound 156881)
+NoRel heuristic complete
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.90s
+
+Barrier statistics:
+ AA' NZ     : 4.376e+05
+ Factor NZ  : 1.940e+06 (roughly 50 MB of memory)
+ Factor Ops : 8.678e+08 (less than 1 second per iteration)
+ Threads    : 30
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.20428358e+09 -3.55153783e+09  2.80e+06 2.50e+03  6.72e+05  5871s
+   1   7.01186444e+08 -2.95493617e+09  8.91e+05 1.21e+03  2.19e+05  5871s
+   2   1.58382842e+08 -1.47280517e+09  2.02e+05 2.09e+02  5.17e+04  5871s
+   3   1.90797256e+07 -3.39637836e+08  2.40e+04 1.53e+01  6.87e+03  5872s
+   4   3.76213086e+06 -1.66644385e+08  4.45e+03 6.92e+00  1.94e+03  5872s
+   5   1.38309469e+06 -6.94787048e+07  1.36e+03 2.51e+00  7.09e+02  5872s
+   6   7.92170213e+05 -4.78914719e+07  5.90e+02 1.63e+00  4.22e+02  5872s
+   7   5.14005062e+05 -2.55771334e+07  2.42e+02 8.29e-01  2.10e+02  5872s
+   8   4.16233745e+05 -1.03472577e+07  1.28e+02 3.03e-01  8.88e+01  5872s
+   9   3.57999499e+05 -4.84979149e+06  6.72e+01 1.31e-01  4.32e+01  5872s
+  10   3.18429020e+05 -2.24817280e+06  3.35e+01 5.75e-02  2.12e+01  5872s
+  11   2.76895737e+05 -1.02185599e+06  8.10e+00 2.71e-02  9.54e+00  5872s
+  12   2.52740691e+05 -5.20205689e+05  3.86e+00 1.48e-02  5.55e+00  5872s
+  13   2.34683477e+05 -3.57694276e+05  2.21e+00 1.14e-02  4.15e+00  5872s
+  14   2.25776538e+05 -2.58296239e+05  1.78e+00 8.92e-03  3.38e+00  5872s
+  15   2.19439319e+05 -1.73877911e+05  1.50e+00 6.84e-03  2.75e+00  5873s
+  16   2.11594312e+05 -1.27392807e+05  1.19e+00 5.75e-03  2.35e+00  5873s
+  17   1.97684519e+05 -1.84636734e+04  7.14e-01 3.54e-03  1.49e+00  5873s
+  18   1.88093681e+05  3.72238648e+04  4.68e-01 2.42e-03  1.03e+00  5873s
+  19   1.83493993e+05  6.17354748e+04  3.93e-01 1.84e-03  8.32e-01  5873s
+  20   1.77397794e+05  7.31942965e+04  2.80e-01 1.58e-03  7.06e-01  5873s
+  21   1.73175095e+05  8.40052428e+04  2.15e-01 1.30e-03  6.01e-01  5874s
+  22   1.71164831e+05  1.09449784e+05  1.81e-01 7.82e-04  4.17e-01  5874s
+  23   1.66723795e+05  1.27317336e+05  1.19e-01 4.36e-04  2.65e-01  5874s
+  24   1.62452426e+05  1.42678037e+05  6.29e-02 1.65e-04  1.33e-01  5874s
+  25   1.60512139e+05  1.52438790e+05  3.92e-02 2.65e-05  5.43e-02  5874s
+  26   1.58972816e+05  1.54508884e+05  2.13e-02 8.63e-06  2.99e-02  5874s
+  27   1.58490362e+05  1.55037586e+05  1.58e-02 4.68e-06  2.31e-02  5874s
+  28   1.57825904e+05  1.55736218e+05  8.57e-03 1.72e-10  1.39e-02  5875s
+  29   1.57639387e+05  1.55915606e+05  6.60e-03 1.13e-10  1.14e-02  5875s
+  30   1.57434220e+05  1.56086362e+05  4.50e-03 1.36e-10  8.92e-03  5875s
+  31   1.57310667e+05  1.56108253e+05  3.39e-03 1.81e-10  7.94e-03  5875s
+  32   1.57205607e+05  1.56429151e+05  2.52e-03 1.40e-10  5.14e-03  5875s
+  33   1.56931328e+05  1.56847071e+05  2.95e-04 9.09e-11  5.59e-04  5875s
+  34   1.56882883e+05  1.56880807e+05  1.30e-06 1.64e-10  1.36e-05  5875s
+  35   1.56881308e+05  1.56881308e+05  7.55e-09 2.57e-10  4.77e-10  5875s
+
+Barrier solved model in 35 iterations and 5875.34 seconds (2114.07 work units)
+Optimal objective 1.56881308e+05
+
+
+Root crossover log...
+
+    3867 DPushes remaining with DInf 0.0000000e+00              5875s
+       0 DPushes remaining with DInf 0.0000000e+00              5875s
+
+    2686 PPushes remaining with PInf 0.0000000e+00              5875s
+       0 PPushes remaining with PInf 0.0000000e+00              5875s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 4.0061841e-10   5875s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    6435    1.5688131e+05   0.000000e+00   0.000000e+00   5875s
+Concurrent spin time: 1.49s (can be avoided by choosing Method=3)
+
+Solved with barrier
+    6435    1.5688131e+05   0.000000e+00   0.000000e+00   5875s
+
+Root relaxation: objective 1.568813e+05, 6435 iterations, 6.45 seconds (2.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 156881.308    0  391 240991.999 156881.308  34.9%     - 5880s
+     0     0 156881.308    0  392 240991.999 156881.308  34.9%     - 5880s
+     0     0 156881.308    0  392 240991.999 156881.308  34.9%     - 5880s
+     0     0 157849.754    0  373 240991.999 157849.754  34.5%     - 5880s
+     0     0 160541.058    0  428 240991.999 160541.058  33.4%     - 5905s
+     0     0 163274.055    0  432 240991.999 163274.055  32.2%     - 5925s
+     0     0 164895.711    0  411 240991.999 164895.711  31.6%     - 5927s
+     0     0 164895.711    0  412 240991.999 164895.711  31.6%     - 5927s
+     0     0 166462.238    0  440 240991.999 166462.238  30.9%     - 5934s
+     0     0 167117.742    0  423 240991.999 167117.742  30.7%     - 5937s
+     0     0 167173.724    0  417 240991.999 167173.724  30.6%     - 5938s
+     0     0 167173.724    0  406 240991.999 167173.724  30.6%     - 5938s
+     0     0 167758.960    0  442 240991.999 167758.960  30.4%     - 5942s
+     0     0 167771.460    0  460 240991.999 167771.460  30.4%     - 5966s
+     0     0 168161.346    0  445 240991.999 168161.346  30.2%     - 5976s
+     0     0 168184.717    0  467 240991.999 168184.717  30.2%     - 5980s
+     0     0 168190.075    0  453 240991.999 168190.075  30.2%     - 5981s
+     0     0 168192.444    0  426 240991.999 168192.444  30.2%     - 5981s
+     0     0 168256.747    0  475 240991.999 168256.747  30.2%     - 5983s
+     0     0 168271.893    0  457 240991.999 168271.893  30.2%     - 6003s
+     0     0 168271.893    0  458 240991.999 168271.893  30.2%     - 6004s
+     0     0 168291.028    0  459 240991.999 168291.028  30.2%     - 6006s
+     0     0 168291.041    0  459 240991.999 168291.041  30.2%     - 6043s
+     0     0 168516.465    0  473 240991.999 168516.465  30.1%     - 6047s
+     0     0 168705.066    0  481 240991.999 168705.066  30.0%     - 6071s
+     0     0 168705.066    0  473 240991.999 168705.066  30.0%     - 6072s
+     0     0 168907.775    0  467 240991.999 168907.775  29.9%     - 6075s
+     0     0 168963.126    0  465 240991.999 168963.126  29.9%     - 6088s
+     0     0 168963.126    0  463 240991.999 168963.126  29.9%     - 6088s
+     0     0 169079.550    0  469 240991.999 169079.550  29.8%     - 6091s
+     0     0 169104.295    0  468 240991.999 169104.295  29.8%     - 6103s
+     0     0 169104.656    0  450 240991.999 169104.656  29.8%     - 6103s
+     0     0 169136.701    0  475 240991.999 169136.701  29.8%     - 6106s
+     0     0 169144.305    0  467 240991.999 169144.305  29.8%     - 6111s
+     0     0 169144.305    0  462 240991.999 169144.305  29.8%     - 6111s
+     0     0 169203.126    0  482 240991.999 169203.126  29.8%     - 6113s
+     0     0 169206.890    0  487 240991.999 169206.890  29.8%     - 6117s
+     0     0 169221.050    0  492 240991.999 169221.050  29.8%     - 6119s
+     0     0 169224.668    0  461 240991.999 169224.668  29.8%     - 6127s
+     0     0 169229.441    0  468 240991.999 169229.441  29.8%     - 6129s
+     0     0 169229.441    0  392 240991.999 169229.441  29.8%     - 6131s
+     0     2 169406.218    0  374 240991.999 169406.218  29.7%     - 6152s
+     3     8 169924.842    2  414 240991.999 169406.218  29.7%  1980 6157s
+     7    16 170572.405    3  410 240991.999 169463.039  29.7%  1449 6160s
+    15    32 170690.441    4  423 240991.999 169608.742  29.6%  1256 6167s
+    31    64 170702.411    5  400 240991.999 169687.212  29.6%  1685 6176s
+    63    96 170856.192    6  401 240991.999 169711.048  29.6%  1497 6182s
+    95   129 170957.216    7  394 240991.999 169711.048  29.6%  1353 6189s
+   128   173 171405.455    8  413 240991.999 169711.048  29.6%  1208 6196s
+   172   205 171295.163    8  416 240991.999 169711.048  29.6%  1122 6204s
+   204   248 171431.452    9  397 240991.999 169711.048  29.6%  1097 6215s
+   247   280 172025.303   10  398 240991.999 169711.048  29.6%  1098 6222s
+   279   322 172342.820   10  390 240991.999 169711.048  29.6%  1055 6230s
+   321   356 172491.164   11  393 240991.999 169711.048  29.6%  1015 6237s
+   355   401 173374.677   11  339 240991.999 169711.048  29.6%   991 6245s
+   400   433 172722.127   12  417 240991.999 169711.048  29.6%   970 6256s
+   432   478 172968.186   13  401 240991.999 169711.048  29.6%   965 6272s
+   479   510 173178.363   13  412 240991.999 169711.048  29.6%   947 6277s
+   511   542 173525.903   14  386 240991.999 169711.048  29.6%   936 6282s
+   545   574 174187.833   14  362 240991.999 169711.048  29.6%   936 6288s
+   577   610 173611.130   15  377 240991.999 169711.048  29.6%   926 6296s
+   613   642 173739.757   16  395 240991.999 169711.048  29.6%   912 6302s
+   645   674 174116.929   16  362 240991.999 169711.048  29.6%   899 6323s
+   677   706 174223.273   17  373 240991.999 169711.048  29.6%   887 6336s
+   709   738 175521.923   17  395 240991.999 169711.048  29.6%   877 6345s
+   741   770 174609.306   18  359 240991.999 169711.048  29.6%   868 6352s
+   773   802 175746.134   18  395 240991.999 169711.048  29.6%   858 6371s
+   805   833 174837.247   19  376 240991.999 169711.048  29.6%   852 6384s
+   838   865 174769.606   19  337 240991.999 169711.048  29.6%   846 6398s
+   872   894 175821.527   20  379 240991.999 169711.048  29.6%   835 6405s
+   907   929 175793.292   20  381 240991.999 169768.491  29.6%   836 6414s
+   942   965 177480.769   21  403 240991.999 169768.491  29.6%   829 6422s
+   978   995 178123.448   22  384 240991.999 169768.491  29.6%   827 6435s
+  1014  1030 180034.246   22  355 240991.999 169768.491  29.6%   831 6443s
+  1049  1070 178636.763   23  377 240991.999 169768.491  29.6%   829 6453s
+  1089  1110 180820.542   23  409 240991.999 169768.491  29.6%   823 6462s
+  1129  1166 179062.411   24  377 240991.999 169768.491  29.6%   816 6472s
+  1185  1223 179954.969   25  354 240991.999 169768.491  29.6%   809 6485s
+  1248  1291 181025.293   26  366 240991.999 169768.491  29.6%   808 6500s
+  1316  1359 183146.712   26  374 240991.999 169768.491  29.6%   807 6518s
+  1386  1456 184448.078   27  362 240991.999 169768.491  29.6%   806 6545s
+  1494  1560 186432.623   31  390 240991.999 169792.232  29.5%   795 6559s
+  1619  1693 188179.355   34  348 240991.999 169792.232  29.5%   782 6574s
+  1760  1822 193805.814   39  365 240991.999 169792.232  29.5%   773 6586s
+  1910  1945 193863.835   41  369 240991.999 169994.713  29.5%   759 6603s
+  2055  2063 195553.028   45  347 240991.999 170170.132  29.4%   760 6615s
+  2205  2203 196350.039   49  345 240991.999 170218.623  29.4%   756 6625s
+  2367  2335 204397.216   60  319 240991.999 170270.035  29.3%   754 6638s
+  2555  2461 171120.066    7  386 240991.999 170270.035  29.3%   746 6653s
+  2721  2621 175361.372   15  344 240991.999 170270.035  29.3%   743 6667s
+  2894  2811 183448.559   20  284 240991.999 170270.035  29.3%   737 6681s
+  3108  3027 189325.467   25  253 240991.999 170347.848  29.3%   727 6697s
+  3355  3255 192593.251   39  259 240991.999 170347.848  29.3%   715 6707s
+  3615  3524 222098.777   59  317 240991.999 170347.848  29.3%   706 6716s
+  3967  3525 217476.835   71  392 240991.999 170347.848  29.3%   686 6783s
+  3969  3526 191559.116   59  348 240991.999 170347.848  29.3%   685 6814s
+  3970  3527 187480.730   44  337 240991.999 170347.848  29.3%   685 6843s
+  3971  3528 188181.007   17  447 240991.999 170347.848  29.3%   685 6853s
+  3972  3528 179354.681   25  492 240991.999 170347.848  29.3%   685 6858s
+  3974  3530 176897.259   20  489 240991.999 170347.848  29.3%   684 6863s
+  3975  3530 192350.978   40  497 240991.999 170347.848  29.3%   684 6869s
+  3976  3531 188847.590   44  471 240991.999 170347.848  29.3%   684 6886s
+  3979  3533 182377.291   34  488 240991.999 170347.848  29.3%   683 6891s
+  3981  3534 217399.780   46  480 240991.999 170347.848  29.3%   683 6901s
+  3982  3535 174810.740   16  461 240991.999 170347.848  29.3%   683 6917s
+  3983  3536 216292.170   47  511 240991.999 170374.769  29.3%   683 6921s
+  3985  3537 212113.135   46  518 240991.999 170486.689  29.3%   682 6927s
+  3986  3538 190531.462   56  521 240991.999 170526.183  29.2%   682 6930s
+  3987  3538 177980.795   27  513 240991.999 170530.757  29.2%   682 6936s
+  3988  3539 186606.203   42  487 240991.999 171701.424  28.8%   682 6953s
+  3990  3540 189509.246   36  470 240991.999 171701.424  28.8%   682 6956s
+  3994  3543 175334.866   17  474 240991.999 171701.424  28.8%   681 6961s
+  3995  3544 173048.952   19  461 240991.999 171866.837  28.7%   681 6984s
+  3996  3544 177083.875   23  491 240991.999 171866.837  28.7%   681 6987s
+  3999  3546 229585.662   65  518 240991.999 171927.706  28.7%   680 6991s
+  4000  3547 211805.881   68  526 240991.999 171930.359  28.7%   680 6997s
+
+Cutting planes:
+  Gomory: 11
+  Cover: 50
+  Implied bound: 10
+  Projected implied bound: 2
+  Clique: 17
+  MIR: 97
+  StrongCG: 4
+  Flow cover: 50
+  GUB cover: 20
+  Zero half: 26
+  Network: 1
+  RLT: 347
+  Relax-and-lift: 49
+
+Explored 4000 nodes (2896604 simplex iterations) in 7000.17 seconds (2980.04 work units)
+Thread count was 32 (of 48 available processors)
+
+Solution count 10: 240992 240992 240992 ... 240992
+
+Time limit reached
+Best objective 2.409919986206e+05, best bound 1.719303592043e+05, gap 28.6572%
+  Status : Time limit
+  Runtime: 7000.2s
+  UB     : 240,992.00 km
+  LB     : 171,930.36 km
+  Gap    : 28.66%
+
+Phase 4 (Obj 3) — Temperature shock:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7000
+NoRelHeurTime  5800
+
+Optimize a model with 12417 rows, 106664 columns and 1626283 nonzeros
+Model fingerprint: 0xe5f41f88
+Variable types: 21964 continuous, 84700 integer (84700 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+04]
+  Objective range  [2e-02, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+MIP start from previous solve produced solution with objective 782.205 (0.48s)
+Loaded MIP start from previous solve with objective 782.205
+
+Presolve removed 4630 rows and 29834 columns (presolve time = 5s)...
+Presolve removed 4681 rows and 30686 columns (presolve time = 10s)...
+Presolve removed 4610 rows and 30747 columns
+Presolve time: 11.18s
+Presolved: 7807 rows, 75917 columns, 747578 nonzeros
+Variable types: 19857 continuous, 56060 integer (55991 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 255
+Found phase-1 solution: relaxation 232
+Found phase-1 solution: relaxation 173
+Found phase-1 solution: relaxation 169
+Found phase-1 solution: relaxation 95
+Found phase-1 solution: relaxation 81
+Found phase-1 solution: relaxation 58
+Found phase-1 solution: relaxation 54
+Found phase-1 solution: relaxation 47
+Found phase-1 solution: relaxation 43
+Found phase-1 solution: relaxation 25
+Found phase-1 solution: relaxation 22
+Elapsed time for NoRel heuristic: 5s (best bound 336.656)
+Found phase-1 solution: relaxation 10
+Found phase-1 solution: relaxation 0
+Transition to phase 2
+Found heuristic solution: objective 752.2990789
+Found heuristic solution: objective 752.2590789
+Found heuristic solution: objective 748.1257456
+Found heuristic solution: objective 748.0857456
+Found heuristic solution: objective 746.4057456
+Found heuristic solution: objective 746.3657456
+Found heuristic solution: objective 746.1657456
+Found heuristic solution: objective 743.9257456
+Found heuristic solution: objective 743.1748684
+Found heuristic solution: objective 741.6948684
+Found heuristic solution: objective 741.6548684
+Elapsed time for NoRel heuristic: 10s (best bound 336.828)
+Found heuristic solution: objective 735.1456579
+Found heuristic solution: objective 733.9989912
+Found heuristic solution: objective 730.4814474
+Found heuristic solution: objective 730.1481140
+Elapsed time for NoRel heuristic: 15s (best bound 336.828)
+Found heuristic solution: objective 717.6598684
+Found heuristic solution: objective 715.1665351
+Elapsed time for NoRel heuristic: 22s (best bound 336.828)
+Found heuristic solution: objective 705.2096930
+Found heuristic solution: objective 700.6675000
+Found heuristic solution: objective 699.5075000
+Elapsed time for NoRel heuristic: 29s (best bound 336.828)
+Found heuristic solution: objective 698.4275000
+Found heuristic solution: objective 689.5061842
+Found heuristic solution: objective 686.5195175
+Found heuristic solution: objective 686.4541667
+Found heuristic solution: objective 684.5475000
+Elapsed time for NoRel heuristic: 35s (best bound 336.828)
+Found heuristic solution: objective 683.7608333
+Found heuristic solution: objective 683.6328509
+Found heuristic solution: objective 682.1782018
+Elapsed time for NoRel heuristic: 41s (best bound 336.828)
+Found heuristic solution: objective 680.1290789
+Elapsed time for NoRel heuristic: 48s (best bound 336.828)
+Found heuristic solution: objective 677.8224123
+Elapsed time for NoRel heuristic: 56s (best bound 336.828)
+Found heuristic solution: objective 676.6315351
+Elapsed time for NoRel heuristic: 64s (best bound 336.828)
+Elapsed time for NoRel heuristic: 74s (best bound 337.419)
+Found heuristic solution: objective 676.6315331
+Found heuristic solution: objective 676.6315302
+Found heuristic solution: objective 676.4448684
+Elapsed time for NoRel heuristic: 82s (best bound 337.419)
+Found heuristic solution: objective 676.4448649
+Elapsed time for NoRel heuristic: 92s (best bound 337.419)
+Elapsed time for NoRel heuristic: 104s (best bound 340.187)
+Elapsed time for NoRel heuristic: 121s (best bound 340.187)
+Elapsed time for NoRel heuristic: 137s (best bound 340.187)
+Elapsed time for NoRel heuristic: 156s (best bound 342.305)
+Found heuristic solution: objective 676.4448638
+Elapsed time for NoRel heuristic: 174s (best bound 342.305)
+Found heuristic solution: objective 676.4448568
+Elapsed time for NoRel heuristic: 192s (best bound 342.305)
+Found heuristic solution: objective 676.4448536
+Elapsed time for NoRel heuristic: 200s (best bound 342.305)
+Elapsed time for NoRel heuristic: 209s (best bound 342.305)
+Elapsed time for NoRel heuristic: 222s (best bound 342.305)
+Elapsed time for NoRel heuristic: 236s (best bound 342.305)
+Elapsed time for NoRel heuristic: 258s (best bound 342.305)
+Found heuristic solution: objective 676.4448511
+Elapsed time for NoRel heuristic: 309s (best bound 345.257)
+Elapsed time for NoRel heuristic: 328s (best bound 345.257)
+Elapsed time for NoRel heuristic: 345s (best bound 348.064)
+Elapsed time for NoRel heuristic: 360s (best bound 348.064)
+Found heuristic solution: objective 676.4448287
+Elapsed time for NoRel heuristic: 419s (best bound 348.064)
+Elapsed time for NoRel heuristic: 428s (best bound 348.559)
+Elapsed time for NoRel heuristic: 449s (best bound 348.559)
+Elapsed time for NoRel heuristic: 468s (best bound 348.559)
+Elapsed time for NoRel heuristic: 529s (best bound 348.778)
+Elapsed time for NoRel heuristic: 578s (best bound 348.778)
+Found heuristic solution: objective 676.4448262
+Elapsed time for NoRel heuristic: 644s (best bound 348.778)
+Elapsed time for NoRel heuristic: 662s (best bound 348.778)
+Elapsed time for NoRel heuristic: 684s (best bound 348.778)
+Found heuristic solution: objective 676.4448251
+Elapsed time for NoRel heuristic: 711s (best bound 348.778)
+Found heuristic solution: objective 676.4448232
+Elapsed time for NoRel heuristic: 739s (best bound 348.778)
+Elapsed time for NoRel heuristic: 771s (best bound 348.778)
+Elapsed time for NoRel heuristic: 808s (best bound 348.778)
+Elapsed time for NoRel heuristic: 837s (best bound 348.778)
+Found heuristic solution: objective 626.0082895
+Elapsed time for NoRel heuristic: 894s (best bound 348.778)
+Found heuristic solution: objective 612.9860965
+Found heuristic solution: objective 611.9567105
+Found heuristic solution: objective 609.8333772
+Elapsed time for NoRel heuristic: 942s (best bound 348.778)
+Found heuristic solution: objective 608.4127632
+Elapsed time for NoRel heuristic: 987s (best bound 348.778)
+Found heuristic solution: objective 607.9727632
+Found heuristic solution: objective 607.4660965
+Elapsed time for NoRel heuristic: 1052s (best bound 348.778)
+Found heuristic solution: objective 604.7060965
+Found heuristic solution: objective 597.6477632
+Elapsed time for NoRel heuristic: 1137s (best bound 348.778)
+Elapsed time for NoRel heuristic: 1184s (best bound 348.778)
+Elapsed time for NoRel heuristic: 1259s (best bound 348.778)
+Elapsed time for NoRel heuristic: 1337s (best bound 348.778)
+Elapsed time for NoRel heuristic: 1591s (best bound 348.778)
+Found heuristic solution: objective 597.6477619
+Found heuristic solution: objective 597.6477609
+Elapsed time for NoRel heuristic: 1874s (best bound 348.778)
+Found heuristic solution: objective 597.6477553
+Elapsed time for NoRel heuristic: 1948s (best bound 348.778)
+Found heuristic solution: objective 597.6477243
+Elapsed time for NoRel heuristic: 2030s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2110s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2163s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2255s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2573s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2755s (best bound 348.778)
+Elapsed time for NoRel heuristic: 2896s (best bound 348.778)
+Elapsed time for NoRel heuristic: 3133s (best bound 348.778)
+Elapsed time for NoRel heuristic: 3396s (best bound 348.778)
+Elapsed time for NoRel heuristic: 3859s (best bound 348.778)
+Found heuristic solution: objective 597.6477204
+Elapsed time for NoRel heuristic: 4239s (best bound 348.778)
+Elapsed time for NoRel heuristic: 4394s (best bound 348.778)
+Elapsed time for NoRel heuristic: 4595s (best bound 348.778)
+Found heuristic solution: objective 597.6476978
+Elapsed time for NoRel heuristic: 4759s (best bound 348.778)
+Found heuristic solution: objective 597.6476711
+Elapsed time for NoRel heuristic: 4941s (best bound 348.778)
+Elapsed time for NoRel heuristic: 5068s (best bound 348.778)
+Found heuristic solution: objective 597.6476502
+Elapsed time for NoRel heuristic: 5237s (best bound 348.778)
+Found heuristic solution: objective 597.6476020
+Elapsed time for NoRel heuristic: 5346s (best bound 348.778)
+Elapsed time for NoRel heuristic: 5483s (best bound 348.778)
+Elapsed time for NoRel heuristic: 5690s (best bound 348.778)
+Found heuristic solution: objective 597.6475754
+Elapsed time for NoRel heuristic: 5949s (best bound 348.778)
+NoRel heuristic complete
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.81s
+
+Barrier statistics:
+ AA' NZ     : 5.502e+05
+ Factor NZ  : 2.494e+06 (roughly 50 MB of memory)
+ Factor Ops : 1.269e+09 (less than 1 second per iteration)
+ Threads    : 30
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.35247444e+08 -1.02928151e+07  9.09e+06 0.00e+00  4.14e+03  5963s
+   1   8.04689979e+07 -9.48274484e+06  3.13e+06 1.98e+00  1.45e+03  5963s
+   2   1.16355192e+07 -6.69978853e+06  4.54e+05 4.20e-01  2.37e+02  5963s
+   3   2.11067096e+06 -1.61626428e+06  8.23e+04 1.10e-12  4.25e+01  5963s
+   4   4.98344898e+05 -7.29229482e+05  1.94e+04 1.03e-12  1.21e+01  5963s
+   5   3.47482082e+05 -3.69255986e+05  1.35e+04 1.31e-12  7.61e+00  5963s
+   6   2.80981151e+05 -2.79535438e+05  1.09e+04 1.30e-12  6.04e+00  5963s
+   7   1.58971649e+05 -1.70411273e+05  6.17e+03 1.34e-12  3.49e+00  5963s
+   8   8.24371285e+04 -1.14147010e+05  3.18e+03 1.30e-12  1.97e+00  5963s
+   9   6.58256646e+04 -7.74892903e+04  2.54e+03 9.47e-13  1.46e+00  5964s
+  10   7.02275342e+03 -3.10014293e+04  2.46e+02 1.24e-12  2.95e-01  5964s
+  11   3.65741733e+03 -1.28402195e+04  1.15e+02 1.11e-12  1.27e-01  5964s
+  12   2.22476522e+03 -6.60465175e+03  6.07e+01 1.30e-12  6.76e-02  5964s
+  13   1.18587972e+03 -3.24218888e+03  2.23e+01 1.38e-12  3.24e-02  5964s
+  14   9.46183662e+02 -2.26215345e+03  1.41e+01 1.36e-12  2.31e-02  5964s
+  15   7.24189751e+02 -1.32549438e+03  7.29e+00 1.78e-12  1.44e-02  5964s
+  16   6.09726046e+02 -8.67885438e+02  4.14e+00 1.27e-12  1.02e-02  5964s
+  17   5.27482132e+02 -4.57736309e+02  2.26e+00 1.16e-12  6.69e-03  5964s
+  18   4.98369005e+02 -1.49405717e+02  1.74e+00 9.45e-13  4.41e-03  5965s
+  19   4.71931668e+02 -6.09442965e+01  1.36e+00 1.47e-12  3.60e-03  5965s
+  20   4.49822808e+02  4.00640055e+01  1.04e+00 1.15e-12  2.76e-03  5965s
+  21   4.28238716e+02  1.21297891e+02  7.57e-01 1.52e-12  2.05e-03  5965s
+  22   4.19130686e+02  1.37960041e+02  6.53e-01 1.62e-12  1.87e-03  5965s
+  23   4.12922100e+02  1.90122059e+02  5.85e-01 1.76e-12  1.48e-03  5965s
+  24   4.03101940e+02  2.12030527e+02  4.78e-01 1.69e-12  1.26e-03  5965s
+  25   3.95037199e+02  2.16826714e+02  3.97e-01 1.85e-12  1.17e-03  5965s
+  26   3.90516664e+02  2.39080971e+02  3.49e-01 1.60e-12  9.94e-04  5965s
+  27   3.83543192e+02  2.60544735e+02  2.80e-01 1.84e-12  8.04e-04  5965s
+  28   3.74346326e+02  2.85572828e+02  1.98e-01 1.52e-12  5.76e-04  5966s
+  29   3.67653187e+02  3.03756650e+02  1.40e-01 1.19e-12  4.12e-04  5966s
+  30   3.66206875e+02  3.11082464e+02  1.29e-01 1.28e-12  3.55e-04  5966s
+  31   3.62929704e+02  3.19545969e+02  1.02e-01 8.79e-13  2.78e-04  5966s
+  32   3.60320010e+02  3.29973936e+02  8.26e-02 1.41e-12  1.93e-04  5966s
+  33   3.57732548e+02  3.31618530e+02  6.25e-02 1.61e-12  1.66e-04  5966s
+  34   3.55031262e+02  3.36587432e+02  4.12e-02 9.01e-13  1.17e-04  5966s
+  35   3.52788198e+02  3.40758504e+02  2.42e-02 1.22e-12  7.61e-05  5966s
+  36   3.52439381e+02  3.41087824e+02  2.16e-02 1.41e-12  7.19e-05  5966s
+  37   3.51441832e+02  3.45139006e+02  1.45e-02 9.20e-13  3.96e-05  5966s
+  38   3.50478932e+02  3.45808524e+02  8.01e-03 1.24e-12  2.95e-05  5967s
+  39   3.50354248e+02  3.46259759e+02  7.31e-03 1.32e-12  2.58e-05  5967s
+  40   3.50030317e+02  3.47262815e+02  5.69e-03 1.18e-12  1.74e-05  5967s
+  41   3.49701451e+02  3.47830938e+02  3.98e-03 1.29e-12  1.17e-05  5967s
+  42   3.49569773e+02  3.48039777e+02  3.28e-03 1.27e-12  9.60e-06  5967s
+  43   3.49536422e+02  3.48116640e+02  3.14e-03 1.47e-12  8.90e-06  5967s
+  44   3.49470838e+02  3.48186996e+02  2.84e-03 1.47e-12  8.05e-06  5967s
+  45   3.49382599e+02  3.48290615e+02  2.45e-03 1.50e-12  6.84e-06  5967s
+  46   3.49343935e+02  3.48464808e+02  2.29e-03 1.56e-12  5.48e-06  5967s
+  47   3.49213969e+02  3.48529862e+02  1.75e-03 1.55e-12  4.27e-06  5967s
+  48   3.49061060e+02  3.48558593e+02  1.13e-03 1.57e-12  3.15e-06  5967s
+  49   3.49001952e+02  3.48670992e+02  8.88e-04 1.84e-12  2.06e-06  5967s
+  50   3.48914536e+02  3.48679729e+02  5.43e-04 1.63e-12  1.47e-06  5968s
+  51   3.48900798e+02  3.48729170e+02  4.92e-04 1.41e-12  1.07e-06  5968s
+  52   3.48847790e+02  3.48771414e+02  2.78e-04 1.07e-12  4.71e-07  5968s
+  53   3.48783147e+02  3.48776945e+02  1.78e-05 1.43e-12  3.86e-08  5968s
+  54   3.48779656e+02  3.48776991e+02  4.56e-06 1.06e-12  1.68e-08  5968s
+  55   3.48778783e+02  3.48777969e+02  1.25e-06 1.33e-12  5.16e-09  5968s
+  56   3.48778524e+02  3.48778150e+02  2.12e-07 1.44e-12  2.39e-09  5968s
+  57   3.48778490e+02  3.48778316e+02  8.48e-08 1.32e-12  1.11e-09  5968s
+  58   3.48778479e+02  3.48778462e+02  4.44e-08 1.24e-12  1.06e-10  5968s
+  59   3.48778467e+02  3.48778467e+02  2.84e-09 1.75e-12  1.81e-12  5968s
+
+Barrier solved model in 59 iterations and 5968.21 seconds (2194.56 work units)
+Optimal objective 3.48778467e+02
+
+
+Root crossover log...
+
+    3846 DPushes remaining with DInf 0.0000000e+00              5968s
+       0 DPushes remaining with DInf 0.0000000e+00              5969s
+
+     511 PPushes remaining with PInf 0.0000000e+00              5969s
+       0 PPushes remaining with PInf 0.0000000e+00              5969s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.1794809e-13   5969s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    4248    3.4877847e+02   0.000000e+00   0.000000e+00   5969s
+Concurrent spin time: 0.00s
+
+Solved with barrier
+    4248    3.4877847e+02   0.000000e+00   0.000000e+00   5969s
+
+Root relaxation: objective 3.487785e+02, 4248 iterations, 7.92 seconds (3.04 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  348.77847    0  431  597.64758  348.77847  41.6%     - 5969s
+     0     0  348.77847    0  431  597.64758  348.77847  41.6%     - 5969s
+     0     0  348.77847    0  431  597.64758  348.77847  41.6%     - 5969s
+     0     0  348.94960    0  433  597.64758  348.94960  41.6%     - 5970s
+     0     0  348.94960    0  433  597.64758  348.94960  41.6%     - 5970s
+     0     0  349.15551    0  444  597.64758  349.15551  41.6%     - 5971s
+     0     0  353.76010    0  444  597.64758  353.76010  40.8%     - 6009s
+     0     0  358.98513    0  414  597.64758  358.98513  39.9%     - 6017s
+     0     0  366.72396    0  410  597.64758  366.72396  38.6%     - 6022s
+     0     0  367.36107    0  435  597.64758  367.36107  38.5%     - 6023s
+     0     0  367.38577    0  442  597.64758  367.38577  38.5%     - 6023s
+     0     0  367.38596    0  450  597.64758  367.38596  38.5%     - 6024s
+     0     0  375.40593    0  468  597.64758  375.40593  37.2%     - 6032s
+     0     0  377.20683    0  476  597.64758  377.20683  36.9%     - 6036s
+     0     0  377.22091    0  485  597.64758  377.22091  36.9%     - 6037s
+     0     0  377.25118    0  481  597.64758  377.25118  36.9%     - 6037s
+     0     0  377.26521    0  484  597.64758  377.26521  36.9%     - 6037s
+     0     0  377.26521    0  485  597.64758  377.26521  36.9%     - 6037s
+     0     0  379.51274    0  460  597.64758  379.51274  36.5%     - 6042s
+     0     0  379.83714    0  457  597.64758  379.83714  36.4%     - 6057s
+     0     0  379.88606    0  464  597.64758  379.88606  36.4%     - 6060s
+     0     0  379.90541    0  456  597.64758  379.90541  36.4%     - 6060s
+     0     0  379.90798    0  458  597.64758  379.90798  36.4%     - 6061s
+     0     0  381.42701    0  505  597.64758  381.42701  36.2%     - 6066s
+     0     0  381.78602    0  503  597.64758  381.78602  36.1%     - 6071s
+     0     0  382.07623    0  521  597.64758  382.07623  36.1%     - 6072s
+     0     0  382.08295    0  514  597.64758  382.08295  36.1%     - 6073s
+     0     0  382.41214    0  511  597.64758  382.41214  36.0%     - 6074s
+     0     0  382.45938    0  508  597.64758  382.45938  36.0%     - 6091s
+     0     0  382.50551    0  524  597.64758  382.50551  36.0%     - 6092s
+     0     0  382.50889    0  526  597.64758  382.50889  36.0%     - 6092s
+     0     0  382.74874    0  514  597.64758  382.74874  36.0%     - 6094s
+     0     0  382.78926    0  514  597.64758  382.78926  36.0%     - 6128s
+     0     0  382.79327    0  516  597.64758  382.79327  36.0%     - 6128s
+     0     0  383.00777    0  503  597.64758  383.00777  35.9%     - 6130s
+     0     0  383.03371    0  495  597.64758  383.03371  35.9%     - 6141s
+     0     0  383.04289    0  517  597.64758  383.04289  35.9%     - 6141s
+     0     0  383.09110    0  522  597.64758  383.09110  35.9%     - 6143s
+     0     0  383.09976    0  531  597.64758  383.09976  35.9%     - 6145s
+     0     0  383.14403    0  526  597.64758  383.14403  35.9%     - 6146s
+     0     0  383.14436    0  525  597.64758  383.14436  35.9%     - 6147s
+     0     2  384.78224    0  522  597.64758  384.78224  35.6%     - 6184s
+     1     4  384.78224    1  539  597.64758  384.78224  35.6%   752 6189s
+     3     8  384.78224    2  557  597.64758  384.78224  35.6%  1621 6198s
+     7    16  384.78224    3  544  597.64758  384.78224  35.6%  1612 6203s
+    15    32  384.78224    4  558  597.64758  384.78224  35.6%  1327 6210s
+    31    64  385.31184    5  553  597.64758  384.78224  35.6%  1435 6215s
+    63    96  385.66512    6  565  597.64758  385.32092  35.5%  1235 6222s
+    95   128  386.16975    7  568  597.64758  385.32092  35.5%  1005 6232s
+   127   160  386.63759    8  574  597.64758  385.32092  35.5%   862 6237s
+   159   196  386.78007    9  573  597.64758  385.32092  35.5%   823 6241s
+   195   235  387.90939    9  557  597.64758  385.32092  35.5%   807 6251s
+   234   283  386.87168   10  574  597.64758  385.32092  35.5%   819 6259s
+   282   334  387.11835   11  555  597.64758  385.32092  35.5%   785 6265s
+   333   390  387.25687   12  550  597.64758  385.32092  35.5%   766 6274s
+   389   437  394.00959   12  544  597.64758  385.32092  35.5%   757 6285s
+   436   484  387.38941   13  538  597.64758  385.32092  35.5%   771 6295s
+   483   538  388.93544   13  548  597.64758  385.32092  35.5%   811 6308s
+   537   589  389.13379   14  544  597.64758  385.32092  35.5%   802 6320s
+   588   648  389.27046   15  557  597.64758  385.32092  35.5%   791 6331s
+   649   704  389.92099   16  570  597.64758  385.32092  35.5%   769 6343s
+   705   758  390.16331   17  562  597.64758  385.32092  35.5%   757 6352s
+   761   816  391.18103   18  543  597.64758  385.32092  35.5%   754 6362s
+   819   867  391.64249   18  569  597.64758  385.32092  35.5%   758 6369s
+   876   929  393.59115   19  552  597.64758  385.32092  35.5%   756 6382s
+   938   996  391.42479   19  548  597.64758  385.32092  35.5%   743 6390s
+  1011  1052  391.57500   20  532  597.64758  385.32092  35.5%   733 6401s
+  1077  1128  391.78237   21  536  597.64758  385.32092  35.5%   726 6412s
+  1157  1207  392.72853   22  543  597.64758  385.32092  35.5%   711 6428s
+  1251  1291  392.81989   22  551  597.64758  385.32092  35.5%   694 6440s
+  1347  1379  393.10982   23  548  597.64758  385.32092  35.5%   674 6460s
+  1447  1476  393.52142   24  537  597.64758  385.32092  35.5%   660 6481s
+  1548  1562  393.55291   25  540  597.64758  385.61009  35.5%   654 6499s
+  1643  1653  395.72685   26  526  597.64758  385.61009  35.5%   650 6526s
+  1740  1749  396.08080   27  524  597.64758  385.61009  35.5%   647 6538s
+  1838  1844  397.86868   27  511  597.64758  385.61009  35.5%   644 6557s
+  1933  1958  396.18990   28  518  597.64758  385.61009  35.5%   645 6574s
+  2053  2083  405.34105   28  453  597.64758  385.61009  35.5%   640 6595s
+  2180  2189  397.02446   29  480  597.64758  385.61009  35.5%   634 6621s
+  2288  2311  397.48130   30  483  597.64758  385.61009  35.5%   638 6646s
+  2414  2461  401.43285   31  472  597.64758  385.61009  35.5%   637 6663s
+  2578  2627  397.52904   31  473  597.64758  385.61009  35.5%   626 6690s
+  2760  2753  398.37961   32  488  597.64758  385.61009  35.5%   614 6716s
+  2910  2906  400.33969   33  483  597.64758  385.67251  35.5%   614 6741s
+  3078  2938  398.72571   33  487  597.64758  385.67251  35.5%   611 6765s
+  3110  2968  398.85247   34  495  597.64758  385.67251  35.5%   611 6787s
+  3144  2998  400.02114   35  494  597.64758  385.67251  35.5%   612 6803s
+  3178  3062  402.00306   36  495  597.64758  385.67251  35.5%   612 6832s
+  3252  3119  402.15844   37  485  597.64758  385.67251  35.5%   604 6858s
+  3328  3165  402.43038   38  488  597.64758  386.29081  35.4%   600 6881s
+  3383  3230  402.53210   39  477  597.64758  386.61171  35.3%   603 6912s
+  3472  3306  402.82704   40  478  597.64758  386.61171  35.3%   604 6935s
+  3556  3386  404.07956   41  413  597.64758  386.61171  35.3%   603 6981s
+  3646  3469  403.64755   41  486  597.64758  386.68579  35.3%   603 7000s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 3
+  Lift-and-project: 4
+  Cover: 125
+  Implied bound: 21
+  Clique: 169
+  MIR: 67
+  StrongCG: 7
+  Flow cover: 15
+  GUB cover: 124
+  Zero half: 54
+  RLT: 159
+  Relax-and-lift: 25
+
+Explored 3729 nodes (2273674 simplex iterations) in 7000.30 seconds (3052.78 work units)
+Thread count was 32 (of 48 available processors)
+
+Solution count 10: 597.648 597.648 597.648 ... 597.648
+
+Time limit reached
+Best objective 5.976475753553e+02, best bound 3.866857884457e+02, gap 35.2987%
+  Status : Time limit
+  Runtime: 7000.4s
+  UB     : 597.65 °C
+  LB     : 386.69 °C
+  Gap    : 35.30%
+
+Phase 5 (Obj 4) — Elevation gain:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7000
+NoRelHeurTime  5800
+
+Optimize a model with 12418 rows, 106664 columns and 1710983 nonzeros
+Model fingerprint: 0x28369d8e
+Variable types: 21964 continuous, 84700 integer (84700 binary)
+Coefficient statistics:
+  Matrix range     [2e-02, 6e+04]
+  Objective range  [1e+00, 4e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+05]
+
+MIP start from previous solve produced solution with objective 24697 (0.48s)
+Loaded MIP start from previous solve with objective 24697
+
+Presolve removed 1831 rows and 23751 columns (presolve time = 5s)...
+Presolve removed 4441 rows and 28718 columns (presolve time = 10s)...
+Presolve removed 4352 rows and 28776 columns
+Presolve time: 11.60s
+Presolved: 8066 rows, 77888 columns, 858655 nonzeros
+Variable types: 19857 continuous, 58031 integer (57941 binary)
+Starting NoRel heuristic
+Elapsed time for NoRel heuristic: 7s (best bound 2210)
+Elapsed time for NoRel heuristic: 14s (best bound 2210)
+Elapsed time for NoRel heuristic: 20s (best bound 2210)
+Found heuristic solution: objective 24696.000000
+Elapsed time for NoRel heuristic: 25s (best bound 2210)
+Elapsed time for NoRel heuristic: 30s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 36s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 47s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 57s (best bound 2210.54)
+Found heuristic solution: objective 24604.000000
+Elapsed time for NoRel heuristic: 65s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 73s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 82s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 93s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 105s (best bound 2210.54)
+Elapsed time for NoRel heuristic: 117s (best bound 2210.56)
+Elapsed time for NoRel heuristic: 132s (best bound 2210.56)
+Elapsed time for NoRel heuristic: 145s (best bound 2213.54)
+Elapsed time for NoRel heuristic: 172s (best bound 2213.65)
+Elapsed time for NoRel heuristic: 186s (best bound 2222.77)
+Elapsed time for NoRel heuristic: 210s (best bound 2222.77)
+Elapsed time for NoRel heuristic: 234s (best bound 2228.19)
+Elapsed time for NoRel heuristic: 266s (best bound 2228.25)
+Elapsed time for NoRel heuristic: 286s (best bound 2228.26)
+Elapsed time for NoRel heuristic: 333s (best bound 2228.26)
+Elapsed time for NoRel heuristic: 364s (best bound 2228.27)
+Elapsed time for NoRel heuristic: 402s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 454s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 472s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 494s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 519s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 553s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 577s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 781s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 1027s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 1287s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 1616s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 1896s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 2165s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 2577s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 3024s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 3612s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 4284s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 4543s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 4899s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 5174s (best bound 2228.3)
+Elapsed time for NoRel heuristic: 5886s (best bound 2228.3)
+NoRel heuristic complete
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.40s
+
+Barrier statistics:
+ AA' NZ     : 6.079e+05
+ Factor NZ  : 3.008e+06 (roughly 60 MB of memory)
+ Factor Ops : 1.838e+09 (less than 1 second per iteration)
+ Threads    : 30
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.56462294e+09 -5.31901532e+08  9.37e+06 0.00e+00  1.95e+05  5899s
+   1   2.31246629e+09 -4.84411422e+08  3.30e+06 6.09e+01  6.94e+04  5899s
+   2   4.60843501e+08 -3.50304550e+08  6.58e+05 1.36e+01  1.49e+04  5900s
+   3   7.52408235e+07 -9.10017561e+07  1.07e+05 6.96e-11  2.47e+03  5900s
+   4   1.46989494e+07 -3.76254522e+07  2.09e+04 4.20e-11  5.99e+02  5900s
+   5   9.80258366e+06 -1.98870920e+07  1.40e+04 4.96e-11  3.69e+02  5900s
+   6   7.09921789e+06 -1.71841880e+07  1.01e+04 6.10e-11  2.84e+02  5900s
+   7   3.73942173e+06 -9.85911421e+06  5.31e+03 6.05e-11  1.54e+02  5900s
+   8   2.01055359e+06 -7.18263402e+06  2.84e+03 6.16e-11  9.40e+01  5900s
+   9   1.03646008e+06 -4.12129360e+06  1.45e+03 4.36e-11  5.06e+01  5900s
+  10   3.01564688e+05 -1.52773688e+06  4.11e+02 8.01e-11  1.64e+01  5901s
+  11   1.28016319e+05 -5.49438721e+05  1.65e+02 7.31e-11  6.11e+00  5901s
+  12   6.81493374e+04 -2.90435057e+05  8.11e+01 7.09e-11  3.13e+00  5901s
+  13   3.39965832e+04 -2.25567647e+05  3.43e+01 9.52e-11  2.00e+00  5901s
+  14   1.98104714e+04 -1.23803299e+05  1.60e+01 1.09e-10  1.07e+00  5901s
+  15   1.64715331e+04 -9.69569330e+04  1.22e+01 8.32e-11  8.35e-01  5901s
+  16   1.33602094e+04 -5.64234683e+04  8.87e+00 8.44e-11  5.23e-01  5901s
+  17   1.07080302e+04 -4.17435595e+04  6.29e+00 7.63e-11  3.87e-01  5901s
+  18   8.09689234e+03 -2.28809584e+04  3.88e+00 7.90e-11  2.28e-01  5901s
+  19   6.10888611e+03 -1.62340813e+04  2.21e+00 5.72e-11  1.58e-01  5901s
+  20   5.23927762e+03 -1.26706084e+04  1.52e+00 6.82e-11  1.24e-01  5901s
+  21   4.28511806e+03 -1.06767520e+04  9.10e-01 8.18e-11  1.00e-01  5901s
+  22   3.96432894e+03 -6.28100572e+03  7.16e-01 6.62e-11  6.81e-02  5901s
+  23   3.54301739e+03 -4.93640441e+03  4.97e-01 6.66e-11  5.56e-02  5901s
+  24   3.18844151e+03 -1.55730128e+03  3.26e-01 7.52e-11  3.07e-02  5901s
+  25   2.98534300e+03 -6.64514568e+02  2.44e-01 6.16e-11  2.34e-02  5902s
+  26   2.80780234e+03 -4.69286519e+02  1.76e-01 7.36e-11  2.09e-02  5902s
+  27   2.73718905e+03  1.01448733e+01  1.56e-01 7.60e-11  1.73e-02  5902s
+  28   2.58839543e+03  4.88947153e+02  1.08e-01 6.04e-11  1.33e-02  5902s
+  29   2.51969616e+03  9.52218940e+02  8.46e-02 5.51e-11  9.88e-03  5902s
+  30   2.43484808e+03  1.16577032e+03  5.92e-02 6.45e-11  7.98e-03  5902s
+  31   2.39482620e+03  1.43273212e+03  4.48e-02 6.80e-11  6.03e-03  5902s
+  32   2.32729655e+03  1.84720622e+03  2.25e-02 5.28e-11  2.99e-03  5902s
+  33   2.28451271e+03  1.96280022e+03  1.00e-02 7.23e-11  2.01e-03  5902s
+  34   2.27333791e+03  1.97156080e+03  7.24e-03 5.47e-11  1.88e-03  5902s
+  35   2.27136435e+03  1.98069594e+03  6.85e-03 8.24e-11  1.81e-03  5902s
+  36   2.26920521e+03  1.98910475e+03  6.45e-03 8.51e-11  1.75e-03  5902s
+  37   2.26334444e+03  2.01213147e+03  5.61e-03 7.96e-11  1.57e-03  5902s
+  38   2.25985298e+03  2.03199480e+03  5.13e-03 9.40e-11  1.42e-03  5902s
+  39   2.25397290e+03  2.09035521e+03  3.66e-03 9.24e-11  1.02e-03  5902s
+  40   2.24890197e+03  2.10190857e+03  2.73e-03 8.56e-11  9.17e-04  5903s
+  41   2.24545740e+03  2.14435935e+03  2.05e-03 7.13e-11  6.30e-04  5903s
+  42   2.24165437e+03  2.16432797e+03  1.43e-03 7.17e-11  4.82e-04  5903s
+  43   2.23742950e+03  2.18268585e+03  8.19e-04 8.63e-11  3.42e-04  5903s
+  44   2.23580062e+03  2.19956733e+03  6.25e-04 5.22e-11  2.26e-04  5903s
+  45   2.23446767e+03  2.20337211e+03  4.86e-04 6.07e-11  1.94e-04  5903s
+  46   2.23372885e+03  2.21090430e+03  4.10e-04 7.27e-11  1.42e-04  5903s
+  47   2.23265912e+03  2.21919927e+03  2.78e-04 5.64e-11  8.38e-05  5903s
+  48   2.23082136e+03  2.22353873e+03  6.76e-05 5.56e-11  4.55e-05  5903s
+  49   2.23035693e+03  2.22474908e+03  4.50e-05 4.85e-11  3.51e-05  5903s
+  50   2.23024154e+03  2.22527057e+03  4.16e-05 4.45e-11  3.11e-05  5903s
+  51   2.22991002e+03  2.22655418e+03  3.19e-05 8.64e-11  2.10e-05  5903s
+  52   2.22964674e+03  2.22672002e+03  2.40e-05 7.19e-11  1.83e-05  5903s
+  53   2.22952016e+03  2.22699546e+03  2.13e-05 8.28e-11  1.58e-05  5903s
+  54   2.22914992e+03  2.22749093e+03  1.34e-05 7.40e-11  1.04e-05  5904s
+  55   2.22880271e+03  2.22761754e+03  7.34e-06 1.01e-10  7.41e-06  5904s
+  56   2.22869685e+03  2.22784093e+03  5.68e-06 8.24e-11  5.35e-06  5904s
+  57   2.22860163e+03  2.22789419e+03  4.22e-06 9.07e-11  4.43e-06  5904s
+  58   2.22848680e+03  2.22804326e+03  2.52e-06 6.73e-11  2.78e-06  5904s
+  59   2.22845790e+03  2.22809801e+03  2.13e-06 8.93e-11  2.25e-06  5904s
+  60   2.22842534e+03  2.22815141e+03  1.68e-06 8.79e-11  1.71e-06  5904s
+  61   2.22839022e+03  2.22820646e+03  1.20e-06 8.07e-11  1.15e-06  5904s
+  62   2.22836870e+03  2.22823406e+03  9.06e-07 9.26e-11  8.42e-07  5904s
+  63   2.22834703e+03  2.22825427e+03  6.27e-07 4.91e-11  5.80e-07  5904s
+  64   2.22833916e+03  2.22826577e+03  5.26e-07 7.36e-11  4.59e-07  5904s
+  65   2.22831972e+03  2.22828228e+03  2.74e-07 6.82e-11  2.34e-07  5904s
+  66   2.22831006e+03  2.22829044e+03  1.52e-07 7.45e-11  1.23e-07  5904s
+  67   2.22830195e+03  2.22829426e+03  5.33e-08 5.40e-11  4.81e-08  5905s
+  68   2.22829976e+03  2.22829602e+03  2.60e-08 5.06e-11  2.33e-08  5905s
+  69   2.22829828e+03  2.22829675e+03  9.35e-09 7.25e-11  9.57e-09  5905s
+  70   2.22829788e+03  2.22829720e+03  4.21e-09 5.35e-11  4.28e-09  5905s
+  71   2.22829751e+03  2.22829731e+03  2.67e-09 7.55e-11  1.26e-09  5905s
+  72   2.22829743e+03  2.22829735e+03  9.89e-10 8.63e-11  5.10e-10  5905s
+  73   2.22829740e+03  2.22829739e+03  1.82e-09 6.16e-11  8.13e-11  5905s
+  74   2.22829740e+03  2.22829740e+03  5.11e-09 8.40e-11  3.35e-12  5905s
+
+Barrier solved model in 74 iterations and 5904.99 seconds (2712.43 work units)
+Optimal objective 2.22829740e+03
+
+
+Root crossover log...
+
+    4025 DPushes remaining with DInf 5.2332276e-04              5905s
+       0 DPushes remaining with DInf 0.0000000e+00              5905s
+
+     316 PPushes remaining with PInf 2.2380601e-04              5905s
+       0 PPushes remaining with PInf 0.0000000e+00              5905s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 4.5883665e-04   5905s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    4129    2.2282974e+03   0.000000e+00   4.588366e-04   5905s
+    4144    2.2282974e+03   0.000000e+00   0.000000e+00   5905s
+Concurrent spin time: 0.00s
+
+Solved with barrier
+    4144    2.2282974e+03   0.000000e+00   0.000000e+00   5905s
+
+Root relaxation: objective 2.228297e+03, 4144 iterations, 7.16 seconds (4.16 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2228.29740    0  474 24604.0000 2228.29740  90.9%     - 5906s
+     0     0 2228.29800    0  460 24604.0000 2228.29800  90.9%     - 5906s
+     0     0 2228.29827    0  467 24604.0000 2228.29827  90.9%     - 5906s
+     0     0 2228.29847    0  455 24604.0000 2228.29847  90.9%     - 5906s
+     0     0 2228.29880    0  456 24604.0000 2228.29880  90.9%     - 5906s
+     0     0 2228.29886    0  456 24604.0000 2228.29886  90.9%     - 5906s
+     0     0 2228.29894    0  454 24604.0000 2228.29894  90.9%     - 5906s
+     0     0 2228.29900    0  455 24604.0000 2228.29900  90.9%     - 5907s
+     0     0 2228.29903    0  455 24604.0000 2228.29903  90.9%     - 5907s
+     0     0 2228.29907    0  454 24604.0000 2228.29907  90.9%     - 5907s
+     0     0 2228.29908    0  452 24604.0000 2228.29908  90.9%     - 5907s
+     0     0 2229.28642    0  466 24604.0000 2229.28642  90.9%     - 5946s
+     0     0 2229.29197    0  462 24604.0000 2229.29197  90.9%     - 5947s
+     0     0 2229.29233    0  463 24604.0000 2229.29233  90.9%     - 5947s
+     0     0 2229.29259    0  462 24604.0000 2229.29259  90.9%     - 5947s
+     0     0 2229.29262    0  460 24604.0000 2229.29262  90.9%     - 5947s
+     0     0 2229.29264    0  461 24604.0000 2229.29264  90.9%     - 5947s
+     0     0 2229.29288    0  460 24604.0000 2229.29288  90.9%     - 5947s
+     0     0 2229.29294    0  459 24604.0000 2229.29294  90.9%     - 5947s
+     0     0 2229.29299    0  460 24604.0000 2229.29299  90.9%     - 5948s
+     0     0 2246.20092    0  388 24604.0000 2246.20092  90.9%     - 5968s
+     0     0 2246.34858    0  394 24604.0000 2246.34858  90.9%     - 5969s
+     0     0 2246.39560    0  396 24604.0000 2246.39560  90.9%     - 5970s
+     0     0 2246.39766    0  393 24604.0000 2246.39766  90.9%     - 5970s
+     0     0 2246.39813    0  393 24604.0000 2246.39813  90.9%     - 5970s
+     0     0 2271.40390    0  436 24604.0000 2271.40390  90.8%     - 5976s
+     0     0 2271.44892    0  430 24604.0000 2271.44892  90.8%     - 5976s
+     0     0 2271.45025    0  430 24604.0000 2271.45025  90.8%     - 5977s
+     0     0 2271.45035    0  430 24604.0000 2271.45035  90.8%     - 5977s
+     0     0 2271.45167    0  432 24604.0000 2271.45167  90.8%     - 5977s
+     0     0 2271.45271    0  431 24604.0000 2271.45271  90.8%     - 5977s
+     0     0 2271.78013    0  434 24604.0000 2271.78013  90.8%     - 5978s
+     0     0 2271.78471    0  433 24604.0000 2271.78471  90.8%     - 5978s
+     0     0 2271.79089    0  436 24604.0000 2271.79089  90.8%     - 5978s
+     0     0 2271.79139    0  436 24604.0000 2271.79139  90.8%     - 5978s
+     0     0 2271.83654    0  433 24604.0000 2271.83654  90.8%     - 5978s
+     0     0 2271.84592    0  441 24604.0000 2271.84592  90.8%     - 5979s
+     0     0 2271.84669    0  451 24604.0000 2271.84669  90.8%     - 5979s
+     0     0 2347.72798    0  491 24604.0000 2347.72798  90.5%     - 5999s
+     0     0 2347.77219    0  493 24604.0000 2347.77219  90.5%     - 5999s
+     0     0 2347.82073    0  489 24604.0000 2347.82073  90.5%     - 6000s
+     0     0 2373.93539    0  500 24604.0000 2373.93539  90.4%     - 6007s
+     0     0 2374.02111    0  498 24604.0000 2374.02111  90.4%     - 6007s
+     0     0 2374.26063    0  498 24604.0000 2374.26063  90.4%     - 6010s
+     0     0 2374.36148    0  495 24604.0000 2374.36148  90.3%     - 6011s
+     0     0 2375.21280    0  500 24604.0000 2375.21280  90.3%     - 6014s
+     0     0 2375.23246    0  498 24604.0000 2375.23246  90.3%     - 6015s
+     0     0 2375.25198    0  501 24604.0000 2375.25198  90.3%     - 6016s
+     0     0 2375.25555    0  504 24604.0000 2375.25555  90.3%     - 6016s
+     0     0 2375.25647    0  503 24604.0000 2375.25647  90.3%     - 6017s
+     0     0 2376.14894    0  494 24604.0000 2376.14894  90.3%     - 6019s
+     0     0 2376.25474    0  492 24604.0000 2376.25474  90.3%     - 6021s
+     0     0 2376.25770    0  496 24604.0000 2376.25770  90.3%     - 6022s
+     0     0 2521.18863    0  484 24604.0000 2521.18863  89.8%     - 6034s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.11678    0  494 24604.0000 2528.11678  89.7%     - 6081s
+     0     0 2528.12127    0  491 24604.0000 2528.12127  89.7%     - 6081s
+     0     0 2528.71174    0  499 24604.0000 2528.71174  89.7%     - 6085s
+     0     0 2528.79934    0  506 24604.0000 2528.79934  89.7%     - 6086s
+     0     0 2528.84333    0  502 24604.0000 2528.84333  89.7%     - 6087s
+     0     0 2535.54638    0  529 24604.0000 2535.54638  89.7%     - 6095s
+     0     0 2536.99693    0  516 24604.0000 2536.99693  89.7%     - 6109s
+     0     0 2537.20314    0  521 24604.0000 2537.20314  89.7%     - 6110s
+     0     0 2537.20558    0  522 24604.0000 2537.20558  89.7%     - 6110s
+     0     0 2537.22396    0  515 24604.0000 2537.22396  89.7%     - 6111s
+     0     0 2539.76695    0  508 24604.0000 2539.76695  89.7%     - 6116s
+     0     0 2539.77005    0  506 24604.0000 2539.77005  89.7%     - 6116s
+     0     0 2539.99895    0  521 24604.0000 2539.99895  89.7%     - 6136s
+     0     0 2540.01298    0  526 24604.0000 2540.01298  89.7%     - 6136s
+     0     0 2542.21926    0  514 24604.0000 2542.21926  89.7%     - 6141s
+     0     0 2542.33095    0  522 24604.0000 2542.33095  89.7%     - 6203s
+     0     0 2542.33835    0  524 24604.0000 2542.33835  89.7%     - 6203s
+     0     0 2545.04813    0  515 24604.0000 2545.04813  89.7%     - 6206s
+     0     0 2545.14832    0  526 24604.0000 2545.14832  89.7%     - 6227s
+     0     0 2547.90632    0  530 24604.0000 2547.90632  89.6%     - 6232s
+     0     0 2548.24202    0  532 24604.0000 2548.24202  89.6%     - 6234s
+     0     0 2548.24850    0  537 24604.0000 2548.24850  89.6%     - 6235s
+     0     0 2549.27882    0  555 24604.0000 2549.27882  89.6%     - 6238s
+     0     0 2549.27883    0  555 24604.0000 2549.27883  89.6%     - 6238s
+     0     0 2549.46105    0  550 24604.0000 2549.46105  89.6%     - 6251s
+     0     0 2549.46497    0  548 24604.0000 2549.46497  89.6%     - 6251s
+     0     0 2550.62304    0  528 24604.0000 2550.62304  89.6%     - 6255s
+     0     0 2550.65779    0  539 24604.0000 2550.65779  89.6%     - 6286s
+     0     0 2550.94678    0  547 24604.0000 2550.94678  89.6%     - 6288s
+     0     0 2551.27909    0  540 24604.0000 2551.27909  89.6%     - 6298s
+     0     0 2551.29160    0  547 24604.0000 2551.29160  89.6%     - 6298s
+     0     0 2552.12286    0  536 24604.0000 2552.12286  89.6%     - 6300s
+     0     0 2552.18425    0  541 24604.0000 2552.18425  89.6%     - 6428s
+     0     0 2552.50293    0  537 24604.0000 2552.50293  89.6%     - 6430s
+     0     0 2552.78862    0  534 24604.0000 2552.78862  89.6%     - 6439s
+     0     0 2552.80360    0  534 24604.0000 2552.80360  89.6%     - 6440s
+     0     0 2552.93743    0  541 24604.0000 2552.93743  89.6%     - 6441s
+     0     0 2552.93954    0  541 24604.0000 2552.93954  89.6%     - 6442s
+     0     2 2560.55532    0  532 24604.0000 2560.55532  89.6%     - 6469s
+     1     4 2560.55532    1  542 24604.0000 2560.55532  89.6%   586 6477s
+     3     8 2560.55532    2  546 24604.0000 2560.55532  89.6%   758 6481s
+     7    16 2562.86534    3  541 24604.0000 2560.55532  89.6%  1083 6485s
+    15    32 2564.53142    4  547 24604.0000 2560.55532  89.6%  1145 6493s
+    31    62 2575.80827    5  534 24604.0000 2560.55532  89.6%  1515 6500s
+    63    94 2579.54309    6  536 24604.0000 2560.55532  89.6%  1478 6511s
+    95   130 2588.63797    7  524 24604.0000 2560.55532  89.6%  1395 6525s
+   131   181 2603.30951    8  522 24604.0000 2560.55532  89.6%  1267 6546s
+   182   213 2599.52271    8  523 24604.0000 2560.55532  89.6%  1184 6558s
+   216   260 2620.59613    9  509 24604.0000 2560.55532  89.6%  1180 6575s
+   263   298 2623.29113    9  521 24604.0000 2560.55532  89.6%  1172 6589s
+   302   345 2632.91219   10  518 24604.0000 2560.55532  89.6%  1182 6611s
+   350   381 2637.99247   11  512 24604.0000 2560.55532  89.6%  1160 6625s
+   387   445 2644.76832   11  519 24604.0000 2560.55532  89.6%  1163 6636s
+   453   476 2639.19162   12  517 24604.0000 2560.55532  89.6%  1090 6643s
+   486   514 2717.75453   13  475 24604.0000 2560.55532  89.6%  1085 6663s
+   528   544 2639.82441   13  513 24604.0000 2560.55532  89.6%  1073 6685s
+   565   589 2641.48578   14  501 24604.0000 2560.55532  89.6%  1066 6703s
+   615   619 2646.55794   14  496 24604.0000 2560.55532  89.6%  1032 6721s
+   648   660 2641.48578   15  501 24604.0000 2560.55532  89.6%  1060 6738s
+   690   694 2663.96091   15  482 24604.0000 2560.55532  89.6%  1053 6751s
+   724   735 2641.48578   16  502 24604.0000 2560.55532  89.6%  1053 6761s
+   766   766 2663.96091   16  482 24604.0000 2560.55532  89.6%  1038 6771s
+   798   800 2641.48578   17  501 24604.0000 2560.55532  89.6%  1033 6782s
+   832   832 2663.96091   17  482 24604.0000 2560.55532  89.6%  1031 6792s
+   864   877 2644.10881   18  502 24604.0000 2560.55532  89.6%  1034 6807s
+   911   928 2663.96091   18  482 24604.0000 2560.55532  89.6%  1021 6830s
+   964   976 2644.10881   19  502 24604.0000 2560.55532  89.6%  1018 6859s
+  1014  1035 2713.76515   19  476 24604.0000 2560.55532  89.6%  1008 6872s
+  1075  1088 2644.28557   20  494 24604.0000 2560.55532  89.6%   991 6886s
+  1134  1150 2644.62525   21  502 24604.0000 2560.55532  89.6%   969 6900s
+  1212  1230 2644.69107   22  501 24604.0000 2560.55532  89.6%   953 6920s
+  1294  1300 2654.92058   22  487 24604.0000 2560.55532  89.6%   938 6937s
+  1374  1380 2676.23718   23  483 24604.0000 2560.55532  89.6%   930 6952s
+  1470  1467 2680.46174   23  463 24604.0000 2560.55532  89.6%   921 6964s
+  1568  1565 2702.99995   24  479 24604.0000 2560.55532  89.6%   916 6983s
+  1676  1652 2766.98202   25  480 24604.0000 2560.55532  89.6%   909 7000s
+
+Cutting planes:
+  Gomory: 13
+  Lift-and-project: 1
+  Cover: 97
+  Implied bound: 30
+  Clique: 159
+  MIR: 94
+  StrongCG: 13
+  Flow cover: 21
+  GUB cover: 145
+  Inf proof: 1
+  Zero half: 54
+  Network: 1
+  RLT: 191
+  Relax-and-lift: 58
+
+Explored 1779 nodes (1660372 simplex iterations) in 7000.22 seconds (3577.63 work units)
+Thread count was 32 (of 48 available processors)
+
+Solution count 3: 24604 24696 24697 
+
+Time limit reached
+Best objective 2.460400000000e+04, best bound 2.561000000000e+03, gap 89.5911%
+  Status : Time limit
+  Runtime: 7000.3s
+  UB     : 24,604.00 m
+  LB     : 2,561.00 m
+  Gap    : 89.59%
+
+Group  Game                                     Day  Date         Stadium                        UTC
+---------------------------------------------------------------------------------------------------------
+A      Korea Republic vs Czechia                          1  2026-06-18   Estadio Akron                  0
+A      Mexico vs South Africa                     1  2026-06-18   Estadio Azteca                 21
+A      Czechia vs South Africa                     2  2026-06-22   Estadio Azteca                 19
+A      Mexico vs Korea Republic                   2  2026-06-23   Estadio Akron                  2
+A      South Africa vs Korea Republic                   3  2026-06-27   NRG Stadium                    21
+A      Czechia vs Mexico                           3  2026-06-27   Estadio Azteca                 21
+
+B      Qatar vs Switzerland                      1  2026-06-12   Lumen Field                    20
+B      Canada vs Bosnia and Herzegovina           1  2026-06-11   BC Place                       22
+B      Canada vs Qatar                            2  2026-06-21   BC Place                       19
+B      Switzerland vs Bosnia and Herzegovina           2  2026-06-21   Lumen Field                    20
+B      Switzerland vs Canada                           3  2026-06-27   BMO Field                      19
+B      Bosnia and Herzegovina vs Qatar                            3  2026-06-27   BC Place                       19
+
+C      Haiti vs Scotland                         1  2026-06-11   Lincoln Financial Field        21
+C      Brazil vs Morocco                          1  2026-06-11   MetLife Stadium                20
+C      Scotland vs Morocco                          2  2026-06-17   MetLife Stadium                19
+C      Brazil vs Haiti                            2  2026-06-17   Lincoln Financial Field        1
+C      Morocco vs Haiti                            3  2026-06-24   Gillette Stadium               22
+C      Scotland vs Brazil                           3  2026-06-24   Lincoln Financial Field        22
+
+D      Australia vs Türkiye                          1  2026-06-11   SoFi Stadium                   20
+D      USA vs Paraguay                         1  2026-06-11   Levi's Stadium                 3
+D      Türkiye vs Paraguay                         2  2026-06-17   SoFi Stadium                   20
+D      USA vs Australia                        2  2026-06-17   Levi's Stadium                 3
+D      Paraguay vs Australia                        3  2026-06-27   Levi's Stadium                 3
+D      Türkiye vs USA                              3  2026-06-27   Lumen Field                    3
+
+E      Germany vs Curaçao                          1  2026-06-11   AT&T Stadium                   22
+E      Ivory Coast vs Ecuador                          1  2026-06-11   Arrowhead Stadium              23
+E      Ecuador vs Curaçao                          2  2026-06-15   AT&T Stadium                   2
+E      Germany vs Ivory Coast                      2  2026-06-15   NRG Stadium                    22
+E      Ecuador vs Germany                          3  2026-06-21   AT&T Stadium                   22
+E      Curaçao vs Ivory Coast                      3  2026-06-21   NRG Stadium                    22
+
+F      Netherlands vs Japan                            1  2026-06-11   Estadio Akron                  0
+F      Sweden vs Tunisia                          1  2026-06-11   Estadio Azteca                 20
+F      Netherlands vs Sweden                           2  2026-06-15   Estadio Azteca                 19
+F      Tunisia vs Japan                            2  2026-06-15   Estadio Akron                  0
+F      Japan vs Sweden                           3  2026-06-27   Estadio BBVA                   1
+F      Tunisia vs Netherlands                      3  2026-06-27   Estadio Akron                  1
+
+G      Belgium vs Egypt                            1  2026-06-14   BC Place                       21
+G      Iran vs New Zealand                      1  2026-06-14   Levi's Stadium                 20
+G      New Zealand vs Egypt                            2  2026-06-18   BC Place                       21
+G      Belgium vs Iran                             2  2026-06-18   Lumen Field                    20
+G      New Zealand vs Belgium                          3  2026-06-24   BC Place                       20
+G      Egypt vs Iran                             3  2026-06-24   Lumen Field                    20
+
+H      Spain vs Cape Verde                       1  2026-06-14   Lincoln Financial Field        21
+H      Saudi Arabia vs Uruguay                          1  2026-06-14   BMO Field                      19
+H      Spain vs Saudi Arabia                     2  2026-06-21   BMO Field                      20
+H      Uruguay vs Cape Verde                       2  2026-06-20   Lincoln Financial Field        20
+H      Cape Verde vs Saudi Arabia                     3  2026-06-27   Mercedes-Benz Stadium          20
+H      Uruguay vs Spain                            3  2026-06-27   MetLife Stadium                20
+
+I      Iraq vs Norway                           1  2026-06-14   Gillette Stadium               20
+I      France vs Senegal                          1  2026-06-14   MetLife Stadium                21
+I      Norway vs Senegal                          2  2026-06-20   MetLife Stadium                22
+I      France vs Iraq                             2  2026-06-21   Gillette Stadium               20
+I      Norway vs France                           3  2026-06-27   Gillette Stadium               20
+I      Senegal vs Iraq                             3  2026-06-27   Lincoln Financial Field        20
+
+J      Argentina vs Algeria                          1  2026-06-14   SoFi Stadium                   19
+J      Austria vs Jordan                           1  2026-06-15   Lumen Field                    20
+J      Argentina vs Austria                          2  2026-06-20   SoFi Stadium                   19
+J      Jordan vs Algeria                          2  2026-06-20   Levi's Stadium                 20
+J      Jordan vs Argentina                        3  2026-06-24   Levi's Stadium                 20
+J      Algeria vs Austria                          3  2026-06-24   SoFi Stadium                   20
+
+K      Portugal vs DR Congo                         1  2026-06-12   NRG Stadium                    17
+K      Uzbekistan vs Colombia                         1  2026-06-13   Estadio BBVA                   4
+K      Portugal vs Uzbekistan                       2  2026-06-18   AT&T Stadium                   17
+K      Colombia vs DR Congo                         2  2026-06-18   NRG Stadium                    22
+K      DR Congo vs Uzbekistan                       3  2026-06-24   AT&T Stadium                   17
+K      Colombia vs Portugal                         3  2026-06-24   NRG Stadium                    17
+
+L      England vs Croatia                          1  2026-06-11   BMO Field                      19
+L      Ghana vs Panama                           1  2026-06-11   Gillette Stadium               23
+L      England vs Ghana                            2  2026-06-18   Gillette Stadium               23
+L      Panama vs Croatia                          2  2026-06-18   BMO Field                      22
+L      Panama vs England                          3  2026-06-24   BMO Field                      22
+L      Croatia vs Ghana                            3  2026-06-24   MetLife Stadium                22
+
+Saved results/solution_seq_5-1-2-3-4.csv (72 games) and results/phase_report_seq_5-1-2-3-4.csv

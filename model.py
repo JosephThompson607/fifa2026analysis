@@ -137,8 +137,9 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
 
     # --- Model ---------------------------------------------------------------
     model = gp.Model("fifa_flow")
-    model.Params.LogToConsole = 0
+    #model.Params.LogToConsole = 0
     model.Params.TimeLimit    = time_limit
+    model.Params.NoRelHeurTime = time_limit-1200
 
     # y[g, v] = 1 if game g assigned to slot v
     y = model.addVars(
@@ -529,11 +530,11 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--time-limit", type=int, default=300,
+    parser.add_argument("-t", "--time-limit", type=int, default=7000,
                         help="Time limit in seconds per phase (default: 300)")
     parser.add_argument("-N", "--multi-obj", action="store_true",
                         help="Use setObjectiveN (single solve, 5× time limit) instead of sequential phases")
-    parser.add_argument("-p", "--priority", type=int, nargs=5, default=[1, 2, 3, 4, 5],
+    parser.add_argument("-p", "--priority", type=int, nargs=5, default=[5, 1, 2, 3, 4],
                         metavar=("OBJ1", "OBJ2", "OBJ3", "OBJ4", "OBJ5"),
                         help="Priority order of objectives 1-5 (default: 1 2 3 4 5). "
                              "1=Stadium, 2=Camp, 3=Temperature, 4=Elevation, 5=Broadcast")
