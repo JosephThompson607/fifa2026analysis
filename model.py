@@ -457,9 +457,12 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
             _, obj_name, unit = objectives[obj_id]
             model.params.ObjNumber = idx
             status_str = "Optimal" if model.Status == GRB.OPTIMAL else "Time limit"
-            val   = model.ObjNVal   if model.SolCount > 0 else None
-            bound = model.ObjNBound if model.SolCount > 0 else None
-            gap   = abs(val - bound) / max(abs(val), 1e-6) if val is not None else None
+            val   = model.ObjNVal if model.SolCount > 0 else None
+            try:
+                bound = model.ObjNBound if model.SolCount > 0 else None
+            except AttributeError:
+                bound = None
+            gap = abs(val - bound) / max(abs(val), 1e-6) if val is not None and bound is not None else None
             print(f"Obj {obj_id} — {obj_name}:")
             print(f"  Status : {status_str}  Runtime: {model.Runtime:.1f}s")
             if val is not None:
