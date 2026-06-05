@@ -256,3 +256,5 @@ Elapsed time for NoRel heuristic: 216s (best bound 23667.5)
 Elapsed time for NoRel heuristic: 232s (best bound 23667.5)
 Found heuristic solution: objective 51240.320860
 Elapsed time for NoRel heuristic: 274s (best bound 23667.5)
+Found heuristic solution: objective 51240.320617
+Elapsed time for NoRel heuristic: 295s (best bound 23667.5)
