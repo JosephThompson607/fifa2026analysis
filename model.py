@@ -540,11 +540,11 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--time-limit", type=int, default=7000,
+    parser.add_argument("-t", "--time-limit", type=int, default=7500,
                         help="Time limit in seconds per phase (default: 300)")
     parser.add_argument("-N", "--multi-obj", action="store_true",
                         help="Use setObjectiveN (single solve, 5× time limit) instead of sequential phases")
-    parser.add_argument("-p", "--priority", type=int, nargs=5, default=[2, 5, 3, 4, 1],
+    parser.add_argument("-p", "--priority", type=int, nargs=5, default=[5, 4, 3, 2, 1],
                         metavar=("OBJ1", "OBJ2", "OBJ3", "OBJ4", "OBJ5"),
                         help="Priority order of objectives 1-5 (default: 1 2 3 4 5). "
                              "1=Stadium, 2=Camp, 3=Temperature, 4=Elevation, 5=Broadcast")

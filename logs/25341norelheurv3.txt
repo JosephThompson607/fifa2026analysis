@@ -1,0 +1,169 @@
+nohup: les entrées sont ignorées
+/home/pincam/fifa2026analysis/model.py:15: DtypeWarning: Columns (22) have mixed types. Specify dtype option on import or set low_memory=False.
+  camp_raw     = pd.read_csv(camp_csv)[["camp_team", "stadium_name", "stad_camp_direct_distance_km"]]
+Exported 2737 nodes to intermediate_nodes.csv
+
+Teams             : 48
+Games             : 72
+Intermediate nodes: 2737  (from weather data)
+src_cutoff        : 2026-06-19  (last_date - 8,  arc group 1)
+sink_cutoff       : 2026-06-19  (first_date + 8, arc group 3)
+
+Set parameter TokenServer to value "licences.gerad.lan"
+Set parameter TimeLimit to value 7500
+Set parameter NoRelHeurTime to value 6300
+Phase 1 (Obj 2) — Camp distances:
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "AlmaLinux 9.8 (Olive Jaguar)")
+
+CPU model: Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+
+Non-default parameters:
+TimeLimit  7500
+NoRelHeurTime  6300
+
+Optimize a model with 57401 rows, 145934 columns and 4116400 nonzeros
+Model fingerprint: 0xaf49139b
+Variable types: 21964 continuous, 123970 integer (123970 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [3e+00, 9e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Presolve removed 5336 rows and 28914 columns (presolve time = 5s)...
+Presolve removed 27702 rows and 54044 columns (presolve time = 10s)...
+Presolve removed 27816 rows and 54191 columns (presolve time = 15s)...
+Presolve removed 27087 rows and 53462 columns
+Presolve time: 17.04s
+Presolved: 30314 rows, 92472 columns, 2144550 nonzeros
+Variable types: 21260 continuous, 71212 integer (70846 binary)
+Starting NoRel heuristic
+Found phase-1 solution: relaxation 79
+Found phase-1 solution: relaxation 77
+Found phase-1 solution: relaxation 75
+Found phase-1 solution: relaxation 73
+Found phase-1 solution: relaxation 72
+Found phase-1 solution: relaxation 71
+Found phase-1 solution: relaxation 59
+Found phase-1 solution: relaxation 57
+Found phase-1 solution: relaxation 55
+Found phase-1 solution: relaxation 51
+Found phase-1 solution: relaxation 48
+Found phase-1 solution: relaxation 45
+Elapsed time for NoRel heuristic: 5s (best bound 137534)
+Found phase-1 solution: relaxation 30
+Found phase-1 solution: relaxation 25
+Found phase-1 solution: relaxation 23
+Found phase-1 solution: relaxation 11
+Found phase-1 solution: relaxation 8
+Found phase-1 solution: relaxation 7
+Found phase-1 solution: relaxation 4
+Elapsed time for NoRel heuristic: 12s (best bound 137711)
+Found phase-1 solution: relaxation 3
+Found phase-1 solution: relaxation 2
+Elapsed time for NoRel heuristic: 18s (best bound 137713)
+Found phase-1 solution: relaxation 1
+Found phase-1 solution: relaxation 0
+Found heuristic solution: objective 441252.76816
+Transition to phase 2
+Found heuristic solution: objective 440530.65260
+Found heuristic solution: objective 439153.19084
+Found heuristic solution: objective 433890.29195
+Found heuristic solution: objective 428286.12169
+Found heuristic solution: objective 424424.77018
+Found heuristic solution: objective 412947.28334
+Found heuristic solution: objective 410903.28096
+Found heuristic solution: objective 406427.10383
+Found heuristic solution: objective 404567.26393
+Found heuristic solution: objective 402369.57833
+Found heuristic solution: objective 402359.89964
+Found heuristic solution: objective 400935.08285
+Found heuristic solution: objective 399982.47063
+Found heuristic solution: objective 386606.97640
+Found heuristic solution: objective 385471.17950
+Elapsed time for NoRel heuristic: 24s (best bound 137713)
+Found heuristic solution: objective 376944.51615
+Found heuristic solution: objective 368825.67632
+Found heuristic solution: objective 360820.15777
+Found heuristic solution: objective 352003.37688
+Found heuristic solution: objective 344877.73580
+Found heuristic solution: objective 340407.02638
+Found heuristic solution: objective 293327.14524
+Found heuristic solution: objective 285023.53089
+Found heuristic solution: objective 230282.30617
+Found heuristic solution: objective 224580.20476
+Found heuristic solution: objective 222780.06167
+Found heuristic solution: objective 221323.50787
+Found heuristic solution: objective 212346.20976
+Elapsed time for NoRel heuristic: 29s (best bound 137713)
+Found heuristic solution: objective 201582.14970
+Found heuristic solution: objective 187598.63352
+Found heuristic solution: objective 183588.60457
+Found heuristic solution: objective 180271.45730
+Found heuristic solution: objective 177149.87791
+Found heuristic solution: objective 164846.94145
+Found heuristic solution: objective 161634.75033
+Found heuristic solution: objective 158557.05888
+Elapsed time for NoRel heuristic: 35s (best bound 137713)
+Found heuristic solution: objective 155532.70223
+Found heuristic solution: objective 155109.33955
+Found heuristic solution: objective 154415.38519
+Found heuristic solution: objective 154399.69064
+Found heuristic solution: objective 154016.88728
+Found heuristic solution: objective 153434.32203
+Elapsed time for NoRel heuristic: 42s (best bound 137713)
+Found heuristic solution: objective 153412.14742
+Found heuristic solution: objective 153400.28708
+Found heuristic solution: objective 153290.76311
+Found heuristic solution: objective 153276.05935
+Elapsed time for NoRel heuristic: 50s (best bound 137713)
+Found heuristic solution: objective 152045.50186
+Found heuristic solution: objective 151898.95810
+Found heuristic solution: objective 151740.99388
+Elapsed time for NoRel heuristic: 57s (best bound 137713)
+Found heuristic solution: objective 150880.85884
+Found heuristic solution: objective 150518.92940
+Found heuristic solution: objective 150083.99304
+Found heuristic solution: objective 149622.97157
+Elapsed time for NoRel heuristic: 64s (best bound 137713)
+Found heuristic solution: objective 149384.74985
+Found heuristic solution: objective 149228.59859
+Found heuristic solution: objective 149221.01112
+Elapsed time for NoRel heuristic: 74s (best bound 137713)
+Found heuristic solution: objective 143752.21819
+Elapsed time for NoRel heuristic: 79s (best bound 137713)
+Found heuristic solution: objective 143648.53295
+Elapsed time for NoRel heuristic: 84s (best bound 137713)
+Found heuristic solution: objective 143618.42043
+Found heuristic solution: objective 142882.62116
+Elapsed time for NoRel heuristic: 93s (best bound 137713)
+Found heuristic solution: objective 142769.21523
+Elapsed time for NoRel heuristic: 100s (best bound 137713)
+Elapsed time for NoRel heuristic: 108s (best bound 137713)
+Elapsed time for NoRel heuristic: 115s (best bound 137713)
+Elapsed time for NoRel heuristic: 125s (best bound 137713)
+Found heuristic solution: objective 141877.85807
+Elapsed time for NoRel heuristic: 154s (best bound 137713)
+Elapsed time for NoRel heuristic: 164s (best bound 137713)
+Found heuristic solution: objective 141868.54906
+Elapsed time for NoRel heuristic: 172s (best bound 137713)
+Found heuristic solution: objective 141868.54899
+Elapsed time for NoRel heuristic: 185s (best bound 137713)
+Elapsed time for NoRel heuristic: 191s (best bound 137713)
+Elapsed time for NoRel heuristic: 197s (best bound 137713)
+Elapsed time for NoRel heuristic: 203s (best bound 137713)
+Found heuristic solution: objective 141768.31772
+Found heuristic solution: objective 141725.46923
+Elapsed time for NoRel heuristic: 232s (best bound 137713)
+Elapsed time for NoRel heuristic: 249s (best bound 137713)
+Elapsed time for NoRel heuristic: 264s (best bound 137713)
+Elapsed time for NoRel heuristic: 290s (best bound 137713)
+Found heuristic solution: objective 141725.46910
+Elapsed time for NoRel heuristic: 369s (best bound 137713)
+Found heuristic solution: objective 141725.46872
+Found heuristic solution: objective 141725.46817
+Elapsed time for NoRel heuristic: 392s (best bound 137713)
+Elapsed time for NoRel heuristic: 437s (best bound 137713)
+Found heuristic solution: objective 141725.46808
+Elapsed time for NoRel heuristic: 467s (best bound 137713)
+Elapsed time for NoRel heuristic: 510s (best bound 137713)
