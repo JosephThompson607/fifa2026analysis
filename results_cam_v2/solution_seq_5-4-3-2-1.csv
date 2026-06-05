@@ -1,0 +1,73 @@
+group,day,team_1,team_2,date,stadium,hour_utc,apparent_temperature,stad_elevation,camp_elev_t1,camp_elev_t2
+A,1,Korea Republic,Czechia,2026-06-15,SoFi Stadium,7,18.94,38,1644,200
+A,1,Mexico,South Africa,2026-06-16,Estadio Azteca,21,23.12666667,2251,2231,2365
+A,2,Czechia,South Africa,2026-06-21,AT&T Stadium,18,36.44,193,200,2365
+A,2,Mexico,Korea Republic,2026-06-22,Estadio BBVA,5,27.96,494,2231,1644
+A,3,South Africa,Korea Republic,2026-06-26,Arrowhead Stadium,21,29.28666667,259,2365,1644
+A,3,Czechia,Mexico,2026-06-26,Estadio Azteca,21,20.15333333,2251,200,2231
+B,1,Qatar,Switzerland,2026-06-14,Gillette Stadium,19,22.2,84,157,66
+B,1,Canada,Bosnia and Herzegovina,2026-06-14,BC Place,22,15.34666667,18,0,1350
+B,2,Canada,Qatar,2026-06-21,BMO Field,16,25.80666667,83,0,157
+B,2,Switzerland,Bosnia and Herzegovina,2026-06-21,BC Place,22,19.61333333,18,66,1350
+B,3,Switzerland,Canada,2026-06-27,BMO Field,16,21.65333333,83,66,0
+B,3,Bosnia and Herzegovina,Qatar,2026-06-27,Gillette Stadium,16,25.36,84,1350,157
+C,1,Haiti,Scotland,2026-06-15,Lincoln Financial Field,22,24.24,1,25,220
+C,1,Brazil,Morocco,2026-06-14,MetLife Stadium,21,22.70666667,4,4,90
+C,2,Scotland,Morocco,2026-06-20,Gillette Stadium,16,26.2,84,220,90
+C,2,Brazil,Haiti,2026-06-20,MetLife Stadium,1,23.62666667,4,4,25
+C,3,Morocco,Haiti,2026-06-24,Levi's Stadium,22,24.16666667,3,90,25
+C,3,Scotland,Brazil,2026-06-24,Lincoln Financial Field,22,28.3,1,220,4
+D,1,Australia,Türkiye,2026-06-11,Lumen Field,7,12.82666667,10,9,405
+D,1,USA,Paraguay,2026-06-11,Levi's Stadium,3,18.70666667,3,82,22
+D,2,Türkiye,Paraguay,2026-06-20,NRG Stadium,19,37.03333333,14,405,22
+D,2,USA,Australia,2026-06-21,Levi's Stadium,3,18.62,3,82,9
+D,3,Paraguay,Australia,2026-06-27,Levi's Stadium,5,15.36666667,3,22,9
+D,3,Türkiye,USA,2026-06-27,Lumen Field,5,18.80666667,10,405,82
+E,1,Germany,Curaçao,2026-06-12,Lincoln Financial Field,20,27.49333333,1,292,8
+E,1,Ivory Coast,Ecuador,2026-06-11,MetLife Stadium,16,23.69333333,4,10,225
+E,2,Ecuador,Curaçao,2026-06-18,Lincoln Financial Field,0,24.43333333,1,225,8
+E,2,Germany,Ivory Coast,2026-06-17,MetLife Stadium,20,24.34666667,4,292,10
+E,3,Ecuador,Germany,2026-06-24,Gillette Stadium,22,25.8,84,225,292
+E,3,Curaçao,Ivory Coast,2026-06-24,Hard Rock Stadium,22,31.77333333,5,8,10
+F,1,Netherlands,Japan,2026-06-12,SoFi Stadium,7,17.16666667,38,227,155
+F,1,Sweden,Tunisia,2026-06-11,AT&T Stadium,22,32.92,193,186,479
+F,2,Netherlands,Sweden,2026-06-17,AT&T Stadium,22,34.96,193,227,186
+F,2,Tunisia,Japan,2026-06-18,SoFi Stadium,7,18.69333333,38,479,155
+F,3,Japan,Sweden,2026-06-27,BC Place,7,18.08666667,18,155,186
+F,3,Tunisia,Netherlands,2026-06-27,SoFi Stadium,7,18.82,38,479,227
+G,1,Belgium,Egypt,2026-06-11,BC Place,7,12.80666667,18,42,584
+G,1,Iran,New Zealand,2026-06-11,BMO Field,20,19.82666667,83,164,66
+G,2,New Zealand,Egypt,2026-06-15,BMO Field,21,20.36666667,83,66,584
+G,2,Belgium,Iran,2026-06-15,Levi's Stadium,7,14.36666667,3,42,164
+G,3,New Zealand,Belgium,2026-06-24,BC Place,7,14.54,18,66,42
+G,3,Egypt,Iran,2026-06-24,SoFi Stadium,7,18.14666667,38,584,164
+H,1,Spain,Cape Verde,2026-06-14,Hard Rock Stadium,22,32.34666667,5,270,13
+H,1,Saudi Arabia,Uruguay,2026-06-14,NRG Stadium,18,36.75333333,14,233,14
+H,2,Spain,Saudi Arabia,2026-06-22,Arrowhead Stadium,18,31.18666667,259,270,233
+H,2,Uruguay,Cape Verde,2026-06-23,NRG Stadium,2,33.1,14,14,13
+H,3,Cape Verde,Saudi Arabia,2026-06-27,NRG Stadium,20,38.32,14,13,233
+H,3,Uruguay,Spain,2026-06-27,Hard Rock Stadium,20,34.29333333,5,14,270
+I,1,Iraq,Norway,2026-06-14,AT&T Stadium,18,34.73333333,193,663,249
+I,1,France,Senegal,2026-06-14,Lumen Field,22,16.52,10,64,38
+I,2,Norway,Senegal,2026-06-18,Levi's Stadium,22,25.55333333,3,249,38
+I,2,France,Iraq,2026-06-18,BMO Field,16,22.04,83,64,663
+I,3,Norway,France,2026-06-24,BMO Field,20,27.57333333,83,249,64
+I,3,Senegal,Iraq,2026-06-24,MetLife Stadium,20,26.43333333,4,38,663
+J,1,Argentina,Algeria,2026-06-17,Arrowhead Stadium,22,33.94,259,281,287
+J,1,Austria,Jordan,2026-06-17,BC Place,7,12.06,18,22,54
+J,2,Argentina,Austria,2026-06-21,Lumen Field,22,22.32,10,281,22
+J,2,Jordan,Algeria,2026-06-21,SoFi Stadium,7,17.84,38,54,287
+J,3,Jordan,Argentina,2026-06-27,MetLife Stadium,16,26.12666667,4,54,281
+J,3,Algeria,Austria,2026-06-27,Lincoln Financial Field,16,28.72,1,287,22
+K,1,Portugal,DR Congo,2026-06-11,Hard Rock Stadium,21,32.74666667,5,5,13
+K,1,Uzbekistan,Colombia,2026-06-11,Arrowhead Stadium,3,25.36,259,338,1566
+K,2,Portugal,Uzbekistan,2026-06-17,Hard Rock Stadium,18,33.86,5,5,338
+K,2,Colombia,DR Congo,2026-06-17,NRG Stadium,22,35.44,14,1566,13
+K,3,DR Congo,Uzbekistan,2026-06-21,Hard Rock Stadium,16,34.33333333,5,13,338
+K,3,Colombia,Portugal,2026-06-21,Lincoln Financial Field,16,28.59333333,1,1566,5
+L,1,England,Croatia,2026-06-11,NRG Stadium,18,36.78666667,14,281,15
+L,1,Ghana,Panama,2026-06-11,Gillette Stadium,23,20.48666667,84,126,221
+L,2,England,Ghana,2026-06-17,Gillette Stadium,16,23.86,84,281,126
+L,2,Panama,Croatia,2026-06-17,Lumen Field,22,17.69333333,10,221,15
+L,3,Panama,England,2026-06-24,AT&T Stadium,22,37.47333333,193,221,281
+L,3,Croatia,Ghana,2026-06-24,Lumen Field,22,21.73333333,10,15,126
