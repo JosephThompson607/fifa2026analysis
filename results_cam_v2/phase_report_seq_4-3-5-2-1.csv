@@ -1,6 +1,14 @@
 phase,status,runtime_s,UB,LB,gap,unit
+<<<<<<< HEAD:results_cam_v2/phase_report_seq_4-3-5-2-1.csv
 Elevation gain,Time limit,7500.4,445.0,413.0,0.0719,m
 Temperature shock,Time limit,7500.2,407.1717,347.8648,0.1457,°C
 Broadcast penalty,Time limit,7500.1,125163.8792,51581.8762,0.5879,
 Camp distances,Time limit,7500.3,303840.3953,207067.7745,0.3185,km
 Stadium distances,Time limit,7500.2,127486.0495,53581.8171,0.5797,km
+=======
+Elevation gain,Time limit,3602.6,445.0,413.0,0.0719,m
+Temperature shock,Time limit,3602.2,434.7725,347.5345,0.2007,°C
+Broadcast penalty,Time limit,3601.9,182713.6739,42707.7609,0.7663,
+Camp distances,Time limit,3601.5,355904.4894,205247.9739,0.4233,km
+Stadium distances,Time limit,3601.4,164892.525,38267.1929,0.7679,km
+>>>>>>> f4084ca53fc7b582a22daf140faf1a0e497beffa:results/phase_report_seq_4-3-5-2-1.csv

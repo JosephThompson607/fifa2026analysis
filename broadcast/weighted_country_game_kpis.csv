@@ -1,0 +1,145 @@
+#match,group,date,local_time,stadium,city,country,day,UTC_Offset,side,opponent,localtime,country_odds,opponent_odds,country_weighted,opponent_weighted,p_win,closeness,trends_interest_per_capita,game_weight_for_country,local_hour
+25,A,2026-06-18,12.0,Mercedes-Benz Stadium,Atlanta,Czechia,2,-4,team_1,South Africa,17.0,Czech Republic,South Africa,Czech Republic,South Africa,0.4662980955211586,0.962734900772063,63000000.0,606.5229874863998,17
+2,A,2026-06-11,22.0,Estadio Akron,Guadalajara,Korea Republic,1,-6,team_1,Czechia,13.0,South Korea,Czech Republic,South Korea,Czech Republic,0.3535143299899776,0.997461798367622,459000000.0,4578.349654507386,13
+52,C,2026-06-24,18.0,Mercedes-Benz Stadium,Atlanta,Morocco,3,-4,team_1,Haiti,23.0,Morocco,Haiti,Morocco,Haiti,0.7084548938726489,0.7236875732516449,333000000.0,2409.8796189279774,23
+28,A,2026-06-18,21.0,Estadio Akron,Guadalajara,Mexico,2,-6,team_1,Korea Republic,21.0,Mexico,South Korea,Mexico,South Korea,0.5196874594712428,0.9289380936839552,896000000.0,8323.285319408238,21
+13,H,2026-06-15,12.0,Mercedes-Benz Stadium,Atlanta,Spain,1,-4,team_1,Cape Verde,17.0,Spain,Cape Verde,Spain,Cape Verde,0.8760132156128039,0.4073975781286083,240000000.0,977.7541875086598,17
+54,A,2026-06-24,21.0,Estadio BBVA,Monterrey,South Africa,3,-6,team_1,Korea Republic,5.0,South Africa,South Korea,South Africa,South Korea,0.2653344323544163,0.9736495307284996,1380000000.0,13436.363524053297,5
+37,H,2026-06-21,12.0,Mercedes-Benz Stadium,Atlanta,Spain,2,-4,team_1,Saudi Arabia,17.0,Spain,Saudi Arabia,Spain,Saudi Arabia,0.8543677467163934,0.4555141274595816,240000000.0,1093.2339059029955,17
+5,B,2026-06-13,15.0,Levi's Stadium,San Francisco,Qatar,1,-7,team_1,Switzerland,1.0,Qatar,Switzerland,Qatar,Switzerland,0.0882319975482674,0.670026150228556,83200000.0,557.4617569901586,1
+70,K,2026-06-27,19.5,Mercedes-Benz Stadium,Atlanta,DR Congo,3,-4,team_1,Uzbekistan,0.5,DR Congo,Uzbekistan,DR Congo,Uzbekistan,0.3755529445805952,0.9952095704667656,297000000.0,2955.772424286294,0
+27,B,2026-06-18,18.0,BC Place,Vancouver,Canada,2,-7,team_1,Qatar,20.0,Canada,Qatar,Canada,Qatar,0.6864054013321117,0.7511478446932925,1040000000.0,7811.937584810243,20
+49,B,2026-06-24,15.0,BC Place,Vancouver,Switzerland,3,-7,team_1,Canada,23.0,Switzerland,Canada,Switzerland,Canada,0.4590842483462938,0.9684804209972732,69600000.0,674.0623730141021,23
+7,C,2026-06-13,21.0,Gillette Stadium,Boston,Haiti,1,-4,team_1,Scotland,20.0,Haiti,Scotland,Haiti,Scotland,0.1312833781709722,0.7838717264475732,68400000.0,536.1682608901401,20
+29,C,2026-06-19,18.0,Gillette Stadium,Boston,Scotland,2,-4,team_1,Morocco,22.0,Scotland,Morocco,Scotland,Morocco,0.2492577300285842,0.9693472649828604,60500000.0,586.4550953146305,22
+18,I,2026-06-16,18.0,Gillette Stadium,Boston,Iraq,1,-4,team_1,Norway,1.0,Iraq,Norway,Iraq,Norway,0.0806385247268436,0.6305429011823727,258000000.0,1626.8006850505217,1
+61,I,2026-06-26,15.0,Gillette Stadium,Boston,Norway,3,-4,team_1,France,20.0,Norway,France,Norway,France,0.192485163317879,0.9040815926006152,38500000.0,348.07141315123687,20
+46,L,2026-06-23,16.0,Gillette Stadium,Boston,England,2,-4,team_1,Ghana,20.0,England,Ghana,England,Ghana,0.7141745052222507,0.7144241933315857,627000000.0,4479.439692189042,20
+10,F,2026-06-14,16.0,AT&T Stadium,Dallas,Netherlands,1,-5,team_1,Japan,22.0,Netherlands,Japan,Netherlands,Japan,0.4762831172345732,0.9603331966146872,105000000.0,1008.3498564454216,22
+57,F,2026-06-25,19.0,AT&T Stadium,Dallas,Japan,3,-5,team_1,Sweden,9.0,Japan,Sweden,Japan,Sweden,0.4569385181799715,0.9700610309490458,250000000.0,2425.1525773726144,9
+41,J,2026-06-22,13.0,AT&T Stadium,Dallas,Argentina,2,-5,team_1,Austria,15.0,Argentina,Austria,Argentina,Austria,0.5711940517420082,0.8859275125000925,188000000.0,1665.543723500174,15
+8,D,2026-06-13,21.0,BC Place,Vancouver,Australia,1,-7,team_1,Türkiye,14.0,Australia,Turkey,Australia,Turkey,0.2106716542873661,0.9270190720176102,338000000.0,3133.3244634195225,14
+72,J,2026-06-27,22.0,AT&T Stadium,Dallas,Jordan,3,-5,team_1,Argentina,6.0,Jordan,Argentina,Jordan,Argentina,0.069852940267042,0.5734496159709885,70000000.0,401.414731179692,6
+32,D,2026-06-19,0.0,Levi's Stadium,San Francisco,Türkiye,2,-7,team_1,Paraguay,10.0,Turkey,Paraguay,Turkey,Paraguay,0.4197200490873028,0.9848464366238068,344000000.0,3387.871741985895,10
+22,L,2026-06-17,16.0,AT&T Stadium,Dallas,England,1,-5,team_1,Croatia,21.0,England,Croatia,England,Croatia,0.5464638854713998,0.910285804715173,627000000.0,5707.491995564134,21
+60,D,2026-06-25,22.0,Levi's Stadium,San Francisco,Paraguay,3,-7,team_1,Australia,1.0,Paraguay,Australia,Paraguay,Australia,0.4323114425035614,0.980520385069706,42000000.0,411.8185617292765,1
+9,E,2026-06-14,13.0,NRG Stadium,Houston,Germany,1,-5,team_1,Curaçao,19.0,Germany,Curaçao,Germany,Curaçao,0.9261708245322884,0.2782237410495119,420000000.0,1168.53971240795,19
+33,F,2026-06-20,13.0,NRG Stadium,Houston,Netherlands,2,-5,team_1,Sweden,19.0,Netherlands,Sweden,Netherlands,Sweden,0.5674881002407284,0.8922434068419883,105000000.0,936.8555771840878,19
+63,H,2026-06-26,20.0,NRG Stadium,Houston,Cape Verde,3,-5,team_1,Saudi Arabia,0.0,Cape Verde,Saudi Arabia,Cape Verde,Saudi Arabia,0.334715669565266,0.9940743100832174,580000.0,5.765630998482661,0
+21,K,2026-06-17,13.0,NRG Stadium,Houston,Portugal,1,-5,team_1,DR Congo,18.0,Portugal,DR Congo,Portugal,DR Congo,0.7492260406717617,0.6607216920574163,94500000.0,624.3819989942583,18
+45,K,2026-06-23,13.0,NRG Stadium,Houston,Portugal,2,-5,team_1,Uzbekistan,18.0,Portugal,Uzbekistan,Portugal,Uzbekistan,0.780376966659271,0.605193793141346,94500000.0,571.9081345185721,18
+35,E,2026-06-20,20.0,Arrowhead Stadium,Kansas City,Ecuador,2,-5,team_1,Curaçao,20.0,Ecuador,Curaçao,Ecuador,Curaçao,0.7621264346688921,0.6351646333335227,129500000.0,822.5382001669119,20
+58,F,2026-06-25,19.0,Arrowhead Stadium,Kansas City,Tunisia,3,-5,team_1,Netherlands,1.0,Tunisia,Netherlands,Tunisia,Netherlands,0.1573218135483119,0.8488460651185701,84000000.0,713.0306946995988,1
+12,F,2026-06-14,22.0,Estadio BBVA,Monterrey,Sweden,1,-6,team_1,Tunisia,5.0,Sweden,Tunisia,Sweden,Tunisia,0.4876717327725951,0.95151574087613,73500000.0,699.3640695439557,5
+19,J,2026-06-16,21.0,Arrowhead Stadium,Kansas City,Argentina,1,-5,team_1,Algeria,23.0,Argentina,Algeria,Argentina,Algeria,0.6754669028227119,0.765125963356679,188000000.0,1438.4368111105566,23
+36,F,2026-06-20,0.0,Estadio BBVA,Monterrey,Tunisia,2,-6,team_1,Japan,7.0,Tunisia,Japan,Tunisia,Japan,0.2063945122249603,0.9341000177141868,84000000.0,784.6440148799169,7
+71,J,2026-06-27,22.0,Arrowhead Stadium,Kansas City,Algeria,3,-5,team_1,Austria,4.0,Algeria,Austria,Algeria,Austria,0.2677557606061063,0.97560934848284,220000000.0,2146.340566662248,4
+26,B,2026-06-18,15.0,SoFi Stadium,Los Angeles,Switzerland,2,-7,team_1,Bosnia and Herzegovina,23.0,Switzerland,Bosnia & Herzegovina,Switzerland,Bosnia & Herzegovina,0.6059795378427127,0.8523975357822409,69600000.0,593.2686849044396,23
+14,G,2026-06-15,15.0,BC Place,Vancouver,Belgium,1,-7,team_1,Egypt,23.0,Belgium,Egypt,Belgium,Egypt,0.5681323173991291,0.8923289053161562,69000000.0,615.7069446681478,23
+4,D,2026-06-12,21.0,SoFi Stadium,Los Angeles,USA,1,-7,team_1,Paraguay,9.0,USA,Paraguay,USA,Paraguay,0.4761113678687317,0.960062779385906,5780000000.0,55491.62864850536,9
+59,D,2026-06-25,22.0,SoFi Stadium,Los Angeles,Türkiye,3,-7,team_1,USA,8.0,Turkey,USA,Turkey,USA,0.3458488705707241,0.99327277437497,344000000.0,3416.8583438498968,8
+40,G,2026-06-21,21.0,BC Place,Vancouver,New Zealand,2,-7,team_1,Egypt,16.0,New Zealand,Egypt,New Zealand,Egypt,0.1938457894213087,0.9074930171798968,93600000.0,849.4134640803835,16
+16,G,2026-06-15,21.0,SoFi Stadium,Los Angeles,Iran,1,-7,team_1,New Zealand,7.5,Iran,New Zealand,Iran,New Zealand,0.5065622077623214,0.9395625182202948,91000000.0,855.0018915804683,7
+66,G,2026-06-26,23.0,BC Place,Vancouver,New Zealand,3,-7,team_1,Belgium,18.0,New Zealand,Belgium,New Zealand,Belgium,0.0965700992794248,0.6785819450862292,93600000.0,635.1527006007105,18
+38,G,2026-06-21,15.0,SoFi Stadium,Los Angeles,Belgium,2,-7,team_1,Iran,23.0,Belgium,Iran,Belgium,Iran,0.660997075836671,0.7872954340641494,69000000.0,543.233849504263,23
+1,A,2026-06-11,15.0,Estadio Azteca,Mexico City,Mexico,1,-6,team_1,South Africa,15.0,Mexico,South Africa,Mexico,South Africa,0.643253535585145,0.8066831362395448,896000000.0,7227.880900706321,15
+53,A,2026-06-24,21.0,Estadio Azteca,Mexico City,Czechia,3,-6,team_1,Mexico,4.0,Czech Republic,Mexico,Czech Republic,Mexico,0.2467425452655173,0.9626170172651494,63000000.0,606.4487208770441,4
+24,K,2026-06-17,22.0,Estadio Azteca,Mexico City,Uzbekistan,1,-6,team_1,Colombia,9.0,Uzbekistan,Colombia,Uzbekistan,Colombia,0.1191849920201558,0.770462070772218,238000000.0,1833.6997284378788,9
+51,C,2026-06-24,18.0,Hard Rock Stadium,Miami,Scotland,3,-4,team_1,Brazil,22.0,Scotland,Brazil,Scotland,Brazil,0.1213506675408487,0.7620564601600168,60500000.0,461.04415839681013,22
+64,H,2026-06-26,20.0,Estadio Akron,Guadalajara,Uruguay,3,-6,team_1,Spain,23.0,Uruguay,Spain,Uruguay,Spain,0.1834453216576465,0.8834038776424702,20400000.0,180.2143910390639,23
+15,H,2026-06-15,18.0,Hard Rock Stadium,Miami,Saudi Arabia,1,-4,team_1,Uruguay,1.0,Saudi Arabia,Uruguay,Saudi Arabia,Uruguay,0.1466132059284984,0.8273040771552523,288000000.0,2382.6357422071264,1
+39,H,2026-06-21,18.0,Hard Rock Stadium,Miami,Uruguay,2,-4,team_1,Cape Verde,19.0,Uruguay,Cape Verde,Uruguay,Cape Verde,0.6533966521117216,0.7970538613210656,20400000.0,162.59898770949738,19
+69,K,2026-06-27,19.5,Hard Rock Stadium,Miami,Colombia,3,-4,team_1,Portugal,18.5,Colombia,Portugal,Colombia,Portugal,0.275348001957514,0.9778908132968446,260000000.0,2542.5161145717957,18
+6,C,2026-06-13,18.0,MetLife Stadium,New Jersey,Brazil,1,-4,team_1,Morocco,19.0,Brazil,Morocco,Brazil,Morocco,0.5864466549937726,0.8727022058835693,645000000.0,5628.929227949022,19
+55,E,2026-06-25,16.0,MetLife Stadium,New Jersey,Ecuador,3,-4,team_1,Germany,15.0,Ecuador,Germany,Ecuador,Germany,0.1890471395427665,0.8949013779760656,129500000.0,1158.897284479005,15
+17,I,2026-06-16,15.0,MetLife Stadium,New Jersey,France,1,-4,team_1,Senegal,20.0,France,Senegal,France,Senegal,0.654197293796388,0.7972968356585639,201000000.0,1602.5666396737136,20
+43,I,2026-06-22,20.0,MetLife Stadium,New Jersey,Norway,2,-4,team_1,Senegal,1.0,Norway,Senegal,Norway,Senegal,0.449558089773376,0.9735362766185184,38500000.0,374.8114664981296,1
+20,J,2026-06-16,0.0,Levi's Stadium,San Francisco,Austria,1,-7,team_1,Jordan,8.0,Austria,Jordan,Austria,Jordan,0.7105460123583158,0.7224298025551159,45000000.0,325.0934111498022,8
+67,L,2026-06-27,17.0,MetLife Stadium,New Jersey,Panama,3,-4,team_1,England,16.0,Panama,England,Panama,England,0.0780333562283418,0.6165365018763684,48400000.0,298.40366690816234,16
+44,J,2026-06-22,23.0,Levi's Stadium,San Francisco,Jordan,2,-7,team_1,Algeria,9.0,Jordan,Algeria,Jordan,Algeria,0.1791288177333712,0.8859016500337069,70000000.0,620.1311550235948,9
+31,C,2026-06-19,21.0,Lincoln Financial Field,Philadelphia,Brazil,2,-4,team_1,Haiti,22.0,Brazil,Haiti,Brazil,Haiti,0.9022651994600188,0.3416262160970277,645000000.0,2203.4890938258286,22
+11,E,2026-06-14,19.0,Lincoln Financial Field,Philadelphia,Ivory Coast,1,-4,team_1,Ecuador,23.0,Ivory Coast,Ecuador,Ivory Coast,Ecuador,0.2678478558194909,0.9848465937826232,84000000.0,827.2711387774035,23
+56,E,2026-06-25,16.0,Lincoln Financial Field,Philadelphia,Curaçao,3,-4,team_1,Ivory Coast,16.0,Curaçao,Ivory Coast,Curaçao,Ivory Coast,0.1003008043429028,0.7114477822386777,5735000.0,40.80153031138816,16
+42,I,2026-06-22,17.0,Lincoln Financial Field,Philadelphia,France,2,-4,team_1,Iraq,22.0,France,Iraq,France,Iraq,0.8453445907015865,0.4731390617623585,201000000.0,951.0095141423404,22
+68,L,2026-06-27,17.0,Lincoln Financial Field,Philadelphia,Croatia,3,-4,team_1,Ghana,22.0,Croatia,Ghana,Croatia,Ghana,0.5421329005144228,0.9129012987531177,36000000.0,328.6444675511223,22
+48,K,2026-06-23,22.0,Estadio Akron,Guadalajara,Colombia,2,-6,team_1,DR Congo,23.0,Colombia,DR Congo,Colombia,DR Congo,0.6283836753935859,0.8229491137887812,260000000.0,2139.6676958508315,23
+50,B,2026-06-24,15.0,Lumen Field,Seattle,Bosnia and Herzegovina,3,-7,team_1,Qatar,23.0,Bosnia & Herzegovina,Qatar,Bosnia & Herzegovina,Qatar,0.5499507294609177,0.9046642994229948,59400000.0,537.3705938572589,23
+30,D,2026-06-19,15.0,Lumen Field,Seattle,USA,2,-7,team_1,Australia,3.0,USA,Australia,USA,Australia,0.5406783163821635,0.9144454911967268,5780000000.0,52854.949391170805,3
+65,G,2026-06-26,23.0,Lumen Field,Seattle,Egypt,3,-7,team_1,Iran,8.0,Egypt,Iran,Egypt,Iran,0.3896706279390388,0.9935250984928328,530000000.0,5265.683022012014,8
+3,B,2026-06-12,15.0,BMO Field,Toronto,Canada,1,-4,team_1,Bosnia and Herzegovina,14.0,Canada,Bosnia & Herzegovina,Canada,Bosnia & Herzegovina,0.5199690006808263,0.9310115130922966,1040000000.0,9682.519736159886,14
+34,E,2026-06-20,16.0,BMO Field,Toronto,Germany,2,-4,team_1,Ivory Coast,21.0,Germany,Ivory Coast,Germany,Ivory Coast,0.6096030008872192,0.8513609739041146,420000000.0,3575.7160903972813,21
+62,I,2026-06-26,15.0,BMO Field,Toronto,Senegal,3,-4,team_1,Iraq,19.0,Senegal,Iraq,Senegal,Iraq,0.6226511938281983,0.8333513543822001,87500000.0,729.182435084425,19
+23,L,2026-06-17,19.0,BMO Field,Toronto,Ghana,1,-4,team_1,Panama,23.0,Ghana,Panama,Ghana,Panama,0.469358349398182,0.9638975657692735,1190000000.0,11470.381032654355,23
+47,L,2026-06-23,19.0,BMO Field,Toronto,Panama,2,-4,team_1,Croatia,18.0,Panama,Croatia,Panama,Croatia,0.1407772059625521,0.8272613519351831,48400000.0,400.3944943366286,18
+25,A,2026-06-18,12.0,Mercedes-Benz Stadium,Atlanta,South Africa,2,-4,team_2,Czechia,18.0,South Africa,Czech Republic,South Africa,Czech Republic,0.2379538198934173,0.962734900772063,1380000000.0,13285.741630654473,18
+2,A,2026-06-11,22.0,Estadio Akron,Guadalajara,Czechia,1,-6,team_2,Korea Republic,5.0,Czech Republic,South Korea,Czech Republic,South Korea,0.3478887631404389,0.997461798367622,63000000.0,628.4009329716018,5
+52,C,2026-06-24,18.0,Mercedes-Benz Stadium,Atlanta,Haiti,3,-4,team_2,Morocco,17.0,Haiti,Morocco,Haiti,Morocco,0.1067748914087584,0.7236875732516449,68400000.0,495.00230010412514,17
+28,A,2026-06-18,21.0,Estadio Akron,Guadalajara,Korea Republic,2,-6,team_2,Mexico,12.0,South Korea,Mexico,South Korea,Mexico,0.2064150227811407,0.9289380936839552,459000000.0,4263.825850009354,12
+13,H,2026-06-15,12.0,Mercedes-Benz Stadium,Atlanta,Cape Verde,1,-4,team_2,Spain,15.0,Cape Verde,Spain,Cape Verde,Spain,0.0339452023859962,0.4073975781286083,580000.0,2.362905953145928,15
+54,A,2026-06-24,21.0,Estadio BBVA,Monterrey,Korea Republic,3,-6,team_2,South Africa,12.0,South Korea,South Africa,South Korea,South Africa,0.4486047152735027,0.9736495307284996,459000000.0,4469.051346043813,12
+37,H,2026-06-21,12.0,Mercedes-Benz Stadium,Atlanta,Saudi Arabia,2,-4,team_2,Spain,19.0,Saudi Arabia,Spain,Saudi Arabia,Spain,0.0397611980332001,0.4555141274595816,288000000.0,1311.880687083595,19
+5,B,2026-06-13,15.0,Levi's Stadium,San Francisco,Switzerland,1,-7,team_2,Qatar,23.0,Switzerland,Qatar,Switzerland,Qatar,0.7423929325499605,0.670026150228556,69600000.0,466.338200559075,23
+70,K,2026-06-27,19.5,Mercedes-Benz Stadium,Atlanta,Uzbekistan,3,-4,team_2,DR Congo,4.5,Uzbekistan,DR Congo,Uzbekistan,DR Congo,0.3325887670596281,0.9952095704667656,238000000.0,2368.598777710902,4
+27,B,2026-06-18,18.0,BC Place,Vancouver,Qatar,2,-7,team_2,Canada,4.0,Qatar,Canada,Qatar,Canada,0.11014402169332,0.7511478446932925,83200000.0,624.9550067848194,4
+49,B,2026-06-24,15.0,BC Place,Vancouver,Canada,3,-7,team_2,Switzerland,17.0,Canada,Switzerland,Canada,Switzerland,0.2562666395816383,0.9684804209972732,1040000000.0,10072.19637837164,17
+7,C,2026-06-13,21.0,Gillette Stadium,Boston,Scotland,1,-4,team_2,Haiti,1.0,Scotland,Haiti,Scotland,Haiti,0.6656778998963142,0.7838717264475732,60500000.0,474.24239450078176,1
+29,C,2026-06-19,18.0,Gillette Stadium,Boston,Morocco,2,-4,team_2,Scotland,23.0,Morocco,Scotland,Morocco,Scotland,0.4548496339240162,0.9693472649828604,333000000.0,3227.926392392925,23
+18,I,2026-06-16,18.0,Gillette Stadium,Boston,Norway,1,-4,team_2,Iraq,23.0,Norway,Iraq,Norway,Iraq,0.7672700441709484,0.6305429011823727,38500000.0,242.75901695521347,23
+61,I,2026-06-26,15.0,Gillette Stadium,Boston,France,3,-4,team_2,Norway,20.0,France,Norway,France,Norway,0.5527451729194611,0.9040815926006152,201000000.0,1817.2040011272368,20
+46,L,2026-06-23,16.0,Gillette Stadium,Boston,Ghana,2,-4,team_2,England,20.0,Ghana,England,Ghana,England,0.1024482319020266,0.7144241933315857,1190000000.0,8501.64790064587,20
+10,F,2026-06-14,16.0,AT&T Stadium,Dallas,Japan,1,-5,team_2,Netherlands,6.0,Japan,Netherlands,Japan,Netherlands,0.2613987614505042,0.9603331966146872,250000000.0,2400.832991536718,6
+57,F,2026-06-25,19.0,AT&T Stadium,Dallas,Sweden,3,-5,team_2,Japan,1.0,Sweden,Japan,Sweden,Japan,0.2654862663114107,0.9700610309490458,73500000.0,712.9948577475486,1
+41,J,2026-06-22,13.0,AT&T Stadium,Dallas,Austria,2,-5,team_2,Argentina,19.0,Austria,Argentina,Austria,Argentina,0.1760154698767063,0.8859275125000925,45000000.0,398.6673806250416,19
+8,D,2026-06-13,21.0,BC Place,Vancouver,Türkiye,1,-7,team_2,Australia,7.0,Turkey,Australia,Turkey,Australia,0.5245181012829756,0.9270190720176102,344000000.0,3188.9456077405794,7
+72,J,2026-06-27,22.0,AT&T Stadium,Dallas,Argentina,3,-5,team_2,Jordan,0.0,Argentina,Jordan,Argentina,Jordan,0.7998907619613276,0.5734496159709885,188000000.0,1078.0852780254584,0
+32,D,2026-06-19,0.0,Levi's Stadium,San Francisco,Paraguay,2,-7,team_2,Türkiye,3.0,Paraguay,Turkey,Paraguay,Turkey,0.2786329308903773,0.9848464366238068,42000000.0,413.6355033819988,3
+22,L,2026-06-17,16.0,AT&T Stadium,Dallas,Croatia,1,-5,team_2,England,22.0,Croatia,England,Croatia,England,0.2001177012935424,0.910285804715173,36000000.0,327.70288969746224,22
+60,D,2026-06-25,22.0,Levi's Stadium,San Francisco,Australia,3,-7,team_2,Paraguay,15.0,Australia,Paraguay,Australia,Paraguay,0.2756692808484375,0.980520385069706,338000000.0,3314.158901535606,15
+9,E,2026-06-14,13.0,NRG Stadium,Houston,Curaçao,1,-5,team_2,Germany,14.0,Curaçao,Germany,Curaçao,Germany,0.0191179987471047,0.2782237410495119,5735000.0,15.956131549189507,14
+33,F,2026-06-20,13.0,NRG Stadium,Houston,Sweden,2,-5,team_2,Netherlands,19.0,Sweden,Netherlands,Sweden,Netherlands,0.1884899093846842,0.8922434068419883,73500000.0,655.7989040288614,19
+63,H,2026-06-26,20.0,NRG Stadium,Houston,Saudi Arabia,3,-5,team_2,Cape Verde,4.0,Saudi Arabia,Cape Verde,Saudi Arabia,Cape Verde,0.3790858929909356,0.9940743100832174,288000000.0,2862.9340130396663,4
+21,K,2026-06-17,13.0,NRG Stadium,Houston,DR Congo,1,-5,team_2,Portugal,19.0,DR Congo,Portugal,DR Congo,Portugal,0.08830868042168,0.6607216920574163,297000000.0,1962.3434254105264,19
+45,K,2026-06-23,13.0,NRG Stadium,Houston,Uzbekistan,2,-5,team_2,Portugal,23.0,Uzbekistan,Portugal,Uzbekistan,Portugal,0.0713129478603195,0.605193793141346,238000000.0,1440.3612276764036,23
+35,E,2026-06-20,20.0,Arrowhead Stadium,Kansas City,Curaçao,2,-5,team_2,Ecuador,21.0,Curaçao,Ecuador,Curaçao,Ecuador,0.076209311183934,0.6351646333335227,5735000.0,36.42669172167752,21
+58,F,2026-06-25,19.0,Arrowhead Stadium,Kansas City,Netherlands,3,-5,team_2,Tunisia,1.0,Netherlands,Tunisia,Netherlands,Tunisia,0.6091642181416849,0.8488460651185701,105000000.0,891.2883683744986,1
+12,F,2026-06-14,22.0,Estadio BBVA,Monterrey,Tunisia,1,-6,team_2,Sweden,5.0,Tunisia,Sweden,Tunisia,Sweden,0.2303034278712717,0.95151574087613,84000000.0,799.2732223359492,5
+19,J,2026-06-16,21.0,Arrowhead Stadium,Kansas City,Algeria,1,-5,team_2,Argentina,3.0,Algeria,Argentina,Algeria,Argentina,0.1139427869531362,0.765125963356679,220000000.0,1683.2771193846938,3
+36,F,2026-06-20,0.0,Estadio BBVA,Monterrey,Japan,2,-6,team_2,Tunisia,15.0,Japan,Tunisia,Japan,Tunisia,0.510453858713173,0.9341000177141868,250000000.0,2335.250044285467,15
+71,J,2026-06-27,22.0,Arrowhead Stadium,Kansas City,Austria,3,-5,team_2,Algeria,4.0,Austria,Algeria,Austria,Algeria,0.4441337454413406,0.97560934848284,45000000.0,439.0242068172779,4
+26,B,2026-06-18,15.0,SoFi Stadium,Los Angeles,Bosnia and Herzegovina,2,-7,team_2,Switzerland,23.0,Bosnia & Herzegovina,Switzerland,Bosnia & Herzegovina,Switzerland,0.1595345563272411,0.8523975357822409,59400000.0,506.3241362546511,23
+14,G,2026-06-15,15.0,BC Place,Vancouver,Egypt,1,-7,team_2,Belgium,0.0,Egypt,Belgium,Egypt,Belgium,0.1911165124426053,0.8923289053161562,530000000.0,4729.343198175628,0
+4,D,2026-06-12,21.0,SoFi Stadium,Los Angeles,Paraguay,1,-7,team_2,USA,0.0,Paraguay,USA,Paraguay,USA,0.2517021881089473,0.960062779385906,42000000.0,403.22636734208055,0
+59,D,2026-06-25,22.0,SoFi Stadium,Los Angeles,USA,3,-7,team_2,Türkiye,10.0,USA,Turkey,USA,Turkey,0.3749759171582426,0.99327277437497,5780000000.0,57411.16635887326,10
+40,G,2026-06-21,21.0,BC Place,Vancouver,Egypt,2,-7,team_2,New Zealand,6.0,Egypt,New Zealand,Egypt,New Zealand,0.5483467032087167,0.9074930171798968,530000000.0,4809.712991053453,6
+16,G,2026-06-15,21.0,SoFi Stadium,Los Angeles,New Zealand,1,-7,team_2,Iran,16.0,New Zealand,Iran,New Zealand,Iran,0.2201296266491334,0.9395625182202948,93600000.0,879.430517054196,16
+66,G,2026-06-26,23.0,BC Place,Vancouver,Belgium,3,-7,team_2,New Zealand,7.0,Belgium,New Zealand,Belgium,New Zealand,0.7393917584828956,0.6785819450862292,69000000.0,468.2215421094981,7
+38,G,2026-06-21,15.0,SoFi Stadium,Los Angeles,Iran,2,-7,team_2,Belgium,1.5,Iran,Belgium,Iran,Belgium,0.1276951676521056,0.7872954340641494,91000000.0,716.4388449983759,1
+1,A,2026-06-11,15.0,Estadio Azteca,Mexico City,South Africa,1,-6,team_2,Mexico,23.0,South Africa,Mexico,South Africa,Mexico,0.1313039107361651,0.8066831362395448,1380000000.0,11132.227280105715,23
+53,A,2026-06-24,21.0,Estadio Azteca,Mexico City,Mexico,3,-6,team_2,Czechia,21.0,Mexico,Czech Republic,Mexico,Czech Republic,0.469826752857522,0.9626170172651494,896000000.0,8625.048474695739,21
+24,K,2026-06-17,22.0,Estadio Azteca,Mexico City,Colombia,1,-6,team_2,Uzbekistan,23.0,Colombia,Uzbekistan,Colombia,Uzbekistan,0.6730774525965205,0.770462070772218,260000000.0,2003.2013840077664,23
+51,C,2026-06-24,18.0,Hard Rock Stadium,Miami,Brazil,3,-4,team_2,Scotland,19.0,Brazil,Scotland,Brazil,Scotland,0.6816529255453908,0.7620564601600168,645000000.0,4915.2641680321085,19
+64,H,2026-06-26,20.0,Estadio Akron,Guadalajara,Spain,3,-6,team_2,Uruguay,3.0,Spain,Uruguay,Spain,Uruguay,0.5772187356121709,0.8834038776424702,240000000.0,2120.1693063419284,3
+15,H,2026-06-15,18.0,Hard Rock Stadium,Miami,Uruguay,1,-4,team_2,Saudi Arabia,19.0,Uruguay,Saudi Arabia,Uruguay,Saudi Arabia,0.6285572477089322,0.8273040771552523,20400000.0,168.77003173967148,19
+39,H,2026-06-21,18.0,Hard Rock Stadium,Miami,Cape Verde,2,-4,team_2,Uruguay,21.0,Cape Verde,Uruguay,Cape Verde,Uruguay,0.1320533825842006,0.7970538613210656,580000.0,4.622912395662181,21
+69,K,2026-06-27,19.5,Hard Rock Stadium,Miami,Portugal,3,-4,team_2,Colombia,23.5,Portugal,Colombia,Portugal,Colombia,0.4392895736973927,0.9778908132968446,94500000.0,924.106818565518,23
+6,C,2026-06-13,18.0,MetLife Stadium,New Jersey,Morocco,1,-4,team_2,Brazil,23.0,Morocco,Brazil,Morocco,Brazil,0.1715874761840793,0.8727022058835693,333000000.0,2906.098345592286,23
+55,E,2026-06-25,16.0,MetLife Stadium,New Jersey,Germany,3,-4,team_2,Ecuador,21.0,Germany,Ecuador,Germany,Ecuador,0.5641676433995375,0.8949013779760656,420000000.0,3758.5857874994754,21
+17,I,2026-06-16,15.0,MetLife Stadium,New Jersey,Senegal,1,-4,team_2,France,19.0,Senegal,France,Senegal,France,0.1345417421605756,0.7972968356585639,87500000.0,697.6347312012434,19
+43,I,2026-06-22,20.0,MetLife Stadium,New Jersey,Senegal,2,-4,team_2,Norway,0.0,Senegal,Norway,Senegal,Norway,0.2715832680706564,0.9735362766185184,87500000.0,851.8442420412035,0
+20,J,2026-06-16,0.0,Levi's Stadium,San Francisco,Jordan,1,-7,team_2,Austria,10.0,Jordan,Austria,Jordan,Austria,0.1095706714170941,0.7224298025551159,70000000.0,505.7008617885811,10
+67,L,2026-06-27,17.0,MetLife Stadium,New Jersey,England,3,-4,team_2,Panama,21.0,England,Panama,England,Panama,0.7756342094531137,0.6165365018763684,627000000.0,3865.6838667648303,21
+44,J,2026-06-22,23.0,Levi's Stadium,San Francisco,Algeria,2,-7,team_2,Jordan,7.0,Algeria,Jordan,Algeria,Jordan,0.5725276856034155,0.8859016500337069,220000000.0,1948.9836300741551,7
+31,C,2026-06-19,21.0,Lincoln Financial Field,Philadelphia,Haiti,2,-4,team_2,Brazil,20.0,Haiti,Brazil,Haiti,Brazil,0.0246882836935672,0.3416262160970277,68400000.0,233.67233181036696,20
+11,E,2026-06-14,19.0,Lincoln Financial Field,Philadelphia,Ecuador,1,-4,team_2,Ivory Coast,18.0,Ecuador,Ivory Coast,Ecuador,Ivory Coast,0.415271174952272,0.9848465937826232,129500000.0,1275.376338948497,18
+56,E,2026-06-25,16.0,Lincoln Financial Field,Philadelphia,Ivory Coast,3,-4,team_2,Curaçao,20.0,Ivory Coast,Curaçao,Ivory Coast,Curaçao,0.7156413411965213,0.7114477822386777,84000000.0,597.6161370804892,20
+42,I,2026-06-22,17.0,Lincoln Financial Field,Philadelphia,Iraq,2,-4,team_2,France,0.0,Iraq,France,Iraq,France,0.0406629841600025,0.4731390617623585,258000000.0,1220.698779346885,0
+68,L,2026-06-27,17.0,Lincoln Financial Field,Philadelphia,Ghana,3,-4,team_2,Croatia,21.0,Ghana,Croatia,Ghana,Croatia,0.1985764180404891,0.9129012987531177,1190000000.0,10863.5254551621,21
+48,K,2026-06-23,22.0,Estadio Akron,Guadalajara,DR Congo,2,-6,team_2,Colombia,5.0,DR Congo,Colombia,DR Congo,Colombia,0.1364080172733252,0.8229491137887812,297000000.0,2444.1588679526803,5
+50,B,2026-06-24,15.0,Lumen Field,Seattle,Qatar,3,-7,team_2,Bosnia and Herzegovina,1.0,Qatar,Bosnia & Herzegovina,Qatar,Bosnia & Herzegovina,0.1876878971913115,0.9046642994229948,83200000.0,752.6806971199316,1
+30,D,2026-06-19,15.0,Lumen Field,Seattle,Australia,2,-7,team_2,USA,8.0,Australia,USA,Australia,USA,0.200982335616973,0.9144454911967268,338000000.0,3090.825760244936,8
+65,G,2026-06-26,23.0,Lumen Field,Seattle,Iran,3,-7,team_2,Egypt,9.5,Iran,Egypt,Iran,Egypt,0.2984054028835133,0.9935250984928328,91000000.0,904.1078396284778,9
+3,B,2026-06-12,15.0,BMO Field,Toronto,Bosnia and Herzegovina,1,-4,team_2,Canada,20.0,Bosnia & Herzegovina,Canada,Bosnia & Herzegovina,Canada,0.2167389790196351,0.9310115130922966,59400000.0,553.0208387768241,20
+34,E,2026-06-20,16.0,BMO Field,Toronto,Ivory Coast,2,-4,team_2,Germany,20.0,Ivory Coast,Germany,Ivory Coast,Germany,0.1665755881080135,0.8513609739041146,84000000.0,715.1432180794562,20
+62,I,2026-06-26,15.0,BMO Field,Toronto,Iraq,3,-4,team_2,Senegal,22.0,Iraq,Senegal,Iraq,Senegal,0.1481332422481745,0.8333513543822001,258000000.0,2150.046494306076,22
+23,L,2026-06-17,19.0,BMO Field,Toronto,Panama,1,-4,team_2,Ghana,18.0,Panama,Ghana,Panama,Ghana,0.2594202712449828,0.9638975657692735,48400000.0,466.5264218323284,18
+47,L,2026-06-23,19.0,BMO Field,Toronto,Croatia,2,-4,team_2,Panama,0.0,Croatia,Panama,Croatia,Panama,0.6259018993254886,0.8272613519351831,36000000.0,297.8140866966659,0
