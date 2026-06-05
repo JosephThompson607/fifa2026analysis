@@ -1,0 +1,6 @@
+phase,status,runtime_s,UB,LB,gap,unit
+Broadcast penalty,Optimal,22.7,15655.2434,15655.2434,0.0,
+Stadium distances,Time limit,252.6,41198.9315,3425.4827,0.9169,km
+Camp distances,Time limit,61.9,477546.2934,154996.1887,0.6754,km
+Temperature shock,Time limit,80.3,775.2317,343.5277,0.5569,°C
+Elevation gain,Time limit,11.4,25820.0,2229.0,0.9137,m
