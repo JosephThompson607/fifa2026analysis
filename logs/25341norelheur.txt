@@ -500,3 +500,4 @@ Found heuristic solution: objective 32226.754219
 Elapsed time for NoRel heuristic: 2531s (best bound 17612.1)
 Elapsed time for NoRel heuristic: 2574s (best bound 17612.1)
 Elapsed time for NoRel heuristic: 2616s (best bound 17612.1)
+Elapsed time for NoRel heuristic: 2660s (best bound 17612.1)
