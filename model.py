@@ -244,16 +244,21 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
             model.addConstr(lhs1 - lhs2 <= 1, name=f"prox_{grp}_d{d}_a")
             model.addConstr(lhs2 - lhs1 <= 1, name=f"prox_{grp}_d{d}_b")
 
-            # Not same (date, time_slot) — even across different stadiums
-            for (date, slot), vs in date_slot_nodes.items():
-                vs1 = [v for v in vs if v in set(game_slots[g1])]
-                vs2 = [v for v in vs if v in set(game_slots[g2])]
-                if not vs1 or not vs2:
+            # 3-hour buffer: game B cannot start within 3 hours of game A
+            # (same date, |hour_utc(v1) - hour_utc(v2)| < 3)
+            gs1 = set(game_slots[g1])
+            gs2 = set(game_slots[g2])
+            for v1 in game_slots[g1]:
+                date1, _, h1 = nodes[v1]
+                forbidden = [
+                    v2 for v2 in game_slots[g2]
+                    if nodes[v2][0] == date1 and abs(nodes[v2][2] - h1) < 3
+                ]
+                if not forbidden:
                     continue
                 model.addConstr(
-                    gp.quicksum(y[g1, v] for v in vs1)
-                    + gp.quicksum(y[g2, v] for v in vs2) <= 1,
-                    name=f"notsameslot_{grp}_d{d}_{date}_{slot}"
+                    gp.quicksum(y[g2, v2] for v2 in forbidden) <= 1 - y[g1, v1],
+                    name=f"buffer3h_{grp}_d{d}_v{v1}"
                 )
 
     # --- Flow formulation with arc costs ---------------------------------------
@@ -466,7 +471,9 @@ def build_and_solve(teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weat
             print(f"Obj {obj_id} — {obj_name}:")
             print(f"  Status : {status_str}  Runtime: {model.Runtime:.1f}s")
             if val is not None:
-                print(f"  Val: {val:,.4f} {unit}  Bound: {bound:,.4f}  Gap: {gap:.4f}")
+                bound_str = f"{bound:,.4f}" if bound is not None else "N/A"
+                gap_str   = f"{gap:.4f}"    if gap   is not None else "N/A"
+                print(f"  Val: {val:,.4f} {unit}  Bound: {bound_str}  Gap: {gap_str}")
             phase_reports.append({
                 "phase": obj_name, "status": status_str,
                 "runtime_s": round(model.Runtime, 1),
@@ -547,6 +554,16 @@ if __name__ == "__main__":
     os.makedirs("results", exist_ok=True)
 
     teams_df, games_df, stadiums_df, dist_df, camp_dist_df, weather_df, broadcast_df = load_data()
+
+    nodes, node_temp = build_intermediate_nodes(weather_df)
+    stad_elev        = stadiums_df.set_index("stadium")["elevation"].to_dict()
+    pd.DataFrame([
+        {"node_id": v, "date": nodes[v][0], "stadium": nodes[v][1],
+         "hour_utc": nodes[v][2], "apparent_temperature": node_temp[v],
+         "elevation": stad_elev[nodes[v][1]]}
+        for v in range(len(nodes))
+    ]).to_csv("intermediate_nodes.csv", index=False)
+    print(f"Exported {len(nodes)} nodes to intermediate_nodes.csv\n")
 
     results, phase_reports = build_and_solve(
         teams_df, games_df, stadiums_df, dist_df, camp_dist_df,
